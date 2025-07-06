@@ -1,0 +1,80 @@
+[
+    {
+        "id": "arte-digital",
+        "name": "Arte Digital",
+        "description": "Prompts para crear imágenes, ilustraciones, arte conceptual o gráficos visuales basados en descripciones de texto.",
+        "image": "/img/categories/arte-digital.svg"
+    },
+    {
+        "id": "programacion",
+        "name": "Programación",
+        "description": "Prompts para producir código en lenguajes específicos (Python, C#, JavaScript, HTML/CSS, etc.), funciones, clases, scripts o soluciones a problemas de programación.",
+        "image": "/img/categories/programacion.svg"
+    },
+    {
+        "id": "contenido-escrito",
+        "name": "Contenido Escrito",
+        "description": "Prompts para redactar blogs, artículos, ensayos, informes, resúmenes, descripciones de productos, o cualquier tipo de contenido textual extenso.",
+        "image": "/img/categories/contenido-escrito.svg"
+    },
+    {
+        "id": "marketing",
+        "name": "Campañas de Marketing",
+        "description": "Prompts para crear ideas de campañas publicitarias, eslóganes, textos para anuncios, estrategias de redes sociales o correos electrónicos de marketing.",
+        "image": "/img/categories/marketing.svg"
+    },
+    {
+        "id": "ui-ux-design",
+        "name": "UI/UX Design",
+        "description": "Herramientas para el diseño de interfaces y experiencia de usuario.",
+        "image": "/img/categories/ui-ux-icon.svg"
+    },
+    {
+        "id": "storytelling",
+        "name": "Storytelling",
+        "description": "Prompts para desarrollar ideas de historias, tramas, personajes, diálogos, guiones de video, podcasts o cortometrajes.",
+        "image": "/img/categories/storytelling.svg"
+    },
+    {
+        "id": "ideas-creativas",
+        "name": "Ideas Creativas",
+        "description": "Prompts para generar nombres de empresas, productos, proyectos, ideas de negocio, conceptos innovadores o títulos creativos.",
+        "image": "/img/categories/ideas-creativas.svg"
+    },
+    {
+        "id": "educativo",
+        "name": "Material Educativo",
+        "description": "Prompts para diseñar planes de estudio, contenido de lecciones, ejercicios, cuestionarios, resúmenes de temas o explicaciones didácticas.",
+        "image": "/img/categories/educativo.svg"
+    },
+    {
+        "id": "culinario",
+        "name": "Instrucciones Culinarias",
+        "description": "Prompts para crear recetas, planes de comidas, listas de ingredientes o instrucciones paso a paso para cocinar.",
+        "image": "/img/categories/culinario.svg"
+    },
+    {
+        "id": "analisis-datos",
+        "name": "Análisis de Datos",
+        "description": "Prompts para solicitar análisis de conjuntos de datos, interpretación de gráficos, generación de resúmenes estadísticos o ideas para visualizaciones.",
+        "image": "/img/categories/analisis-datos.svg"
+    },
+    {
+        "id": "finanzas",
+        "name": "Finanzas",
+        "description": "Prompts para generar estados financieros, proyecciones o estadísticas financieras.",
+        "image": "/img/categories/finanzas.svg"
+    },
+    {
+        "id": "conversacional",
+        "name": "Interacción Conversacional",
+        "description": "Prompts para simular conversaciones, generar respuestas a preguntas frecuentes, crear chatbots o asistentes virtuales, o redactar correos electrónicos de atención al cliente.",
+        "image": "/img/categories/conversacional.svg"
+    },
+    {
+        "id": "ingenieria",
+        "name": "Ingeniería",
+        "description": "Prompts para cálculos de ingeniería, planos, memorias y formulas.",
+        "image": "/img/categories/ingenieria.svg"
+    }
+]

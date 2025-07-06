@@ -1,0 +1,191 @@
+[
+    {
+        "id": "blog_form",
+        "categoryId": "contenido-escrito",
+        "title": "Artículos de Blog (SEO)",
+        "description": "Genera prompts optimizados para la creación de artículos de blog con IA, incluyendo SEO y estructura.",
+        "customPagePath": "/content/prompts/custom/blog_form.html"
+    },
+    {
+        "id": "book_generator_form",
+        "categoryId": "contenido-escrito",
+        "title": "Generador de Contenido para Libros",
+        "description": "Crea prompts para desarrollar la trama, personajes y estructura de un libro.",
+        "customPagePath": "/content/prompts/custom/book_generator_form.html"
+    },
+    {
+        "id": "poem_lyrics_form",
+        "categoryId": "contenido-escrito",
+        "title": "Generador de Poesía y Letras de Canciones",
+        "description": "Crea prompts para escribir poemas o letras de canciones, definiendo el tema, el estilo y la estructura.",
+        "customPagePath": "/content/prompts/custom/poem_lyrics_form.html"
+    },
+    {
+        "id": "product_description_form",
+        "categoryId": "contenido-escrito",
+        "title": "Generador de Descripciones de Productos",
+        "description": "Crea prompts para redactar descripciones de productos persuasivas y optimizadas para e-commerce.",
+        "customPagePath": "/content/prompts/custom/product_description_form.html"
+    },
+    {
+        "id": "email_writer_form",
+        "categoryId": "contenido-escrito",
+        "title": "Redactor de Emails Profesionales",
+        "description": "Crea prompts para redactar emails efectivos para diferentes propósitos, desde marketing hasta comunicación interna.",
+        "customPagePath": "/content/prompts/custom/email_writer_form.html"
+    },
+    {
+        "id": "advertising_campaign_form",
+        "categoryId": "marketing",
+        "title": "Diseñador de Campañas Publicitarias",
+        "description": "Crea prompts para desarrollar conceptos creativos y estrategias para campañas publicitarias completas.",
+        "customPagePath": "/content/prompts/custom/advertising_campaign_form.html"
+    },
+    {
+        "id": "ad_copy_form",
+        "categoryId": "marketing",
+        "title": "Generador de Textos para Anuncios (Copywriting)",
+        "description": "Crea textos (copy) persuasivos para anuncios en diferentes plataformas como Google Ads, Facebook, etc.",
+        "customPagePath": "/content/prompts/custom/ad_copy_form.html"
+    },
+    {
+        "id": "ad_platform_selector_form",
+        "categoryId": "marketing",
+        "title": "Selector de Plataforma Publicitaria",
+        "description": "Recibe una recomendación de las mejores plataformas publicitarias para tu campaña basada en tu público y objetivos.",
+        "customPagePath": "/content/prompts/custom/ad_platform_selector_form.html"
+    },
+    {
+        "id": "value_proposition_form",
+        "categoryId": "marketing",
+        "title": "Creador de Ofertas de Valor",
+        "description": "Define y redacta una propuesta de valor irresistible que conecte con tu público y destaque sobre la competencia.",
+        "customPagePath": "/content/prompts/custom/value_proposition_form.html"
+    },
+    {
+        "id": "social_media_form",
+        "categoryId": "marketing",
+        "title": "Publicaciones para Redes Sociales",
+        "description": "Crea prompts para posts impactantes en diversas plataformas de redes sociales.",
+        "customPagePath": "/content/prompts/custom/social_media_form.html"
+    },
+    {
+        "id": "image_form",
+        "categoryId": "arte-digital",
+        "title": "Generador de Prompts para Imágenes (IA)",
+        "description": "Crea prompts detallados para generar imágenes con modelos de IA como Midjourney o DALL-E.",
+        "customPagePath": "/content/prompts/custom/image_form.html"
+    },
+    {
+        "id": "logo_design_form",
+        "categoryId": "arte-digital",
+        "title": "Generador de Prompts para Logos",
+        "description": "Crea prompts detallados para diseñar logos únicos y profesionales para marcas o proyectos.",
+        "customPagePath": "/content/prompts/custom/logo_design_form.html"
+    },
+    {
+        "id": "video_script_form",
+        "categoryId": "arte-digital",
+        "title": "Generador de Guiones para Video",
+        "description": "Crea prompts para desarrollar guiones completos para videos (YouTube, TikTok, etc.), incluyendo estructura y tono.",
+        "customPagePath": "/content/prompts/custom/video_script_form.html"
+    },
+    {
+        "id": "instagram_post_form",
+        "categoryId": "arte-digital",
+        "title": "Generador de Contenido para Instagram",
+        "description": "Crea prompts para planificar posts de Instagram (carruseles, Reels, etc.) enfocados en el contenido visual y el copy.",
+        "customPagePath": "/content/prompts/custom/instagram_post_form.html"
+    },
+    {
+        "id": "form_design_form",
+        "categoryId": "ui-ux-design",
+        "title": "Diseñador de Formularios (UI/UX)",
+        "description": "Genera prompts para diseñar maquetas de formularios de datos, especificando campos, controles y formato de salida.",
+        "customPagePath": "/content/prompts/custom/form_design_form.html"
+    },
+    {
+        "id": "landing_page_form",
+        "categoryId": "ui-ux-design",
+        "title": "Diseñador de Landing Page",
+        "description": "Genera prompts para diseñar landing pages efectivas, definiendo cada sección y su contenido.",
+        "customPagePath": "/content/prompts/custom/landing_page_form.html"
+    },
+    {
+        "id": "user_persona_form",
+        "categoryId": "ui-ux-design",
+        "title": "Generador de Perfiles de Usuario (Persona)",
+        "description": "Crea perfiles de usuario detallados para entender mejor a tu público objetivo y guiar el diseño.",
+        "customPagePath": "/content/prompts/custom/user_persona_form.html"
+    },
+    {
+        "id": "function_generator_form",
+        "categoryId": "programacion",
+        "title": "Generador de Funciones de Código",
+        "description": "Crea prompts detallados para generar funciones de código en diferentes lenguajes de programación.",
+        "customPagePath": "/content/prompts/custom/function_generator_form.html"
+    },
+    {
+        "id": "entity_generator_form",
+        "categoryId": "programacion",
+        "title": "Generador de Entidades de Datos (Clases/Modelos)",
+        "description": "Define y genera clases o modelos de datos para diferentes lenguajes, especificando atributos y tipos.",
+        "customPagePath": "/content/prompts/custom/entity_generator_form.html"
+    },
+    {
+        "id": "project_design_form",
+        "categoryId": "programacion",
+        "title": "Diseñador de Arquitectura de Software",
+        "description": "Genera prompts para diseñar la arquitectura completa de un proyecto de software, desde patrones hasta tecnologías.",
+        "customPagePath": "/content/prompts/custom/project_design_form.html"
+    },
+    {
+        "id": "database_design_form",
+        "categoryId": "programacion",
+        "title": "Diseñador de Base de Datos",
+        "description": "Genera prompts para diseñar esquemas de bases de datos, incluyendo entidades, atributos y relaciones.",
+        "customPagePath": "/content/prompts/custom/database_design_form.html"
+    },
+    {
+        "id": "unit_test_generator_form",
+        "categoryId": "programacion",
+        "title": "Generador de Pruebas Unitarias (Unit Tests)",
+        "description": "Crea prompts para generar pruebas unitarias para tu código, especificando casos de prueba y frameworks.",
+        "customPagePath": "/content/prompts/custom/unit_test_generator_form.html"
+    },
+    {
+        "id": "story_development_form",
+        "categoryId": "storytelling",
+        "title": "Desarrollador de Historias",
+        "description": "Crea prompts para desarrollar tramas, personajes y mundos para tus historias.",
+        "customPagePath": "/content/prompts/custom/story_development_form.html"
+    },
+    {
+        "id": "movie_script_form",
+        "categoryId": "storytelling",
+        "title": "Generador de Guiones de Película",
+        "description": "Crea prompts para escribir escenas, diálogos y tratamientos para guiones de cine.",
+        "customPagePath": "/content/prompts/custom/movie_script_form.html"
+    },
+    {
+        "id": "podcast_script_form",
+        "categoryId": "storytelling",
+        "title": "Generador de Guiones para Podcast",
+        "description": "Crea prompts para estructurar y escribir guiones para episodios de podcast, desde entrevistas hasta narrativas.",
+        "customPagePath": "/content/prompts/custom/podcast_script_form.html"
+    },
+    {
+        "id": "character_impersonator_form",
+        "categoryId": "storytelling",
+        "title": "Intérprete de Personajes (Role-playing)",
+        "description": "Configura un prompt para que la IA actúe y responda como tu personaje favorito de cualquier universo.",
+        "customPagePath": "/content/prompts/custom/character_impersonator_form.html"
+    },
+    {
+        "id": "general_story_generator_form",
+        "categoryId": "storytelling",
+        "title": "Cuentacuentos General",
+        "description": "Genera historias de cualquier tipo, definiendo el tema, público y tono para capturar la imaginación.",
+        "customPagePath": "/content/prompts/custom/general_story_generator_form.html"
+    }
+]

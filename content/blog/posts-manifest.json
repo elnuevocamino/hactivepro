@@ -1,0 +1,38 @@
+[
+  {
+    "title": "El Arte perdido de la comunicación en la era digital",
+    "subtitle": "Un discurso de Churchill en 280 caracteres?",
+    "file": "posts/el-arte-perdido-de-la-comunicacion-en-la-era-digital.html",
+    "image": "el-arte-perdido-de-la-comunicacion.jpg",
+    "excerpt": "La brevedad no es un atajo sino una cima que exige una escalada mas empinada",
+    "publicationDate": "2025-07-01",
+    "slug": "el-arte-perdido-de-la-comunicacion-en-la-era-digital"
+  },
+  {
+    "file": "posts/DeLaPiedraAlAlgoritmo.html",
+    "title": "De la piedra al algoritmo",
+    "subtitle": "Una Breve Historia de la Innovación Humana y el Amanecer de la Era de la IA",
+    "image": "de-la-piedra.jpg.jpg",
+    "publicationDate": "2025-05-28",
+    "excerpt": "Hace aproximadamente unos 70.000 años, existian en la tierra dos especies distinas de primates...",
+    "slug": "DeLaPiedraAlAlgoritmo"
+  },
+  {
+    "file": "posts/VistemeDespacio.html",
+    "title": "Visteme despacio que la tecnología va de prisa",
+    "subtitle": "El paso firme y decidido hacia el progreso",
+    "image": "visteme-despacio.png",
+    "publicationDate": "2025-06-04",
+    "excerpt": "Desde que el primer rayo de sol iluminó la conciencia humana, hemos estado inmersos en una danza...",
+    "slug": "VistemeDespacio"
+  },
+  {
+    "file": "posts/LosDosGimnasios.html",
+    "title": "Los dos gimnasios",
+    "subtitle": "Entrenamiento las 24/7",
+    "image": "los-dos-gimnasios.jpg",
+    "publicationDate": "2025-06-11",
+    "excerpt": "Tal vez esto no te lo halla dicho ningún entrenador deportivo, pero lo cierto es que cuando te inscribes o pagas la mensualidad...",
+    "slug": "LosDosGimnasios"
+  }
+]
