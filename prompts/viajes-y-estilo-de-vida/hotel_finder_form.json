@@ -1,0 +1,71 @@
+{
+    "id": "hotel_finder_form",
+    "nombre": "Buscador de Hoteles y Alojamiento",
+    "descripcion": "Encuentra el alojamiento perfecto para tu viaje, especificando destino, fechas, presupuesto y comodidades.",
+    "campos": [
+        {
+            "id": "destination",
+            "etiqueta": "Destino (Ciudad, Región)",
+            "tipo": "text",
+            "placeholder": "Ej: Roma, Italia",
+            "requerido": true,
+            "tooltip": "La ciudad o área donde buscas alojamiento."
+        },
+        {
+            "id": "travelDates",
+            "etiqueta": "Fechas del Viaje",
+            "tipo": "text",
+            "placeholder": "Ej: Del 15 al 22 de Octubre",
+            "requerido": true,
+            "tooltip": "Las fechas de check-in y check-out."
+        },
+        {
+            "id": "guests",
+            "etiqueta": "Número de Huéspedes",
+            "tipo": "text",
+            "placeholder": "Ej: 2 adultos, 1 niño",
+            "requerido": true,
+            "tooltip": "El número y tipo de viajeros."
+        },
+        {
+            "id": "budgetPerNight",
+            "etiqueta": "Presupuesto por Noche",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "económico (hasta 80€)", "texto": "Económico (< 80€)", "selected": true },
+                { "valor": "moderado (80€ - 150€)", "texto": "Moderado (80€ - 150€)" },
+                { "valor": "alto (150€ - 300€)", "texto": "Alto (150€ - 300€)" },
+                { "valor": "lujo (más de 300€)", "texto": "Lujo (> 300€)" }
+            ],
+            "tooltip": "Elige tu rango de precio por noche."
+        },
+        {
+            "id": "accommodationType",
+            "etiqueta": "Tipo de Alojamiento Preferido",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "cualquier tipo", "texto": "Cualquiera", "selected": true },
+                { "valor": "Hotel", "texto": "Hotel" },
+                { "valor": "Apartamento", "texto": "Apartamento" },
+                { "valor": "Hostal", "texto": "Hostal" },
+                { "valor": "Bed & Breakfast", "texto": "Bed & Breakfast" }
+            ],
+            "tooltip": "Elige el tipo de lugar donde te gustaría alojarte."
+        },
+        {
+            "id": "requiredAmenities",
+            "etiqueta": "Comodidades Imprescindibles (una por línea)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej:\nWi-Fi gratuito\nPiscina\nDesayuno incluido\nParking",
+            "requerido": false,
+            "tooltip": "Enumera las características que no pueden faltar en tu alojamiento."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un asistente de viajes personal y experto en reservas de alojamiento. Tu tarea es encontrar las 3 mejores opciones de alojamiento basadas en las siguientes preferencias:\n\n**Detalles de la Búsqueda:**\n- **Destino:** {{destination}}\n- **Fechas:** {{travelDates}}\n- **Huéspedes:** {{guests}}\n- **Presupuesto por Noche:** {{budgetPerNight}}\n- **Tipo de Alojamiento:** {{accommodationType}}\n\n{{#if requiredAmenities}}**Comodidades Imprescindibles:**\n{{requiredAmenities}}\n{{/if}}\n\n**Tarea:**\nBusca y presenta 3 opciones de alojamiento que cumplan con los criterios. Para cada opción, proporciona:\n1.  **Nombre del Alojamiento.**\n2.  **Tipo y Calificación (ej. Hotel 4 estrellas).**\n3.  **Ubicación/Barrio.**\n4.  **Precio Estimado por Noche.**\n5.  **Resumen de por qué es una buena opción:** Destaca cómo cumple con los requisitos (ej. \"Tiene piscina y excelentes reseñas de familias\").",
+    "suggestedTools": [
+        { "name": "Booking.com", "url": "https://www.booking.com/" },
+        { "name": "Airbnb", "url": "https://www.airbnb.com/" },
+        { "name": "Expedia", "url": "https://www.expedia.com/" }
+    ]
+}

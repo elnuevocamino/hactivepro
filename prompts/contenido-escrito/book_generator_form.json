@@ -1,0 +1,83 @@
+{
+    "id": "book_generator_form",
+    "nombre": "Generador de Contenido para Libros",
+    "descripcion": "Crea prompts para desarrollar la trama, personajes y estructura de un libro.",
+    "campos": [
+        {
+            "id": "bookTitle",
+            "etiqueta": "Título Provisional",
+            "tipo": "text",
+            "placeholder": "Ej: El Último Guardián, Crónicas de la Ciudad de Cristal",
+            "requerido": true,
+            "tooltip": "El título de trabajo para tu libro. Este campo es obligatorio."
+        },
+        {
+            "id": "bookGenre",
+            "etiqueta": "Género Principal",
+            "tipo": "select",
+            "tooltip": "Elige el género principal para guiar el estilo y las convenciones.",
+            "opciones": [
+                { "valor": "Ciencia Ficción", "texto": "Ciencia Ficción" },
+                { "valor": "Fantasía", "texto": "Fantasía" },
+                { "valor": "Misterio / Thriller", "texto": "Misterio / Thriller" },
+                { "valor": "Romance", "texto": "Romance" },
+                { "valor": "No Ficción (Divulgación)", "texto": "No Ficción (Divulgación)" },
+                { "valor": "Biografía / Memorias", "texto": "Biografía / Memorias" },
+                { "valor": "Terror", "texto": "Terror" }
+            ]
+        },
+        {
+            "id": "bookSynopsis",
+            "etiqueta": "Idea Central o Sinopsis",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Describe en 2-3 frases la trama principal o el concepto del libro.",
+            "requerido": false,
+            "tooltip": "Un resumen breve de la trama o el concepto central de tu libro."
+        },
+        {
+            "id": "bookCharacters",
+            "etiqueta": "Personajes Principales (opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Kael, un joven mago con un pasado oscuro\nElena, una detective cínica pero brillante",
+            "requerido": false,
+            "tooltip": "Describe brevemente a los protagonistas."
+        },
+        {
+            "id": "bookThemes",
+            "etiqueta": "Temas Clave a Explorar",
+            "tipo": "text",
+            "placeholder": "Ej: La amistad, la traición, el impacto de la tecnología",
+            "requerido": false,
+            "tooltip": "Las ideas o mensajes centrales que quieres explorar en la historia."
+        },
+        {
+            "id": "bookTone",
+            "etiqueta": "Tono y Estilo de Escritura",
+            "tipo": "text",
+            "placeholder": "Ej: Oscuro y atmosférico, rápido y lleno de acción, humorístico",
+            "requerido": false,
+            "tooltip": "La atmósfera general y el estilo de la narración."
+        },
+        {
+            "id": "outputRequest",
+            "etiqueta": "¿Qué necesitas generar?",
+            "tipo": "select",
+            "tooltip": "Elige qué parte específica del libro necesitas que la IA desarrolle.",
+            "opciones": [
+                { "valor": "un resumen detallado de la trama (sinopsis extendida)", "texto": "Sinopsis Detallada" },
+                { "valor": "un esquema de capítulos completo", "texto": "Esquema de Capítulos" },
+                { "valor": "el primer capítulo del libro", "texto": "El Primer Capítulo" },
+                { "valor": "una descripción profunda de los personajes principales", "texto": "Desarrollo de Personajes" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un editor y desarrollador de historias profesional. Estoy trabajando en un libro y necesito tu ayuda para generar contenido.\n\n**Título Provisional:** {{bookTitle}}\n**Género:** {{bookGenre}}\n\n{{#if bookSynopsis}}**Sinopsis:**\n{{bookSynopsis}}\n{{/if}}\n\n{{#if bookCharacters}}**Personajes Principales:**\n{{bookCharacters}}\n{{/if}}\n\n{{#if bookThemes}}**Temas Clave:** {{bookThemes}}{{/if}}\n{{#if bookTone}}**Tono y Estilo:** {{bookTone}}{{/if}}\n\n**Tu Tarea:**\nBasado en la información anterior, genera {{outputRequest}}.",
+    "suggestedTools": [
+        { "name": "Scrivener", "url": "https://www.literatureandlatte.com/scrivener/overview" },
+        { "name": "Google Docs", "url": "https://docs.google.com/" },
+        { "name": "Claude", "url": "https://claude.ai/" },
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" }
+    ]
+}

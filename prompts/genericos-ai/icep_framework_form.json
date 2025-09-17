@@ -1,0 +1,49 @@
+{
+    "id": "icep_framework_form",
+    "nombre": "Framework ICEP",
+    "descripcion": "Genera prompts con el framework ICEP (Instrucción, Contexto, Ejemplo, Persona) para tareas específicas.",
+    "campos": [
+        {
+            "id": "icepInstruction",
+            "etiqueta": "I - Instrucción",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Resume el siguiente texto en tres puntos clave.",
+            "requerido": true,
+            "tooltip": "La orden directa y clara de lo que la IA debe hacer. Este campo es obligatorio."
+        },
+        {
+            "id": "icepContext",
+            "etiqueta": "C - Contexto",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: [Pega aquí el texto a resumir]. El resumen se usará para una presentación interna.",
+            "requerido": false,
+            "tooltip": "Proporciona la información necesaria para que la IA entienda la tarea."
+        },
+        {
+            "id": "icepExample",
+            "etiqueta": "E - Ejemplo",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Formato deseado:\n- Punto 1: [Resumen del primer punto]\n- Punto 2: [Resumen del segundo punto]\n- Punto 3: [Resumen del tercer punto]",
+            "requerido": false,
+            "tooltip": "Muestra un ejemplo del formato o estilo de la respuesta esperada."
+        },
+        {
+            "id": "icepPersona",
+            "etiqueta": "P - Persona",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Actúa como un analista de negocios senior.",
+            "requerido": false,
+            "tooltip": "Define el rol o la personalidad que la IA debe adoptar."
+        }
+    ],
+    "plantilla_prompt": "{{#if icepPersona}}{{icepPersona}}\n\n{{/if}}**Instrucción:**\n{{icepInstruction}}\n\n{{#if icepContext}}**Contexto:**\n{{icepContext}}\n{{/if}}\n\n{{#if icepExample}}**Ejemplo de Salida:**\n{{icepExample}}\n{{/if}}",
+    "suggestedTools": [
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" },
+        { "name": "Claude", "url": "https://claude.ai/" },
+        { "name": "Gemini", "url": "https://gemini.google.com/" }
+    ]
+}

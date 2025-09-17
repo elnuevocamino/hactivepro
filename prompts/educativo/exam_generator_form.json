@@ -1,0 +1,71 @@
+{
+    "id": "exam_generator_form",
+    "nombre": "Generador de Exámenes y Cuestionarios",
+    "descripcion": "Crea exámenes personalizados sobre cualquier tema, definiendo el número, tipo de preguntas y nivel de dificultad.",
+    "campos": [
+        {
+            "id": "examTopic",
+            "etiqueta": "Tema Principal del Examen",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: La Revolución Francesa, Álgebra básica, Ciclo del agua.",
+            "requerido": true,
+            "tooltip": "Indica el área de conocimiento que se evaluará."
+        },
+        {
+            "id": "questionCount",
+            "etiqueta": "Número de Preguntas",
+            "tipo": "number",
+            "valor_defecto": 10,
+            "placeholder": "Ej: 15",
+            "requerido": false,
+            "tooltip": "¿Cuántas preguntas debe tener el examen?"
+        },
+        {
+            "id": "questionTypes",
+            "etiqueta": "Tipo de Preguntas",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "una mezcla de selección múltiple y preguntas de desarrollo", "texto": "Mezcla (Selección y Desarrollo)", "selected": true },
+                { "valor": "de selección múltiple con 4 opciones (A, B, C, D)", "texto": "Solo Selección Múltiple" },
+                { "valor": "de desarrollo o respuesta corta", "texto": "Solo Desarrollo / Abiertas" },
+                { "valor": "de verdadero o falso", "texto": "Verdadero o Falso" }
+            ],
+            "tooltip": "Elige el formato de las preguntas."
+        },
+        {
+            "id": "examLevel",
+            "etiqueta": "Nivel de Dificultad",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "básico / introductorio", "texto": "Básico / Introductorio", "selected": true },
+                { "valor": "intermedio", "texto": "Intermedio" },
+                { "valor": "avanzado / experto", "texto": "Avanzado / Experto" }
+            ],
+            "tooltip": "Define la complejidad de las preguntas."
+        },
+        {
+            "id": "timeLimit",
+            "etiqueta": "Tiempo Estimado para Completar (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: 60 minutos, 1 hora y media.",
+            "requerido": false,
+            "tooltip": "Indica el tiempo límite para realizar el examen."
+        },
+        {
+            "id": "examInstructions",
+            "etiqueta": "Instrucciones Adicionales (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: No se permite el uso de calculadora. Cada pregunta de desarrollo vale 5 puntos.",
+            "requerido": false,
+            "tooltip": "Añade cualquier regla o instrucción específica para el examen."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un experto en diseño de evaluaciones y pedagogía. Tu tarea es crear un examen o cuestionario bien estructurado basado en los siguientes criterios:\n\n**Detalles del Examen:**\n- **Tema Principal:** {{examTopic}}\n- **Número de Preguntas:** {{#if questionCount}}{{questionCount}}{{else}}10{{/if}}\n- **Tipo de Preguntas:** {{questionTypes}}\n- **Nivel de Dificultad:** {{examLevel}}\n{{#if timeLimit}}- **Tiempo Límite Sugerido:** {{timeLimit}}\n{{/if}}\n\n{{#if examInstructions}}**Instrucciones Adicionales:**\n{{examInstructions}}\n{{/if}}\n\n**Tarea:**\nGenera el examen completo. Para preguntas de selección múltiple, proporciona la respuesta correcta. Para preguntas abiertas, proporciona una respuesta ideal o una rúbrica de evaluación. El examen debe ser coherente, justo y evaluar adecuadamente el conocimiento sobre el tema especificado.",
+    "suggestedTools": [
+        { "name": "Kahoot!", "url": "https://kahoot.com/" },
+        { "name": "Quizlet", "url": "https://quizlet.com/" },
+        { "name": "Google Forms", "url": "https://www.google.com/forms/about/" }
+    ]
+}

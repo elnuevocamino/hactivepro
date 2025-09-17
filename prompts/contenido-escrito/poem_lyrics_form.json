@@ -1,0 +1,69 @@
+{
+    "id": "poem_lyrics_form",
+    "nombre": "Generador de Poesía y Letras de Canciones",
+    "descripcion": "Crea prompts para escribir poemas o letras de canciones, definiendo el tema, el estilo y la estructura.",
+    "campos": [
+        {
+            "id": "poemTopic",
+            "etiqueta": "Tema o Sentimiento Principal",
+            "tipo": "text",
+            "placeholder": "Ej: La nostalgia de un amor perdido, la belleza de la naturaleza",
+            "requerido": true,
+            "tooltip": "El concepto central de tu creación. Este campo es obligatorio."
+        },
+        {
+            "id": "poemType",
+            "etiqueta": "Tipo de Creación",
+            "tipo": "select",
+            "tooltip": "Elige si quieres un poema o la letra para una canción.",
+            "opciones": [
+                { "valor": "un poema lírico", "texto": "Poema", "selected": true },
+                { "valor": "la letra para una canción", "texto": "Letra de Canción" }
+            ]
+        },
+        {
+            "id": "poemMood",
+            "etiqueta": "Emoción o Tono",
+            "tipo": "text",
+            "placeholder": "Ej: Melancólico y reflexivo, alegre y optimista, oscuro y misterioso",
+            "requerido": false,
+            "tooltip": "La atmósfera o el sentimiento que quieres transmitir."
+        },
+        {
+            "id": "poemKeywords",
+            "etiqueta": "Palabras o Imágenes Clave (opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Lluvia en la ventana, eco de una risa, camino de tierra, estrellas fugaces",
+            "requerido": false,
+            "tooltip": "Incluye palabras o metáforas que te gustaría que aparecieran."
+        },
+        {
+            "id": "poemStructure",
+            "etiqueta": "Estructura Deseada (opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: 4 estrofas de 4 versos. Para canción: Verso 1, Coro, Verso 2, Coro, Puente, Coro.",
+            "requerido": false,
+            "tooltip": "Define la estructura que debe seguir la creación."
+        },
+        {
+            "id": "poemRhyme",
+            "etiqueta": "Esquema de Rima (opcional)",
+            "tipo": "select",
+            "tooltip": "Elige el tipo de rima que prefieres.",
+            "opciones": [
+                { "valor": "y deja que la IA elija el esquema de rima más adecuado", "texto": "Dejar que la IA elija", "selected": true },
+                { "valor": "con rima libre", "texto": "Rima Libre" },
+                { "valor": "con rima consonante (ABAB)", "texto": "Rima Consonante (ABAB)" },
+                { "valor": "con rima asonante (AABB)", "texto": "Rima Asonante (AABB)" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un poeta y letrista experimentado. Quiero que escribas {{poemType}} sobre {{poemTopic}}.\n\n{{#if poemMood}}El tono debe ser {{poemMood}}.{{/if}}\n{{#if poemKeywords}}Incorpora las siguientes palabras o imágenes clave: {{poemKeywords}}.{{/if}}\n{{#if poemStructure}}La estructura debe ser la siguiente: {{poemStructure}}.{{/if}}\n\nEl resultado debe ser creado {{poemRhyme}}.",
+    "suggestedTools": [
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" },
+        { "name": "Claude", "url": "https://claude.ai/" },
+        { "name": "Gemini", "url": "https://gemini.google.com/" }
+    ]
+}

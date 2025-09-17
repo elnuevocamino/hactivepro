@@ -1,0 +1,66 @@
+{
+    "id": "startup_plan_form",
+    "nombre": "Generador de Plan de Startup",
+    "descripcion": "Esboza un plan de negocios inicial para una nueva startup, definiendo el problema, la solución y el mercado.",
+    "campos": [
+        {
+            "id": "startupName",
+            "etiqueta": "Nombre de la Startup",
+            "tipo": "text",
+            "placeholder": "Ej: 'EcoCharge', 'ConnectaPro'",
+            "requerido": true,
+            "tooltip": "El nombre provisional de tu nueva empresa."
+        },
+        {
+            "id": "startupConcept",
+            "etiqueta": "Concepto de la Startup (Elevator Pitch)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Una plataforma que conecta a agricultores locales con restaurantes para reducir el desperdicio de alimentos.",
+            "requerido": true,
+            "tooltip": "Describe tu idea de negocio en una o dos frases."
+        },
+        {
+            "id": "problemToSolve",
+            "etiqueta": "Problema que Resuelve",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Los restaurantes tienen dificultades para encontrar productos frescos y locales, y los agricultores pierden ingresos por excedentes.",
+            "requerido": true,
+            "tooltip": "¿Qué necesidad o problema del mercado estás abordando?"
+        },
+        {
+            "id": "solutionProposed",
+            "etiqueta": "Solución Propuesta",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Una app móvil con un mercado en tiempo real, logística optimizada y un sistema de calificación.",
+            "requerido": true,
+            "tooltip": "Describe tu producto o servicio y cómo resuelve el problema."
+        },
+        {
+            "id": "targetMarket",
+            "etiqueta": "Mercado Objetivo",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Restaurantes de alta cocina y cafeterías en áreas urbanas. Agricultores orgánicos a menos de 50 km de la ciudad.",
+            "requerido": false,
+            "tooltip": "Define a tus clientes ideales."
+        },
+        {
+            "id": "revenueModel",
+            "etiqueta": "Modelo de Ingresos (Cómo ganarás dinero)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Comisión del 5% por cada transacción. Modelo de suscripción premium para restaurantes con funciones avanzadas.",
+            "requerido": false,
+            "tooltip": "Describe cómo planeas generar ingresos."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un consultor de negocios y experto en startups. Tu tarea es esbozar un plan de negocios inicial basado en la siguiente información:\n\n**Nombre de la Startup:** {{startupName}}\n**Concepto:** {{startupConcept}}\n\n**1. Problema:**\nDescribe en detalle el problema que {{startupName}} busca resolver, basándote en: '{{problemToSolve}}'.\n\n**2. Solución:**\nExplica cómo el producto/servicio propuesto ({{solutionProposed}}) aborda directamente el problema.\n\n**3. Mercado Objetivo:**\n{{#if targetMarket}}Define el perfil del cliente ideal y el tamaño del mercado, basándote en: {{targetMarket}}.{{else}}Define un perfil de cliente ideal y un tamaño de mercado potencial para esta idea.{{/if}}\n\n**4. Modelo de Ingresos:**\n{{#if revenueModel}}Detalla el modelo de ingresos propuesto: {{revenueModel}}.{{else}}Sugiere al menos dos modelos de ingresos viables para esta startup.{{/if}}\n\n**5. Resumen Ejecutivo:**\nCrea un resumen ejecutivo conciso que encapsule toda la idea de negocio.",
+    "suggestedTools": [
+        { "name": "Miro", "url": "https://miro.com/" },
+        { "name": "Notion", "url": "https://www.notion.so/" },
+        { "name": "Google Docs", "url": "https://docs.google.com/" }
+    ]
+}

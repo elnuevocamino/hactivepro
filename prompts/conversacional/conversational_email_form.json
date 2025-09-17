@@ -1,0 +1,58 @@
+{
+    "id": "conversational_email_form",
+    "nombre": "Generador de Emails Conversacionales",
+    "descripcion": "Crea borradores de email para cualquier situación, definiendo el propósito, el tono y la información clave.",
+    "campos": [
+        {
+            "id": "emailPurpose",
+            "etiqueta": "Propósito del Email",
+            "tipo": "text",
+            "placeholder": "Ej: Seguimiento de reunión, solicitud de información, agradecimiento",
+            "requerido": true,
+            "tooltip": "Define el objetivo principal de tu correo electrónico."
+        },
+        {
+            "id": "recipientDescription",
+            "etiqueta": "Descripción del Destinatario",
+            "tipo": "text",
+            "placeholder": "Ej: Un cliente potencial, mi jefe, un colega de otro departamento",
+            "requerido": true,
+            "tooltip": "Describe a quién le estás escribiendo para ajustar el tono."
+        },
+        {
+            "id": "keyInfo",
+            "etiqueta": "Información Clave a Incluir",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Resumen de los puntos acordados en la llamada. Preguntar sobre el estado del proyecto X. Adjuntar el informe trimestral.",
+            "requerido": true,
+            "tooltip": "Los puntos más importantes que deben estar en el correo."
+        },
+        {
+            "id": "emailTone",
+            "etiqueta": "Tono del Email",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "profesional y formal", "texto": "Profesional y Formal", "selected": true },
+                { "valor": "amigable y cercano", "texto": "Amigable y Cercano" },
+                { "valor": "directo y conciso", "texto": "Directo y Conciso" },
+                { "valor": "persuasivo y entusiasta", "texto": "Persuasivo y Entusiasta" }
+            ],
+            "tooltip": "Elige el estilo de comunicación para el email."
+        },
+        {
+            "id": "callToAction",
+            "etiqueta": "Llamada a la Acción (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: ¿Podríamos agendar una llamada la próxima semana?, Espero tu respuesta.",
+            "requerido": false,
+            "tooltip": "La acción específica que quieres que el destinatario realice."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un experto en comunicación escrita. Tu tarea es redactar un borrador de correo electrónico claro, conciso y efectivo.\n\n**Detalles del Email:**\n- **Propósito:** {{emailPurpose}}\n- **Destinatario:** {{recipientDescription}}\n- **Tono Deseado:** {{emailTone}}\n\n**Información a Incluir:**\n{{keyInfo}}\n\n{{#if callToAction}}**Llamada a la Acción:**\n{{callToAction}}\n{{/if}}\n\n**Tarea:**\nEscribe el borrador completo del correo electrónico. Asegúrate de que el asunto sea claro y relevante. El cuerpo del email debe ser fácil de leer y estar bien estructurado. Finaliza de manera profesional y apropiada para el tono solicitado.",
+    "suggestedTools": [
+        { "name": "Gmail", "url": "https://mail.google.com/" },
+        { "name": "Outlook", "url": "https://outlook.live.com/" },
+        { "name": "Grammarly", "url": "https://www.grammarly.com/" }
+    ]
+}

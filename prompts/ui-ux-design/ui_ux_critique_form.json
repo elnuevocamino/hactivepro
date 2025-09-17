@@ -1,0 +1,58 @@
+{
+    "id": "ui_ux_critique_form",
+    "nombre": "Crítica de Diseño UX/UI",
+    "descripcion": "Genera un prompt detallado para realizar un análisis experto de una interfaz de usuario.",
+    "campos": [
+        {
+            "id": "interfaceURL",
+            "etiqueta": "URL de la Interfaz a Analizar (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: https://www.ejemplo.com/pagina-a-revisar",
+            "tooltip": "Pega la URL de la página web o app que quieres que se analice."
+        },
+        {
+            "id": "interfaceDescription",
+            "etiqueta": "Descripción de la Interfaz y su Propósito",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Es la página de detalles de un producto en un e-commerce. Su objetivo es convencer al usuario de añadir el producto al carrito.",
+            "requerido": true,
+            "tooltip": "Describe qué es la interfaz y qué se supone que debe hacer. Si no tienes una URL, puedes describir la interfaz aquí o pegar una URL a una imagen."
+        },
+        {
+            "id": "targetAudience",
+            "etiqueta": "Público Objetivo",
+            "tipo": "text",
+            "placeholder": "Ej: Adultos jóvenes (20-30 años) interesados en la moda sostenible.",
+            "requerido": true,
+            "tooltip": "Describe a quién se dirige esta interfaz."
+        },
+        {
+            "id": "analysisFocus",
+            "etiqueta": "Puntos Clave a Analizar",
+            "tipo": "checkbox-group",
+            "opciones": [
+                { "valor": "Usabilidad y Facilidad de Uso", "texto": "Usabilidad" },
+                { "valor": "Diseño Visual y Estética", "texto": "Diseño Visual" },
+                { "valor": "Accesibilidad (WCAG)", "texto": "Accesibilidad" },
+                { "valor": "Flujo de Usuario y Navegación", "texto": "Flujo de Usuario" },
+                { "valor": "Copywriting y Claridad del Mensaje", "texto": "Copywriting" }
+            ],
+            "tooltip": "Selecciona las áreas en las que quieres que se centre el análisis."
+        },
+        {
+            "id": "competitors",
+            "etiqueta": "Competidores o Referencias (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Me gusta cómo lo hace Amazon en su ficha de producto. Un competidor directo es Zara.com.",
+            "tooltip": "Menciona otras webs o apps como referencia, ya sea buena o mala."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un consultor experto en Experiencia de Usuario (UX) y Diseño de Interfaz (UI) con más de 10 años de experiencia. Tu tarea es realizar una crítica constructiva y detallada de una interfaz digital.\n\n**Interfaz a Analizar:**\n{{#if interfaceURL}}- **URL:** {{interfaceURL}}\n{{/if}}- **Descripción y Propósito:** {{interfaceDescription}}\n- **Público Objetivo:** {{targetAudience}}\n\n{{#if competitors}}**Competidores o Referencias:**\n{{competitors}}\n{{/if}}\n\n**Tarea Principal:**\nRealiza un análisis heurístico de la interfaz. Si se especificaron puntos clave, enfócate principalmente en ellos:\n{{{analysisFocus}}}\n\nPara cada punto de enfoque (o para un análisis general si no se especificaron), proporciona:\n1.  **Observaciones Positivas:** ¿Qué funciona bien y por qué?\n2.  **Áreas de Mejora:** ¿Qué elementos son confusos, ineficientes o problemáticos? Sé específico.\n3.  **Sugerencias Concretas:** Propón cambios accionables para solucionar los problemas identificados. Justifica tus recomendaciones basándote en principios de diseño y usabilidad.\n\nFinaliza con un resumen de 3 recomendaciones prioritarias que tendrían el mayor impacto en la mejora de la experiencia del usuario.",
+    "suggestedTools": [
+        { "name": "Figma", "url": "https://www.figma.com/" },
+        { "name": "UserTesting", "url": "https://www.usertesting.com/" },
+        { "name": "Hotjar", "url": "https://www.hotjar.com/" }
+    ]
+}

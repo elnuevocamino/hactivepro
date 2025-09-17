@@ -1,0 +1,73 @@
+{
+    "id": "job_interview_simulator_form",
+    "nombre": "Simulador de Entrevistas de Trabajo",
+    "descripcion": "Prepárate para entrevistas simulando una conversación con un entrevistador de IA.",
+    "campos": [
+        {
+            "id": "jobPosition",
+            "etiqueta": "Puesto al que Aplicas",
+            "tipo": "text",
+            "placeholder": "Ej: Desarrollador de Software Senior, Gerente de Marketing.",
+            "requerido": true,
+            "tooltip": "El rol para el que estás siendo entrevistado."
+        },
+        {
+            "id": "companyDescription",
+            "etiqueta": "Descripción de la Empresa (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Startup de tecnología financiera enfocada en pagos móviles.",
+            "tooltip": "Proporciona un contexto sobre la empresa."
+        },
+        {
+            "id": "candidateProfile",
+            "etiqueta": "Tu Perfil como Candidato (Opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Describe tu perfil. Ej: Soy un candidato con 5 años de experiencia en desarrollo backend con Python y Django. Mis fortalezas son la resolución de problemas y el trabajo en equipo.",
+            "tooltip": "Ayuda a la IA a entender tu perfil para que pueda hacer preguntas más relevantes."
+        },
+        {
+            "id": "interviewerPersona",
+            "etiqueta": "Personalidad del Entrevistador (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Amigable y técnico, directo y enfocado en resultados.",
+            "tooltip": "Define cómo debe actuar el entrevistador de la IA."
+        },
+        {
+            "id": "interviewType",
+            "etiqueta": "Tipo de Entrevista",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "una entrevista general / híbrida", "texto": "General / Híbrida", "selected": true },
+                { "valor": "una entrevista técnica", "texto": "Técnica" },
+                { "valor": "una entrevista de comportamiento (behavioral)", "texto": "De Comportamiento" },
+                { "valor": "una entrevista de filtro inicial (screening call)", "texto": "Filtro Inicial" }
+            ],
+            "tooltip": "Elige el enfoque principal de la entrevista."
+        },
+        {
+            "id": "specificTopics",
+            "etiqueta": "Temas a Cubrir o Preguntas Específicas (Opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Pregúntame sobre mi experiencia con AWS. Incluye una pregunta sobre cómo manejo la presión.",
+            "tooltip": "Indica áreas específicas en las que quieres que se enfoque la entrevista."
+        },
+        {
+            "id": "requestFeedback",
+            "etiqueta": "Solicitar Feedback",
+            "tipo": "checkbox",
+            "opciones": [
+                { "valor": "true", "texto": "Sí, dame feedback constructivo al final de la entrevista." }
+            ],
+            "tooltip": "Al final, la IA te dará una evaluación de tus respuestas."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un entrevistador profesional para el puesto de {{jobPosition}}. {{#if interviewerPersona}}Adopta una personalidad {{interviewerPersona}}.{{/if}} {{#if companyDescription}}La entrevista es para un puesto en la siguiente empresa: {{companyDescription}}.{{/if}}\n\n**Mi Perfil como Candidato:**\n{{#if candidateProfile}}{{candidateProfile}}{{else}}No he proporcionado un perfil específico.{{/if}}\n\n**Instrucciones para la Entrevista:**\n- El enfoque principal de la entrevista es: {{interviewType}}.\n{{#if specificTopics}}- Asegúrate de cubrir los siguientes temas: {{specificTopics}}\n{{/if}}- Hazme una pregunta a la vez y espera mi respuesta.\n- No respondas por mí.\n- Comienza la entrevista presentándote y explicando el propósito de la llamada.\n{{#if requestFeedback}}- Al final de la entrevista, cuando yo te lo indique, dame un feedback constructivo sobre mis respuestas, destacando mis puntos fuertes y áreas de mejora.{{/if}}\n\nComienza ahora con la primera pregunta.",
+    "suggestedTools": [
+        { "name": "LinkedIn Interview Prep", "url": "https://www.linkedin.com/interview-prep/practice" },
+        { "name": "Google Meet", "url": "https://meet.google.com/" },
+        { "name": "Zoom", "url": "https://zoom.us/" }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "id": "social_media_form",
+    "nombre": "Publicaciones para Redes Sociales",
+    "descripcion": "Crea prompts para posts impactantes en diversas plataformas de redes sociales.",
+    "campos": [
+        {
+            "id": "socialPlatform",
+            "etiqueta": "Plataforma de Red Social",
+            "tipo": "select",
+            "tooltip": "Elige la plataforma para la que quieres crear el post.",
+            "opciones": [
+                { "valor": "Instagram", "texto": "Instagram", "selected": true },
+                { "valor": "Facebook", "texto": "Facebook" },
+                { "valor": "LinkedIn", "texto": "LinkedIn" },
+                { "valor": "Twitter / X", "texto": "Twitter / X" },
+                { "valor": "TikTok", "texto": "TikTok" }
+            ]
+        },
+        {
+            "id": "postGoal",
+            "etiqueta": "Objetivo de la Publicación",
+            "tipo": "select",
+            "tooltip": "Selecciona qué quieres lograr con este post.",
+            "opciones": [
+                { "valor": "generar interacción (likes, comentarios)", "texto": "Generar Interacción", "selected": true },
+                { "valor": "educar a la audiencia", "texto": "Educar a la Audiencia" },
+                { "valor": "promocionar un producto/servicio", "texto": "Promocionar Producto/Servicio" },
+                { "valor": "dirigir tráfico a un sitio web", "texto": "Dirigir Tráfico Web" },
+                { "valor": "construir comunidad", "texto": "Construir Comunidad" }
+            ]
+        },
+        {
+            "id": "postTopic",
+            "etiqueta": "Tema Principal del Post",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: 5 consejos para mejorar la productividad trabajando desde casa.",
+            "requerido": true,
+            "tooltip": "Describe el contenido central de tu publicación."
+        },
+        {
+            "id": "targetAudience",
+            "etiqueta": "Público Objetivo (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Freelancers y trabajadores remotos.",
+            "requerido": false,
+            "tooltip": "Define a quién te diriges para adaptar el tono y el contenido."
+        },
+        {
+            "id": "postTone",
+            "etiqueta": "Tono del Post",
+            "tipo": "select",
+            "tooltip": "Elige el estilo de comunicación.",
+            "opciones": [
+                { "valor": "inspirador y motivacional", "texto": "Inspirador y Motivacional", "selected": true },
+                { "valor": "informativo y útil", "texto": "Informativo y Útil" },
+                { "valor": "divertido y casual", "texto": "Divertido y Casual" },
+                { "valor": "profesional y corporativo", "texto": "Profesional y Corporativo" }
+            ]
+        },
+        {
+            "id": "includeHashtags",
+            "etiqueta": "Incluir Hashtags",
+            "tipo": "checkbox",
+            "tooltip": "Marca esta casilla para que la IA sugiera hashtags relevantes.",
+            "opciones": [
+                { "valor": "true", "texto": "Sí, sugerir hashtags relevantes" }
+            ]
+        },
+        {
+            "id": "callToAction",
+            "etiqueta": "Llamada a la Acción (CTA) (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: 'Guarda este post', 'Comenta tu consejo #1', 'Visita el enlace en la bio'",
+            "requerido": false,
+            "tooltip": "La acción que quieres que los usuarios realicen."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un Community Manager experto. Tu tarea es crear el texto para una publicación en redes sociales.\n\n**Plataforma:** {{socialPlatform}}\n**Objetivo:** {{postGoal}}\n**Tema:** {{postTopic}}\n\n{{#if targetAudience}}**Público Objetivo:** {{targetAudience}}\n{{/if}}\n\n**Tono:** {{postTone}}\n\n**Tarea:**\nEscribe el texto completo para la publicación. El texto debe ser atractivo, fácil de leer y estar optimizado para la plataforma {{socialPlatform}}.\n\n{{#if callToAction}}**Llamada a la Acción:** Incluye la siguiente llamada a la acción al final: '{{callToAction}}'.\n{{/if}}\n\n{{#if includeHashtags}}**Hashtags:** Al final, sugiere una lista de 5 a 10 hashtags relevantes y populares para maximizar el alcance.{{/if}}",
+    "suggestedTools": [
+        { "name": "Instagram", "url": "https://www.instagram.com/" },
+        { "name": "LinkedIn", "url": "https://www.linkedin.com/" },
+        { "name": "X (Twitter)", "url": "https://twitter.com/" }
+    ]
+}

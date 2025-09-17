@@ -1,0 +1,75 @@
+{
+    "id": "product_description_form",
+    "nombre": "Generador de Descripciones de Productos",
+    "descripcion": "Crea prompts para redactar descripciones de productos persuasivas y optimizadas para e-commerce.",
+    "campos": [
+        {
+            "id": "prodName",
+            "etiqueta": "Nombre del Producto",
+            "tipo": "text",
+            "placeholder": "Ej: Cafetera de Goteo Automática 'AromaX'",
+            "requerido": true,
+            "tooltip": "El nombre completo del producto."
+        },
+        {
+            "id": "prodCategory",
+            "etiqueta": "Categoría del Producto",
+            "tipo": "text",
+            "placeholder": "Ej: Electrodomésticos de cocina, Ropa deportiva",
+            "requerido": false,
+            "tooltip": "La categoría a la que pertenece el producto."
+        },
+        {
+            "id": "prodFeatures",
+            "etiqueta": "Características Principales (una por línea)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Capacidad para 12 tazas\nFiltro permanente lavable\nFunción de pausa para servir",
+            "requerido": false,
+            "tooltip": "Enumera las características técnicas o funcionales más importantes."
+        },
+        {
+            "id": "prodAudience",
+            "etiqueta": "Público Objetivo",
+            "tipo": "text",
+            "placeholder": "Ej: Amantes del café, familias ocupadas, oficinistas",
+            "requerido": false,
+            "tooltip": "Define a quién va dirigida la descripción."
+        },
+        {
+            "id": "prodTone",
+            "etiqueta": "Tono de la Descripción",
+            "tipo": "select",
+            "tooltip": "Elige el estilo de la redacción.",
+            "opciones": [
+                { "valor": "persuasivo y enfocado en beneficios", "texto": "Persuasivo y enfocado en beneficios", "selected": true },
+                { "valor": "técnico y detallado", "texto": "Técnico y detallado" },
+                { "valor": "lujoso y exclusivo", "texto": "Lujoso y exclusivo" },
+                { "valor": "divertido y casual", "texto": "Divertido y casual" },
+                { "valor": "directo y al grano", "texto": "Directo y al grano" }
+            ]
+        },
+        {
+            "id": "prodKeywords",
+            "etiqueta": "Palabras Clave SEO (opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: cafetera programable, mejor cafetera, café recién hecho",
+            "requerido": false,
+            "tooltip": "Palabras clave para optimizar la descripción en buscadores."
+        },
+        {
+            "id": "prodCTA",
+            "etiqueta": "Llamada a la Acción (CTA) (opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: ¡Compra ahora y despierta tus mañanas!, Añadir al carrito",
+            "requerido": false,
+            "tooltip": "La acción que quieres que el cliente realice."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un copywriter experto en e-commerce. Redacta una descripción de producto atractiva y optimizada para la venta.\n\n**Producto:** {{prodName}}\n{{#if prodCategory}}**Categoría:** {{prodCategory}}{{/if}}\n**Tono:** {{prodTone}}\n{{#if prodAudience}}**Público Objetivo:** {{prodAudience}}{{/if}}\n\n{{#if prodFeatures}}**Características Principales:**\n{{prodFeatures}}\n{{/if}}\n\n**Tarea:**\nEscribe una descripción de producto que transforme las características en beneficios claros para el cliente. {{#if prodKeywords}}Optimiza el texto para las siguientes palabras clave: {{prodKeywords}}.{{/if}}\n\n{{#if prodCTA}}Finaliza con una llamada a la acción clara y convincente: '{{prodCTA}}'.{{else}}Finaliza con una llamada a la acción clara y convincente.{{/if}}",
+    "suggestedTools": [
+        { "name": "Shopify", "url": "https://www.shopify.com/" },
+        { "name": "WooCommerce", "url": "https://woocommerce.com/" },
+        { "name": "Amazon Seller Central", "url": "https://sellercentral.amazon.com/" }
+    ]
+}

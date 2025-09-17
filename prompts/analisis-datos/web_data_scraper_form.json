@@ -1,0 +1,73 @@
+{
+    "id": "web_data_scraper_form",
+    "nombre": "Buscador de Datos Web",
+    "descripcion": "Genera prompts para buscar y extraer datos específicos de la web, definiendo fuentes, filtros y formato.",
+    "campos": [
+        {
+            "id": "searchTopic",
+            "etiqueta": "Tema o Pregunta de Búsqueda",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Precios de aguacates en los principales supermercados de España. Lista de las 10 películas de ciencia ficción mejor valoradas de la última década.",
+            "requerido": true,
+            "tooltip": "Describe qué información necesitas encontrar. Este campo es obligatorio."
+        },
+        {
+            "id": "specificSources",
+            "etiqueta": "Fuentes Específicas a Consultar (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: wikipedia.org, ine.es, reuters.com/business.",
+            "tooltip": "Indica sitios web, APIs o tipos de fuentes (portales de noticias, bases de datos académicas) que se deben priorizar."
+        },
+        {
+            "id": "dataToExtract",
+            "etiqueta": "Puntos de Datos Específicos a Extraer (Opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Para cada película: Título, Año de estreno, Director, Puntuación en IMDb, Resumen de la trama.",
+            "tooltip": "Define exactamente qué campos de información quieres para cada resultado encontrado."
+        },
+        {
+            "id": "searchFilters",
+            "etiqueta": "Filtros de Búsqueda (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Solo datos publicados entre 2020 y 2023. Excluir resultados del Reino Unido. Solo fuentes en español.",
+            "tooltip": "Añade cualquier criterio para acotar la búsqueda (fechas, ubicación, idioma, etc.)."
+        },
+        {
+            "id": "resultsCount",
+            "etiqueta": "Cantidad de Resultados Deseados (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: 20 resultados, los 5 más relevantes.",
+            "tooltip": "Especifica cuántos resultados necesitas."
+        },
+        {
+            "id": "outputFormat",
+            "etiqueta": "Formato de Salida de los Datos (Opcional)",
+            "tipo": "select",
+            "tooltip": "Elige cómo quieres que se estructuren los datos extraídos.",
+            "opciones": [
+                { "valor": "una tabla en formato Markdown", "texto": "Tabla (Markdown)", "selected": true },
+                { "valor": "un archivo en formato CSV", "texto": "CSV" },
+                { "valor": "un objeto en formato JSON", "texto": "JSON" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un asistente de investigación experto con acceso a la web. Tu tarea es buscar y extraer información sobre el siguiente tema:\n\n**Tema:** {{searchTopic}}\n\n{{#if specificSources}}Prioriza la búsqueda en las siguientes fuentes: {{specificSources}}.{{/if}}\n{{#if dataToExtract}}Para cada resultado, extrae los siguientes puntos de datos específicos: {{dataToExtract}}.{{else}}Para cada resultado, extrae la información más relevante.{{/if}}\n{{#if searchFilters}}Aplica los siguientes filtros a tu búsqueda: {{searchFilters}}.{{/if}}\n{{#if resultsCount}}Limita la cantidad de resultados a: {{resultsCount}}.{{/if}}\n\nPresenta los datos encontrados en el formato de {{outputFormat}}.",
+    "suggestedTools": [
+        {
+            "name": "Gemini",
+            "url": "https://gemini.google.com/"
+        },
+        {
+            "name": "Perplexity",
+            "url": "https://www.perplexity.ai/"
+        },
+        {
+            "name": "ChatGPT (con Navegación)",
+            "url": "https://chat.openai.com/"
+        }
+    ]
+}

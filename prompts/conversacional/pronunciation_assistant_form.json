@@ -1,0 +1,55 @@
+{
+    "id": "pronunciation_assistant_form",
+    "nombre": "Asistente de Pronunciación",
+    "descripcion": "Obtén la pronunciación fonética de textos en cualquier idioma, adaptada a tu lengua nativa.",
+    "campos": [
+        {
+            "id": "targetLanguage",
+            "etiqueta": "Idioma a Practicar",
+            "tipo": "text",
+            "placeholder": "Ej: Inglés (británico), Francés, Japonés",
+            "requerido": true,
+            "tooltip": "El idioma que quieres aprender a pronunciar."
+        },
+        {
+            "id": "nativeLanguage",
+            "etiqueta": "Tu Idioma Nativo",
+            "tipo": "text",
+            "placeholder": "Ej: Español (latinoamericano), Español (de España)",
+            "requerido": true,
+            "tooltip": "Tu lengua materna, para adaptar la fonética."
+        },
+        {
+            "id": "pronunciationAlphabet",
+            "etiqueta": "Alfabeto para la Pronunciación (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: del Alfabeto Fonético Internacional (AFI), latino simple",
+            "requerido": false,
+            "tooltip": "Define qué tipo de letras usar para la pronunciación. Si se deja en blanco, la IA usará una aproximación simple."
+        },
+        {
+            "id": "additionalRules",
+            "etiqueta": "Reglas Adicionales (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Separa las sílabas con un guion. Marca la sílaba tónica en negrita.",
+            "requerido": false,
+            "tooltip": "Añade cualquier otra instrucción específica que la IA deba seguir."
+        },
+        {
+            "id": "noExtraText",
+            "etiqueta": "Modo Conciso",
+            "tipo": "checkbox",
+            "opciones": [
+                { "valor": "true", "texto": "Sí, responder solo con la pronunciación, sin texto extra." }
+            ],
+            "tooltip": "Si se marca, la IA solo responderá con la pronunciación, sin saludos ni explicaciones."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un asistente de pronunciación experto. Mi idioma nativo es {{nativeLanguage}} y quiero practicar la pronunciación de {{targetLanguage}}.\n\n**Instrucciones:**\nCuando te proporcione una palabra o frase, tu única respuesta debe ser su pronunciación fonética.{{#if noExtraText}} No incluyas ninguna explicación, saludo o texto adicional. Solo la pronunciación.{{/if}}\n\n**Formato de Pronunciación:**\n{{#if pronunciationAlphabet}}Usa el formato {{pronunciationAlphabet}} para la transcripción.{{else}}Usa una aproximación fonética simple y fácil de leer para un hablante de {{nativeLanguage}}.{{/if}}\n\n{{#if additionalRules}}**Reglas Adicionales:**\n{{additionalRules}}\n{{/if}}\n\nPara empezar, dime \"Listo para empezar.\" y espera mi primera palabra o frase.",
+    "suggestedTools": [
+        { "name": "Forvo", "url": "https://forvo.com/" },
+        { "name": "Google Translate", "url": "https://translate.google.com/" },
+        { "name": "iPA.typeit.org", "url": "https://ipa.typeit.org/" }
+    ]
+}

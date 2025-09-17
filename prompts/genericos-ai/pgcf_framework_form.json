@@ -1,0 +1,49 @@
+{
+    "id": "pgcf_framework_form",
+    "nombre": "Framework PGCF",
+    "descripcion": "Genera prompts claros usando el framework PGCF (Persona, Meta, Contexto, Formato).",
+    "campos": [
+        {
+            "id": "pgcfPersona",
+            "etiqueta": "P - Persona",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Un copywriter experto en marketing digital.",
+            "requerido": false,
+            "tooltip": "Define la personalidad o el rol que debe adoptar la IA."
+        },
+        {
+            "id": "pgcfGoal",
+            "etiqueta": "G - Meta (Goal)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Escribir 3 variantes de un titular para un anuncio de Facebook.",
+            "requerido": true,
+            "tooltip": "Describe el objetivo específico que la IA debe alcanzar. Este campo es obligatorio."
+        },
+        {
+            "id": "pgcfContext",
+            "etiqueta": "C - Contexto",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: El producto es un curso online sobre finanzas personales para jóvenes adultos.",
+            "requerido": false,
+            "tooltip": "Proporciona la información de fondo necesaria para la tarea."
+        },
+        {
+            "id": "pgcfFormat",
+            "etiqueta": "F - Formato",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Una lista numerada. Cada titular debe tener menos de 15 palabras.",
+            "requerido": false,
+            "tooltip": "Especifica cómo debe estar estructurada la respuesta final."
+        }
+    ],
+    "plantilla_prompt": "{{#if pgcfPersona}}**Persona:** {{pgcfPersona}}\n\n{{/if}}**Meta:**\n{{pgcfGoal}}\n\n{{#if pgcfContext}}**Contexto:**\n{{pgcfContext}}\n{{/if}}\n\n{{#if pgcfFormat}}**Formato de Salida:**\n{{pgcfFormat}}\n{{/if}}",
+    "suggestedTools": [
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" },
+        { "name": "Claude", "url": "https://claude.ai/" },
+        { "name": "Gemini", "url": "https://gemini.google.com/" }
+    ]
+}

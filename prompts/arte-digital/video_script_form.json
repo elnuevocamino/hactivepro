@@ -1,0 +1,73 @@
+{
+    "id": "video_script_form",
+    "nombre": "Generador de Guiones para Video",
+    "descripcion": "Crea prompts para desarrollar guiones completos para videos (YouTube, TikTok, etc.), incluyendo estructura y tono.",
+    "campos": [
+        {
+            "id": "videoTopic",
+            "etiqueta": "Tema Principal del Video",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Cómo hacer el mejor café frío en casa, unboxing del nuevo smartphone X, la historia de la inteligencia artificial.",
+            "requerido": true,
+            "tooltip": "Describe la idea central de tu video. Este campo es obligatorio."
+        },
+        {
+            "id": "videoPlatform",
+            "etiqueta": "Plataforma de Video",
+            "tipo": "select",
+            "tooltip": "Elige la plataforma para la que se optimizará el guion.",
+            "opciones": [
+                { "valor": "un video de YouTube", "texto": "YouTube", "selected": true },
+                { "valor": "un TikTok", "texto": "TikTok" },
+                { "valor": "un Instagram Reel", "texto": "Instagram Reel" },
+                { "valor": "un video corporativo", "texto": "Video Corporativo" }
+            ]
+        },
+        {
+            "id": "videoDuration",
+            "etiqueta": "Duración Estimada",
+            "tipo": "text",
+            "placeholder": "Ej: 10 minutos, 60 segundos, 3-5 minutos.",
+            "requerido": false,
+            "tooltip": "La duración aproximada que debería tener el video."
+        },
+        {
+            "id": "videoTone",
+            "etiqueta": "Tono y Estilo",
+            "tipo": "select",
+            "tooltip": "Define la atmósfera y el estilo de la narración.",
+            "opciones": [
+                { "valor": "informativo y educativo", "texto": "Informativo / Educativo", "selected": true },
+                { "valor": "entretenido y divertido", "texto": "Entretenido / Divertido" },
+                { "valor": "inspirador y motivacional", "texto": "Inspirador / Motivacional" },
+                { "valor": "serio y profesional", "texto": "Serio / Profesional" },
+                { "valor": "dramático y cinematográfico", "texto": "Dramático / Cinematográfico" }
+            ]
+        },
+        {
+            "id": "keyPoints",
+            "etiqueta": "Puntos Clave o Estructura",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: 1. Introducción (gancho).\n2. Problema a resolver.\n3. Presentación de la solución (3 pasos).\n4. Conclusión y resumen.",
+            "requerido": false,
+            "tooltip": "Esboza las secciones o ideas principales que el guion debe cubrir."
+        },
+        {
+            "id": "callToAction",
+            "etiqueta": "Llamada a la Acción Final (CTA)",
+            "tipo": "text",
+            "placeholder": "Ej: 'Suscríbete para más videos', 'Deja un comentario', 'Visita nuestra web'.",
+            "requerido": false,
+            "tooltip": "Indica qué acción quieres que realice el espectador al final."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un guionista profesional especializado en crear contenido para herramientas de video generadas por IA. Necesito un guion para {{videoPlatform}} sobre el siguiente tema: {{videoTopic}}.\n\n{{#if videoDuration}}La duración estimada del video es de {{videoDuration}}.{{/if}}\nEl tono debe ser {{videoTone}}.\n\n**Estructura y Contenido:**\nEl guion debe estar dividido en dos columnas: 'Visual' (descripciones detalladas de cada escena para la IA de video) y 'Audio' (la narración, diálogos o música).\n{{#if keyPoints}}Por favor, sigue esta estructura o incluye estos puntos clave:\n{{keyPoints}}\n{{/if}}\n\n{{#if callToAction}}El video debe terminar con una clara llamada a la acción: '{{callToAction}}'.{{/if}}\n\nGenera el guion completo.",
+    "suggestedTools": [
+        { "name": "Runway", "url": "https://runwayml.com/" },
+        { "name": "Pika", "url": "https://pika.art/" },
+        { "name": "CapCut", "url": "https://www.capcut.com/" },
+        { "name": "Adobe Premiere", "url": "https://www.adobe.com/products/premiere.html" }
+    ]
+}

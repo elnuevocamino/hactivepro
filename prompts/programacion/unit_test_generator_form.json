@@ -1,0 +1,53 @@
+{
+    "id": "unit_test_generator_form",
+    "nombre": "Generador de Pruebas Unitarias (Unit Tests)",
+    "descripcion": "Crea prompts para generar pruebas unitarias para tu código, especificando casos de prueba y frameworks.",
+    "campos": [
+        {
+            "id": "testFramework",
+            "etiqueta": "Framework de Pruebas",
+            "tipo": "select",
+            "tooltip": "Elige el framework o librería para generar las pruebas.",
+            "opciones": [
+                { "valor": "JUnit 5 (Java)", "texto": "JUnit 5 (Java)", "selected": true },
+                { "valor": "PyTest (Python)", "texto": "PyTest (Python)" },
+                { "valor": "Jest (JavaScript/TypeScript)", "texto": "Jest (JavaScript/TypeScript)" },
+                { "valor": "NUnit (C#)", "texto": "NUnit (C#)" },
+                { "valor": "Go's testing package", "texto": "Go (testing package)" }
+            ]
+        },
+        {
+            "id": "codeToTest",
+            "etiqueta": "Código a Probar",
+            "tipo": "textarea",
+            "filas": 8,
+            "placeholder": "Pega aquí la clase, función o método que quieres probar.",
+            "requerido": true,
+            "tooltip": "El fragmento de código para el cual se generarán las pruebas."
+        },
+        {
+            "id": "testCases",
+            "etiqueta": "Casos de Prueba a Cubrir (uno por línea)",
+            "tipo": "textarea",
+            "filas": 5,
+            "placeholder": "Ej:\n- Probar con entrada válida.\n- Probar con entrada nula o vacía.\n- Probar caso límite (ej. número máximo).\n- Verificar que se lanza una excepción con datos incorrectos.",
+            "requerido": true,
+            "tooltip": "Describe los escenarios que quieres probar para asegurar la cobertura."
+        },
+        {
+            "id": "mockDependencies",
+            "etiqueta": "Simular Dependencias (Mocking)",
+            "tipo": "checkbox",
+            "tooltip": "Marca esta casilla si el código tiene dependencias externas que deben ser simuladas (ej. llamadas a base de datos, APIs).",
+            "opciones": [
+                { "valor": "true", "texto": "Sí, simular dependencias externas (usar Mocks)" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un ingeniero de software especializado en Quality Assurance (QA) y testing automatizado. Tu tarea es escribir un conjunto completo de pruebas unitarias.\n\n**Framework de Pruebas:** {{testFramework}}\n\n**Código a Probar:**\n```\n{{codeToTest}}\n```\n\n**Casos de Prueba Requeridos:**\n{{testCases}}\n\n{{#if mockDependencies}}**Requisito Adicional:**\nEl código tiene dependencias externas. Utiliza un framework de mocking apropiado para {{testFramework}} (ej. Mockito para JUnit, unittest.mock para PyTest, Jest's built-in mocks) para simular cualquier llamada externa y aislar la unidad bajo prueba.{{/if}}\n\n**Instrucciones:**\n1.  Genera el código completo para la clase o archivo de prueba.\n2.  Asegúrate de que cada caso de prueba descrito esté implementado en un método de prueba separado y claramente nombrado (ej. `test_calculadora_suma_conNumerosPositivos`).\n3.  El código de las pruebas debe ser limpio, legible y seguir las mejores prácticas del framework especificado.\n4.  Genera únicamente el bloque de código, sin explicaciones adicionales fuera del código.",
+    "suggestedTools": [
+        { "name": "Jest", "url": "https://jestjs.io/" },
+        { "name": "Pytest", "url": "https://docs.pytest.org/" },
+        { "name": "JUnit 5", "url": "https://junit.org/junit5/" }
+    ]
+}

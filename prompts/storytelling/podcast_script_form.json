@@ -1,0 +1,86 @@
+{
+    "id": "podcast_script_form",
+    "nombre": "Generador de Guiones para Podcast",
+    "descripcion": "Crea prompts para estructurar y escribir guiones para episodios de podcast, desde entrevistas hasta narrativas.",
+    "campos": [
+        {
+            "id": "podcastTitle",
+            "etiqueta": "Nombre del Podcast",
+            "tipo": "text",
+            "placeholder": "Ej: Crónicas Digitales",
+            "requerido": true,
+            "tooltip": "El nombre general de tu programa de podcast."
+        },
+        {
+            "id": "episodeTitle",
+            "etiqueta": "Título del Episodio (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: El Futuro de la Inteligencia Artificial",
+            "requerido": false,
+            "tooltip": "El título específico para este episodio."
+        },
+        {
+            "id": "podcastFormat",
+            "etiqueta": "Formato del Podcast",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "una entrevista", "texto": "Entrevista", "selected": true },
+                { "valor": "un monólogo informativo", "texto": "Monólogo / Informativo" },
+                { "valor": "una narrativa o historia contada", "texto": "Narrativa / Storytelling" },
+                { "valor": "una mesa redonda o panel de discusión", "texto": "Panel de Discusión" }
+            ],
+            "tooltip": "Elige la estructura principal del episodio."
+        },
+        {
+            "id": "podcastHosts",
+            "etiqueta": "Anfitrión(es)",
+            "tipo": "text",
+            "placeholder": "Ej: Ana García, Juan Pérez",
+            "requerido": true,
+            "tooltip": "Los nombres de las personas que conducen el podcast."
+        },
+        {
+            "id": "podcastGuests",
+            "etiqueta": "Invitado(s) (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Dra. Elena Ríos, experta en IA",
+            "requerido": false,
+            "tooltip": "Si hay invitados, menciónalos aquí."
+        },
+        {
+            "id": "podcastSegments",
+            "etiqueta": "Segmentos o Temas a Cubrir (uno por línea)",
+            "tipo": "textarea",
+            "filas": 5,
+            "placeholder": "Ej:\nIntroducción y presentación del tema\nHistoria de la IA\nAplicaciones actuales\nDebate sobre ética\nPreguntas de la audiencia",
+            "requerido": true,
+            "tooltip": "Estructura el episodio en secciones o temas clave."
+        },
+        {
+            "id": "podcastTone",
+            "etiqueta": "Tono del Episodio",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "informativo y educativo", "texto": "Informativo y Educativo", "selected": true },
+                { "valor": "casual y conversacional", "texto": "Casual y Conversacional" },
+                { "valor": "humorístico y entretenido", "texto": "Humorístico y Entretenido" },
+                { "valor": "serio y profundo", "texto": "Serio y Profundo" }
+            ],
+            "tooltip": "Elige el ambiente o estilo del episodio."
+        },
+        {
+            "id": "podcastCTA",
+            "etiqueta": "Llamada a la Acción (CTA) al final (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Síguenos en Spotify, visita nuestra web para más info",
+            "requerido": false,
+            "tooltip": "La acción que quieres que los oyentes realicen al final."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un productor y guionista de podcasts experimentado. Tu tarea es crear un guion detallado para un episodio de podcast.\n\n**Información del Podcast:**\n- **Nombre del Podcast:** {{podcastTitle}}\n{{#if episodeTitle}}- **Título del Episodio:** {{episodeTitle}}{{/if}}\n- **Formato:** {{podcastFormat}}\n- **Tono:** {{podcastTone}}\n- **Anfitrión(es):** {{podcastHosts}}\n{{#if podcastGuests}}- **Invitado(s):** {{podcastGuests}}{{/if}}\n\n**Estructura del Episodio:**\n- **Segmentos a Cubrir:**\n{{podcastSegments}}\n\n{{#if podcastCTA}}- **Llamada a la Acción Final:** {{podcastCTA}}{{/if}}\n\n**Tarea:**\nEscribe un guion completo para el episodio. Incluye una introducción (con música de entrada sugerida), transiciones claras entre segmentos, puntos de conversación o preguntas para cada segmento, y una conclusión que incorpore la llamada a la acción. El guion debe ser fácil de seguir para los anfitriones.",
+    "suggestedTools": [
+        { "name": "Audacity", "url": "https://www.audacityteam.org/" },
+        { "name": "Descript", "url": "https://www.descript.com/" },
+        { "name": "Riverside.fm", "url": "https://riverside.fm/" }
+    ]
+}

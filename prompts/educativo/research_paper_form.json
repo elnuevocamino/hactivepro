@@ -1,0 +1,69 @@
+{
+    "id": "research_paper_form",
+    "nombre": "Generador de Propuesta de Investigación",
+    "descripcion": "Esboza una propuesta de investigación completa, definiendo el tema, marco teórico, metodología y más.",
+    "campos": [
+        {
+            "id": "researchTopic",
+            "etiqueta": "Tema General de Investigación",
+            "tipo": "text",
+            "placeholder": "Ej: El impacto de la IA en el mercado laboral, La representación de la mujer en la literatura del siglo XIX",
+            "requerido": true,
+            "tooltip": "El área amplia en la que se enmarca tu investigación."
+        },
+        {
+            "id": "researchQuestion",
+            "etiqueta": "Pregunta de Investigación o Hipótesis",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: ¿De qué manera la automatización de tareas cognitivas afectará los salarios de los trabajadores de cuello blanco en la próxima década?",
+            "requerido": true,
+            "tooltip": "La pregunta específica que tu investigación busca responder."
+        },
+        {
+            "id": "keyObjectives",
+            "etiqueta": "Objetivos Clave (uno por línea)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej:\n- Analizar las tendencias actuales de automatización.\n- Identificar los sectores más vulnerables.\n- Proponer un modelo predictivo.",
+            "requerido": false,
+            "tooltip": "Los objetivos específicos que te ayudarán a responder la pregunta principal."
+        },
+        {
+            "id": "methodology",
+            "etiqueta": "Metodología Propuesta",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "una metodología cuantitativa (encuestas, análisis estadístico)", "texto": "Cuantitativa", "selected": true },
+                { "valor": "una metodología cualitativa (entrevistas, estudios de caso)", "texto": "Cualitativa" },
+                { "valor": "una metodología mixta (combinando ambas)", "texto": "Mixta" },
+                { "valor": "una revisión bibliográfica sistemática", "texto": "Revisión Bibliográfica" }
+            ],
+            "tooltip": "Elige el enfoque metodológico para tu investigación."
+        },
+        {
+            "id": "theoreticalFramework",
+            "etiqueta": "Marco Teórico o Conceptos Clave (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Teoría del Capital Humano, Destrucción Creativa de Schumpeter.",
+            "requerido": false,
+            "tooltip": "Menciona las teorías o autores principales en los que te basarás."
+        },
+        {
+            "id": "expectedOutcomes",
+            "etiqueta": "Resultados Esperados o Contribución al Campo",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Un nuevo modelo para predecir el impacto laboral de la IA, una mejor comprensión de los riesgos y oportunidades.",
+            "requerido": false,
+            "tooltip": "¿Qué esperas descubrir y cómo aportará a tu campo de estudio?"
+        }
+    ],
+    "plantilla_prompt": "Actúa como un director de tesis y académico experimentado. Tu tarea es ayudar a un estudiante a estructurar una propuesta de investigación sólida y coherente.\n\n**Información del Proyecto de Investigación:**\n- **Tema General:** {{researchTopic}}\n- **Pregunta de Investigación/Hipótesis:** {{researchQuestion}}\n- **Metodología Propuesta:** {{methodology}}\n{{#if keyObjectives}}\n- **Objetivos Clave:**\n{{keyObjectives}}\n{{/if}}{{#if theoreticalFramework}}\n- **Marco Teórico:** {{theoreticalFramework}}\n{{/if}}{{#if expectedOutcomes}}\n- **Resultados Esperados/Contribución:** {{expectedOutcomes}}\n{{/if}}\n\n**Tarea:**\nGenera un borrador de una propuesta de investigación. El borrador debe estar estructurado en las siguientes secciones:\n1.  **Introducción:** Presenta el tema y su relevancia, culminando con la pregunta de investigación.\n2.  **Revisión de Literatura (Breve):** Menciona los conceptos clave y los debates existentes en el campo.\n3.  **Metodología:** Describe en detalle cómo se llevará a cabo la investigación, incluyendo la recolección y análisis de datos.\n4.  **Cronograma Sugerido:** Propón un plan de trabajo realista dividido en fases.\n5.  **Conclusión:** Resume la importancia del estudio y su contribución esperada.",
+    "suggestedTools": [
+        { "name": "Google Scholar", "url": "https://scholar.google.com/" },
+        { "name": "Zotero", "url": "https://www.zotero.org/" },
+        { "name": "Mendeley", "url": "https://www.mendeley.com/" }
+    ]
+}

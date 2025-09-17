@@ -1,0 +1,60 @@
+{
+    "id": "story_development_form",
+    "nombre": "Desarrollador de Historias",
+    "descripcion": "Crea prompts para desarrollar tramas, personajes y mundos para tus historias.",
+    "campos": [
+        {
+            "id": "storyGenre",
+            "etiqueta": "Género Principal de la Historia",
+            "tipo": "text",
+            "placeholder": "Ej: Ciencia Ficción, Fantasía Épica, Misterio Noir",
+            "requerido": true,
+            "tooltip": "Define el género que marcará el tono y las convenciones de la historia."
+        },
+        {
+            "id": "storyLogline",
+            "etiqueta": "Idea Principal o Logline",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Un detective en un mundo ciberpunk debe resolver el asesinato de un magnate tecnológico que resulta ser su padre perdido.",
+            "requerido": true,
+            "tooltip": "Resume la premisa central de tu historia en una o dos frases."
+        },
+        {
+            "id": "mainCharacters",
+            "etiqueta": "Personajes Principales (uno por línea)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej:\nKaelen, el detective cínico con un pasado oscuro.\nJianna, la hacker idealista que lo ayuda.\nEl Director, el antagonista corporativo sin escrúpulos.",
+            "requerido": false,
+            "tooltip": "Describe brevemente a los protagonistas y antagonistas."
+        },
+        {
+            "id": "worldSetting",
+            "etiqueta": "Descripción del Mundo o Escenario",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Una megaciudad lluviosa en 2088, dominada por corporaciones y tecnología de neón.",
+            "requerido": false,
+            "tooltip": "Describe el entorno donde se desarrolla la historia."
+        },
+        {
+            "id": "developmentFocus",
+            "etiqueta": "Enfoque del Desarrollo",
+            "tipo": "select",
+            "tooltip": "Elige qué aspecto de la historia quieres que la IA desarrolle principalmente.",
+            "opciones": [
+                { "valor": "un esquema de la trama principal con los tres actos", "texto": "Esquema de la Trama", "selected": true },
+                { "valor": "una descripción detallada de los arcos de los personajes principales", "texto": "Arcos de Personajes" },
+                { "valor": "una exploración profunda del mundo, su historia y sus reglas", "texto": "Construcción del Mundo (Worldbuilding)" },
+                { "valor": "ideas para giros de guion y subtramas interesantes", "texto": "Giros de Guion y Subtramas" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un escritor de ficción y editor de desarrollo experimentado. Tu tarea es ayudar a expandir una idea inicial en una historia más completa.\n\n**Información de la Historia:**\n- **Género:** {{storyGenre}}\n- **Logline:** {{storyLogline}}\n\n{{#if mainCharacters}}**Personajes Principales:**\n{{mainCharacters}}\n{{/if}}\n\n{{#if worldSetting}}**Mundo/Escenario:**\n{{worldSetting}}\n{{/if}}\n\n**Tarea:**\nBasado en la información proporcionada, genera {{developmentFocus}}. La respuesta debe ser creativa, coherente con el género y la premisa, y proporcionar una base sólida para que un escritor pueda empezar a trabajar.",
+    "suggestedTools": [
+        { "name": "Scrivener", "url": "https://www.literatureandlatte.com/scrivener/overview" },
+        { "name": "Milanote", "url": "https://milanote.com/" },
+        { "name": "World Anvil", "url": "https://www.worldanvil.com/" }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "id": "market_trend_analysis_form",
+    "nombre": "Análisis de Tendencias de Mercado",
+    "descripcion": "Analiza tendencias de activos financieros (acciones, divisas, etc.) usando análisis técnico y fundamental.",
+    "campos": [
+        {
+            "id": "assetName",
+            "etiqueta": "Nombre del Activo",
+            "tipo": "text",
+            "placeholder": "Ej: Tesla (TSLA), EUR/USD, Bitcoin (BTC)",
+            "requerido": true,
+            "tooltip": "El nombre o ticker del activo que quieres analizar."
+        },
+        {
+            "id": "assetType",
+            "etiqueta": "Tipo de Activo",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "una acción", "texto": "Acción", "selected": true },
+                { "valor": "un par de divisas", "texto": "Divisa / Forex" },
+                { "valor": "una criptomoneda", "texto": "Criptomoneda" },
+                { "valor": "una materia prima", "texto": "Materia Prima" }
+            ]
+        },
+        {
+            "id": "timeframe",
+            "etiqueta": "Marco de Tiempo del Análisis",
+            "tipo": "text",
+            "placeholder": "Ej: Últimos 3 meses, último año, desde el inicio del año",
+            "requerido": true,
+            "tooltip": "El período que debe cubrir el análisis."
+        },
+        {
+            "id": "analysisTypes",
+            "etiqueta": "Tipos de Análisis a Incluir",
+            "tipo": "checkbox-group",
+            "opciones": [
+                { "valor": "Análisis Técnico (patrones de gráficos, indicadores)", "texto": "Análisis Técnico", "checked": true },
+                { "valor": "Análisis Fundamental (noticias, salud financiera de la empresa, factores macroeconómicos)", "texto": "Análisis Fundamental" },
+                { "valor": "Análisis de Sentimiento (opinión del mercado, redes sociales)", "texto": "Análisis de Sentimiento" }
+            ]
+        },
+        {
+            "id": "specificRequests",
+            "etiqueta": "Solicitudes Específicas (opcional)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Identificar niveles de soporte y resistencia clave.\nComparar el rendimiento con el índice S&P 500.\nEvaluar el impacto de la última reunión de la Fed.",
+            "requerido": false,
+            "tooltip": "Pide a la IA que se enfoque en aspectos particulares del análisis."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un analista de mercados financieros con experiencia. Realiza un análisis de tendencias para el siguiente activo:\n\n**Activo:** {{assetName}} ({{assetType}})\n**Marco de Tiempo:** {{timeframe}}\n\n**Análisis Requerido:**\nRealiza un análisis que incluya los siguientes tipos:\n{{analysisTypes}}\n\n{{#if specificRequests}}**Solicitudes Específicas:**\n{{specificRequests}}\n{{/if}}\n\n**Tarea:**\nPresenta un informe estructurado que resuma tus hallazgos. Incluye una conclusión con una posible proyección o perspectiva para el activo en el corto y mediano plazo, basada en tu análisis. Identifica los principales riesgos y oportunidades.",
+    "suggestedTools": [
+        { "name": "TradingView", "url": "https://www.tradingview.com/" },
+        { "name": "Yahoo Finance", "url": "https://finance.yahoo.com/" },
+        { "name": "Bloomberg", "url": "https://www.bloomberg.com/markets" }
+    ]
+}

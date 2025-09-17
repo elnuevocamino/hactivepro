@@ -1,0 +1,48 @@
+{
+    "id": "rtft_framework_form",
+    "nombre": "Framework RTFT",
+    "descripcion": "Genera prompts concisos usando el framework RTFT (Rol, Tarea, Formato, Tono).",
+    "campos": [
+        {
+            "id": "rtftRole",
+            "etiqueta": "R - Rol (Role)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Un biólogo marino experto.",
+            "requerido": false,
+            "tooltip": "Define la personalidad o el rol que debe adoptar la IA."
+        },
+        {
+            "id": "rtftTask",
+            "etiqueta": "T - Tarea (Task)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Explicar el proceso de bioluminiscencia en las criaturas abisales.",
+            "requerido": true,
+            "tooltip": "Describe la tarea específica que la IA debe realizar. Este campo es obligatorio."
+        },
+        {
+            "id": "rtftFormat",
+            "etiqueta": "F - Formato (Format)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Una lista de 5 puntos clave. Un párrafo introductorio seguido de una tabla.",
+            "requerido": false,
+            "tooltip": "Especifica cómo debe estar estructurada la respuesta final."
+        },
+        {
+            "id": "rtftTone",
+            "etiqueta": "T - Tono (Tone)",
+            "tipo": "text",
+            "placeholder": "Ej: Asombrado y educativo. Científico pero accesible.",
+            "requerido": false,
+            "tooltip": "Define el tono y estilo de la respuesta."
+        }
+    ],
+    "plantilla_prompt": "Aplica el framework RTFT para generar el siguiente prompt:\n\n{{#if rtftRole}}**Rol:** {{rtftRole}}\n{{/if}}\n**Tarea:** {{rtftTask}}\n\n{{#if rtftFormat}}**Formato:** {{rtftFormat}}\n{{/if}}{{#if rtftTone}}**Tono:** {{rtftTone}}\n{{/if}}",
+    "suggestedTools": [
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" },
+        { "name": "Claude", "url": "https://claude.ai/" },
+        { "name": "Gemini", "url": "https://gemini.google.com/" }
+    ]
+}

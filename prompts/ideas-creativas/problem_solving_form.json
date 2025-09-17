@@ -1,0 +1,52 @@
+{
+    "id": "problem_solving_form",
+    "nombre": "Solucionador de Problemas",
+    "descripcion": "Aplica técnicas estructuradas como los 5 Porqués o los 6 Sombreros para analizar y resolver problemas complejos.",
+    "campos": [
+        {
+            "id": "problemStatement",
+            "etiqueta": "Declaración del Problema",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Las ventas de nuestro producto estrella han caído un 20% en el último trimestre.",
+            "requerido": true,
+            "tooltip": "Describe de forma clara y concisa el problema que quieres abordar."
+        },
+        {
+            "id": "problemContext",
+            "etiqueta": "Contexto y Antecedentes (Opcional)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Lanzamos una nueva campaña de marketing hace dos meses. Un competidor entró al mercado con un producto similar. No ha habido cambios en el equipo de ventas.",
+            "requerido": false,
+            "tooltip": "Proporciona cualquier información de fondo que pueda ser relevante para entender el problema."
+        },
+        {
+            "id": "solvingTechnique",
+            "etiqueta": "Técnica de Resolución a Utilizar",
+            "tipo": "select",
+            "tooltip": "Elige un framework estructurado para guiar el análisis del problema.",
+            "opciones": [
+                { "valor": "el análisis de los '5 Porqués' para encontrar la causa raíz", "texto": "5 Porqués (Análisis de Causa Raíz)", "selected": true },
+                { "valor": "la técnica de los '6 Sombreros para Pensar' para explorar diferentes perspectivas", "texto": "6 Sombreros para Pensar" },
+                { "valor": "un Análisis FODA (Fortalezas, Oportunidades, Debilidades, Amenazas)", "texto": "Análisis FODA (SWOT)" },
+                { "valor": "un Diagrama de Causa y Efecto (Ishikawa o espina de pescado)", "texto": "Diagrama Causa-Efecto (Ishikawa)" }
+            ]
+        },
+        {
+            "id": "specificGoal",
+            "etiqueta": "Objetivo Específico de la Sesión (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Generar una lista de al menos 5 posibles soluciones. Identificar las 3 causas raíz más probables.",
+            "requerido": false,
+            "tooltip": "Describe qué esperas obtener como resultado de este análisis."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un consultor experto en resolución de problemas y facilitador de talleres. Tu tarea es guiarme a través de un proceso estructurado para analizar un problema.\n\n**Problema:**\n{{problemStatement}}\n\n{{#if problemContext}}**Contexto:**\n{{problemContext}}\n{{/if}}\n\n**Metodología:**\nVamos a utilizar {{solvingTechnique}}.\n\n{{#if specificGoal}}**Objetivo de esta sesión:**\n{{specificGoal}}\n{{/if}}\n\n**Instrucciones:**\nGuíame paso a paso a través de la metodología seleccionada. Haz preguntas claras y estructuradas para ayudarme a analizar el problema a fondo y, finalmente, a identificar posibles soluciones o causas raíz. Comienza con la primera pregunta o paso del proceso.",
+    "suggestedTools": [
+        { "name": "Miro", "url": "https://miro.com/" },
+        { "name": "Mural", "url": "https://www.mural.co/" },
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" }
+    ]
+}

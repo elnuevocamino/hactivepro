@@ -1,0 +1,56 @@
+{
+    "id": "ad_platform_selector_form",
+    "nombre": "Selector de Plataforma Publicitaria",
+    "descripcion": "Recibe una recomendación de las mejores plataformas publicitarias para tu campaña basada en tu público y objetivos.",
+    "campos": [
+        {
+            "id": "campaignObjective",
+            "etiqueta": "Objetivo Principal de la Campaña",
+            "tipo": "select",
+            "tooltip": "Elige la meta principal que quieres lograr.",
+            "opciones": [
+                { "valor": "generar ventas directas (e-commerce)", "texto": "Generar Ventas (E-commerce)", "selected": true },
+                { "valor": "captar clientes potenciales (leads) para un servicio", "texto": "Captar Clientes Potenciales (Leads)" },
+                { "valor": "aumentar el reconocimiento de marca (brand awareness)", "texto": "Aumentar Reconocimiento de Marca" },
+                { "valor": "dirigir tráfico a mi sitio web o blog", "texto": "Dirigir Tráfico Web" },
+                { "valor": "promocionar una aplicación móvil", "texto": "Promocionar App Móvil" }
+            ]
+        },
+        {
+            "id": "targetAudienceDescription",
+            "etiqueta": "Descripción del Público Objetivo",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Profesionales de 30-50 años en el sector tecnológico (B2B). Jóvenes de 18-25 interesados en moda sostenible (B2C).",
+            "requerido": true,
+            "tooltip": "Describe a tu cliente ideal, incluyendo datos demográficos, intereses y si es B2B o B2C."
+        },
+        {
+            "id": "productServiceType",
+            "etiqueta": "Tipo de Producto/Servicio",
+            "tipo": "select",
+            "tooltip": "Elige la categoría que mejor describe tu oferta.",
+            "opciones": [
+                { "valor": "un producto visualmente atractivo (ropa, decoración, comida)", "texto": "Producto Visual (B2C)", "selected": true },
+                { "valor": "un servicio profesional o software (B2B)", "texto": "Servicio/Software (B2B)" },
+                { "valor": "un producto de consumo masivo", "texto": "Producto de Consumo (B2C)" },
+                { "valor": "contenido o información (blog, noticias)", "texto": "Contenido/Información" },
+                { "valor": "un producto/servicio local (restaurante, taller)", "texto": "Negocio Local" }
+            ]
+        },
+        {
+            "id": "monthlyBudget",
+            "etiqueta": "Presupuesto Mensual Estimado (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: 500 EUR, 2000 USD",
+            "requerido": false,
+            "tooltip": "Tu presupuesto puede influir en la recomendación de plataformas."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un estratega de medios digitales con más de 10 años de experiencia. Mi objetivo es encontrar las mejores plataformas publicitarias para mi campaña.\n\n**Información de la Campaña:**\n- **Objetivo Principal:** {{campaignObjective}}\n- **Público Objetivo:** {{targetAudienceDescription}}\n- **Tipo de Producto/Servicio:** {{productServiceType}}\n{{#if monthlyBudget}}- **Presupuesto Mensual Estimado:** {{monthlyBudget}}{{/if}}\n\n**Tarea:**\n1.  **Recomienda las 3 mejores plataformas publicitarias** para esta campaña, ordenadas por prioridad.\n2.  **Justifica cada recomendación**, explicando por qué esa plataforma es ideal para alcanzar el objetivo y conectar con el público descrito.\n3.  **Sugiere un formato de anuncio** ideal para cada plataforma recomendada (ej: Anuncios de carrusel en Instagram, Anuncios de búsqueda en Google, Anuncios de video en YouTube).",
+    "suggestedTools": [
+        { "name": "Google Ads", "url": "https://ads.google.com/" },
+        { "name": "Facebook Ads", "url": "https://www.facebook.com/business/ads" },
+        { "name": "LinkedIn Ads", "url": "https://www.linkedin.com/ads/" }
+    ]
+}

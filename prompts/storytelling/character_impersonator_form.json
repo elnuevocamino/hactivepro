@@ -1,0 +1,56 @@
+{
+    "id": "character_impersonator_form",
+    "nombre": "Intérprete de Personajes (Role-playing)",
+    "descripcion": "Configura un prompt para que la IA actúe y responda como tu personaje favorito de cualquier universo.",
+    "campos": [
+        {
+            "id": "characterName",
+            "etiqueta": "Nombre del Personaje",
+            "tipo": "text",
+            "placeholder": "Ej: Sherlock Holmes, Daenerys Targaryen",
+            "requerido": true,
+            "tooltip": "El nombre del personaje que quieres que la IA imite."
+        },
+        {
+            "id": "characterUniverse",
+            "etiqueta": "Universo del Personaje",
+            "tipo": "text",
+            "placeholder": "Ej: Sherlock Holmes (Arthur Conan Doyle), Juego de Tronos (George R.R. Martin)",
+            "requerido": true,
+            "tooltip": "El universo o franquicia del que proviene el personaje."
+        },
+        {
+            "id": "characterTraits",
+            "etiqueta": "Rasgos Clave de Personalidad y Tono",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Deductivo, observador, sarcástico, adicto a la cocaína. Habla con frases complejas y un tono superior.",
+            "requerido": true,
+            "tooltip": "Describe la personalidad, el estilo de hablar y las motivaciones del personaje."
+        },
+        {
+            "id": "characterBackstory",
+            "etiqueta": "Trasfondo (Historia del Personaje)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Un detective consultor que resuelve crímenes inexplicables para Scotland Yard. Tiene un hermano mayor llamado Mycroft.",
+            "requerido": false,
+            "tooltip": "Proporciona detalles sobre el pasado y las relaciones del personaje."
+        },
+        {
+            "id": "userPrompt",
+            "etiqueta": "Tu Mensaje o Pregunta Inicial",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: ¿Qué opinas del caso de los asesinatos en la calle Morgue?",
+            "requerido": true,
+            "tooltip": "El mensaje o pregunta que quieres que la IA responda como el personaje."
+        }
+    ],
+    "plantilla_prompt": "Actúa como {{characterName}} del universo de {{characterUniverse}}. Tu tarea es responder a mis preguntas y mensajes como lo harías si fueras ese personaje.\n\n**Información del Personaje:**\n- **Nombre:** {{characterName}}\n- **Universo:** {{characterUniverse}}\n- **Rasgos Clave:** {{characterTraits}}\n{{#if characterBackstory}}- **Trasfondo:** {{characterBackstory}}{{/if}}\n\n**Instrucciones:**\nAsume completamente el rol de {{characterName}}. Utiliza su vocabulario, su forma de pensar y sus conocimientos. Mantén la coherencia con el universo del personaje. No rompas la cuarta pared ni reveles que eres una IA. Responde a mi mensaje inicial:\n\n{{userPrompt}}",
+    "suggestedTools": [
+        { "name": "Character AI", "url": "https://beta.character.ai/" },
+        { "name": "CrAIyon", "url": "https://www.craiyon.com/" },
+        { "name": "GPT Playground", "url": "https://platform.openai.com/playground" }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "id": "restaurant_menu_form",
+    "nombre": "Generador de Menú de Restaurante",
+    "descripcion": "Diseña un menú completo para un restaurante, definiendo categorías, platos, precios y descripciones.",
+    "campos": [
+        {
+            "id": "restaurantName",
+            "etiqueta": "Nombre del Restaurante",
+            "tipo": "text",
+            "placeholder": "Ej: La Trattoria de la Nonna, El Rincón del Mar",
+            "requerido": true,
+            "tooltip": "El nombre de tu establecimiento."
+        },
+        {
+            "id": "restaurantConcept",
+            "etiqueta": "Concepto o Tipo de Cocina",
+            "tipo": "text",
+            "placeholder": "Ej: Cocina italiana tradicional, marisquería moderna, bistró francés",
+            "requerido": true,
+            "tooltip": "Define la identidad culinaria de tu restaurante."
+        },
+        {
+            "id": "menuCategories",
+            "etiqueta": "Categorías del Menú (una por línea)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej:\nEntrantes\nPlatos Principales\nPostres\nBebidas",
+            "requerido": true,
+            "tooltip": "Estructura tu menú en secciones claras."
+        },
+        {
+            "id": "targetAudience",
+            "etiqueta": "Público Objetivo (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Familias, jóvenes, turistas, gourmets",
+            "requerido": false,
+            "tooltip": "Define a quién se dirige principalmente tu menú."
+        },
+        {
+            "id": "priceRange",
+            "etiqueta": "Rango de Precios",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "económico ($)", "texto": "Económico ($)", "selected": true },
+                { "valor": "moderado ($$)", "texto": "Moderado ($$)" },
+                { "valor": "lujo ($$$)", "texto": "Lujo ($$$)" }
+            ],
+            "tooltip": "Elige el nivel de precios de tu restaurante."
+        },
+        {
+            "id": "specialNotes",
+            "etiqueta": "Notas Especiales o Requisitos",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Incluir al menos 3 opciones veganas. Destacar los platos estrella con un icono. Usar nombres creativos para los platos.",
+            "requerido": false,
+            "tooltip": "Cualquier otra instrucción para el diseño del menú."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un consultor gastronómico y diseñador de menús. Tu tarea es crear una propuesta de menú completa y atractiva para un restaurante.\n\n**Información del Restaurante:**\n- **Nombre:** {{restaurantName}}\n- **Concepto:** {{restaurantConcept}}\n- **Rango de Precios:** {{priceRange}}\n{{#if targetAudience}}- **Público Objetivo:** {{targetAudience}}\n{{/if}}\n\n**Estructura del Menú:**\n- **Categorías:**\n{{menuCategories}}\n\n{{#if specialNotes}}**Requisitos Especiales:**\n{{specialNotes}}\n{{/if}}\n\n**Tarea:**\nGenera una lista de platos sugeridos para cada categoría del menú. Para cada plato, proporciona:\n1.  **Nombre del Plato:** Un nombre atractivo y coherente con el concepto.\n2.  **Descripción Persuasiva:** Un texto breve que describa los ingredientes y el sabor del plato de forma apetitosa.\n3.  **Precio Sugerido:** Un precio acorde con el rango de precios del restaurante.\n\nEl menú debe ser equilibrado, atractivo y rentable.",
+    "suggestedTools": [
+        { "name": "Canva", "url": "https://www.canva.com/create/menus/" },
+        { "name": "MustHaveMenus", "url": "https://musthavemenus.com/" },
+        { "name": "iMenuPro", "url": "https://imenupro.com/" }
+    ]
+}

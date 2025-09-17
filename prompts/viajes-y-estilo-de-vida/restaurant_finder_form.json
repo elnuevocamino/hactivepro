@@ -1,0 +1,70 @@
+{
+    "id": "restaurant_finder_form",
+    "nombre": "Buscador de Restaurantes y Bares",
+    "descripcion": "Encuentra los mejores restaurantes, bares y sitios de ocio según tus preferencias de cocina, ambiente y presupuesto.",
+    "campos": [
+        {
+            "id": "destination",
+            "etiqueta": "Destino (Ciudad, Barrio)",
+            "tipo": "text",
+            "placeholder": "Ej: Barrio Gótico, Barcelona",
+            "requerido": true,
+            "tooltip": "La ciudad o área específica donde buscas un restaurante."
+        },
+        {
+            "id": "cuisineType",
+            "etiqueta": "Tipo de Cocina",
+            "tipo": "text",
+            "placeholder": "Ej: Tapas, japonesa, peruana, vegetariana",
+            "requerido": true,
+            "tooltip": "El tipo de comida que te apetece."
+        },
+        {
+            "id": "priceRange",
+            "etiqueta": "Rango de Precios",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "económico ($)", "texto": "Económico ($)", "selected": true },
+                { "valor": "moderado ($$)", "texto": "Moderado ($$)" },
+                { "valor": "caro ($$$)", "texto": "Caro ($$$)" }
+            ],
+            "tooltip": "Elige el nivel de precios que buscas."
+        },
+        {
+            "id": "ambiance",
+            "etiqueta": "Ambiente Deseado",
+            "tipo": "text",
+            "placeholder": "Ej: Romántico, casual, animado, tranquilo, con vistas",
+            "requerido": false,
+            "tooltip": "Describe el tipo de atmósfera que prefieres."
+        },
+        {
+            "id": "mealType",
+            "etiqueta": "Comida del Día",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "cualquiera", "texto": "Cualquiera", "selected": true },
+                { "valor": "desayuno o brunch", "texto": "Desayuno / Brunch" },
+                { "valor": "almuerzo", "texto": "Almuerzo" },
+                { "valor": "cena", "texto": "Cena" },
+                { "valor": "copas o bebidas", "texto": "Copas / Bebidas" }
+            ],
+            "tooltip": "Elige para qué momento del día es la búsqueda."
+        },
+        {
+            "id": "specialRequirements",
+            "etiqueta": "Requisitos Especiales (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Apto para niños, terraza, admite mascotas",
+            "requerido": false,
+            "tooltip": "Cualquier otra preferencia o necesidad."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un conserje local y crítico gastronómico. Tu tarea es recomendar los 3 mejores restaurantes o bares que se ajusten a las siguientes preferencias:\n\n**Detalles de la Búsqueda:**\n- **Ubicación:** {{destination}}\n- **Tipo de Cocina:** {{cuisineType}}\n- **Rango de Precios:** {{priceRange}}\n- **Comida del Día:** {{mealType}}\n{{#if ambiance}}- **Ambiente Deseado:** {{ambiance}}\n{{/if}}{{#if specialRequirements}}- **Requisitos Especiales:** {{specialRequirements}}\n{{/if}}\n\n**Tarea:**\nPresenta 3 opciones distintas. Para cada opción, proporciona:\n1.  **Nombre del Restaurante.**\n2.  **Dirección o Barrio.**\n3.  **Descripción Breve:** ¿Por qué es especial? ¿Cuál es su plato estrella?\n4.  **Rango de Precios Estimado.**\n5.  **Veredicto:** ¿Por qué es una recomendación ideal para mí según mis preferencias?",
+    "suggestedTools": [
+        { "name": "TheFork", "url": "https://www.thefork.com/" },
+        { "name": "Tripadvisor", "url": "https://www.tripadvisor.com/" },
+        { "name": "Google Maps", "url": "https://maps.google.com/" }
+    ]
+}

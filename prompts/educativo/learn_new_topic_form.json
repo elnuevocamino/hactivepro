@@ -1,0 +1,62 @@
+{
+    "id": "learn_new_topic_form",
+    "nombre": "Aprender un Tema Nuevo",
+    "descripcion": "Genera un plan de estudio estructurado para aprender cualquier tema desde cero, adaptado a tu nivel y metas.",
+    "campos": [
+        {
+            "id": "topicToLearn",
+            "etiqueta": "Tema que Quieres Aprender",
+            "tipo": "text",
+            "placeholder": "Ej: Física Cuántica, Historia del Arte Renacentista, Programación en Python",
+            "requerido": true,
+            "tooltip": "El tema o habilidad específica que deseas dominar."
+        },
+        {
+            "id": "currentKnowledge",
+            "etiqueta": "Tu Nivel de Conocimiento Actual",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "principiante absoluto (cero conocimiento)", "texto": "Principiante Absoluto", "selected": true },
+                { "valor": "principiante con algunos conceptos básicos", "texto": "Principiante con Nociones" },
+                { "valor": "intermedio, conozco las bases pero quiero profundizar", "texto": "Intermedio" },
+                { "valor": "avanzado, busco dominar temas específicos", "texto": "Avanzado" }
+            ],
+            "tooltip": "Sé honesto sobre tu nivel actual para que el plan sea adecuado."
+        },
+        {
+            "id": "learningGoal",
+            "etiqueta": "Tu Objetivo de Aprendizaje Principal",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Ser capaz de construir una aplicación web simple, entender las principales teorías cuánticas.",
+            "requerido": true,
+            "tooltip": "¿Qué quieres ser capaz de hacer al final del proceso de aprendizaje?"
+        },
+        {
+            "id": "timeAvailable",
+            "etiqueta": "Tiempo Disponible para Estudiar (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: 5 horas a la semana, 1 hora al día",
+            "requerido": false,
+            "tooltip": "Esto ayudará a crear un plan realista y distribuido en el tiempo."
+        },
+        {
+            "id": "learningStyle",
+            "etiqueta": "Estilo de Aprendizaje Preferido",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "una mezcla equilibrada", "texto": "Equilibrado (Teoría y Práctica)", "selected": true },
+                { "valor": "muy práctico, basado en proyectos y ejercicios", "texto": "Práctico (Aprender Haciendo)" },
+                { "valor": "muy teórico, enfocado en leer y entender conceptos", "texto": "Teórico (Lectura y Conceptos)" },
+                { "valor": "muy visual, con diagramas, videos y ejemplos gráficos", "texto": "Visual (Gráficos y Videos)" }
+            ],
+            "tooltip": "Elige cómo aprendes mejor para personalizar los recursos sugeridos."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un tutor experto y diseñador instruccional. Tu tarea es crear un plan de estudio personalizado y estructurado para alguien que quiere aprender un nuevo tema.\n\n**Información del Estudiante:**\n- **Tema a Aprender:** {{topicToLearn}}\n- **Nivel de Conocimiento Actual:** {{currentKnowledge}}\n- **Objetivo Principal:** {{learningGoal}}\n{{#if timeAvailable}}- **Tiempo Disponible:** {{timeAvailable}}\n{{/if}}- **Estilo de Aprendizaje Preferido:** {{learningStyle}}\n\n**Tarea:**\nGenera un plan de estudio completo y detallado. El plan debe incluir:\n1.  **Hoja de Ruta (Roadmap):** Una secuencia lógica de los subtemas a aprender, desde lo más básico hasta lo más avanzado.\n2.  **Plan Semanal (si se especificó tiempo):** Una distribución de los temas a lo largo de las semanas, con objetivos claros para cada una.\n3.  **Recursos Sugeridos:** Una lista de recursos de alta calidad (libros, cursos en línea, videos de YouTube, blogs, herramientas) adaptados al estilo de aprendizaje.\n4.  **Proyecto Práctico:** Una sugerencia de un pequeño proyecto final para aplicar y consolidar todo lo aprendido.\n\nEl plan debe ser motivador, realista y diseñado para llevar al estudiante desde su nivel actual hasta su objetivo de aprendizaje.",
+    "suggestedTools": [
+        { "name": "Coursera", "url": "https://www.coursera.org/" },
+        { "name": "edX", "url": "https://www.edx.org/" },
+        { "name": "Khan Academy", "url": "https://www.khanacademy.org/" }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "id": "company_name_generator_form",
+    "nombre": "Generador de Nombres de Empresa",
+    "descripcion": "Crea nombres únicos y memorables para tu nuevo negocio o proyecto basados en su esencia y mercado.",
+    "campos": [
+        {
+            "id": "companyIndustry",
+            "etiqueta": "Industria o Nicho",
+            "tipo": "text",
+            "placeholder": "Ej: Tecnología, moda sostenible, cafetería artesanal.",
+            "requerido": true,
+            "tooltip": "El sector en el que operará tu negocio."
+        },
+        {
+            "id": "companyKeywords",
+            "etiqueta": "Palabras Clave o Conceptos",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Innovación, eco, rápido, comunidad, sol, zen.",
+            "requerido": false,
+            "tooltip": "Palabras que evocan la esencia, los valores o los beneficios de tu marca."
+        },
+        {
+            "id": "nameStyle",
+            "etiqueta": "Estilo del Nombre",
+            "tipo": "select",
+            "tooltip": "Elige la sensación que debe transmitir el nombre.",
+            "opciones": [
+                { "valor": "modernos y tecnológicos", "texto": "Moderno y Tecnológico", "selected": true },
+                { "valor": "clásicos y elegantes", "texto": "Clásico y Elegante" },
+                { "valor": "amigables y cercanos", "texto": "Amigable y Cercano" },
+                { "valor": "abstractos y únicos", "texto": "Abstracto y Único" },
+                { "valor": "descriptivos y directos", "texto": "Descriptivo y Directo" }
+            ]
+        },
+        {
+            "id": "nameCount",
+            "etiqueta": "Cantidad de Nombres a Generar",
+            "tipo": "text",
+            "placeholder": "Ej: 15",
+            "requerido": false,
+            "tooltip": "¿Cuántas sugerencias de nombres quieres?"
+        }
+    ],
+    "plantilla_prompt": "Actúa como un experto en branding y naming. Tu tarea es generar nombres para una nueva empresa.\n\n**Industria/Nicho:** {{companyIndustry}}\n**Estilo de Nombres:** {{nameStyle}}\n\n{{#if companyKeywords}}**Palabras Clave/Conceptos a Inspirar:**\n{{companyKeywords}}\n{{/if}}\n\nGenera una lista de {{#if nameCount}}{{nameCount}}{{else}}15{{/if}} nombres de empresa. Para cada nombre, proporciona una breve justificación de por qué encaja con la marca.",
+    "suggestedTools": [
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" },
+        { "name": "Namely", "url": "https://namely.ai/" },
+        { "name": "Namelix", "url": "https://namelix.com/" }
+    ]
+}

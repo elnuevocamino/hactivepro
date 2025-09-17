@@ -1,0 +1,49 @@
+{
+    "id": "math_equation_solver_form",
+    "nombre": "Solucionador de Ecuaciones Matemáticas",
+    "descripcion": "Resuelve ecuaciones matemáticas, mostrando el proceso paso a paso y explicando los métodos utilizados.",
+    "campos": [
+        {
+            "id": "equation",
+            "etiqueta": "Ecuación a Resolver",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: 2x^2 - 5x + 3 = 0",
+            "requerido": true,
+            "tooltip": "Escribe la ecuación matemática completa que quieres resolver."
+        },
+        {
+            "id": "solveFor",
+            "etiqueta": "Variable a Despejar (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: x",
+            "requerido": false,
+            "tooltip": "Especifica la variable que quieres encontrar. Si se omite, la IA intentará resolver la variable principal."
+        },
+        {
+            "id": "outputFormat",
+            "etiqueta": "Formato de la Solución",
+            "tipo": "select",
+            "tooltip": "Elige cómo quieres que se presente la solución.",
+            "opciones": [
+                { "valor": "mostrando cada paso del proceso de resolución y explicando el método utilizado", "texto": "Paso a Paso con Explicación", "selected": true },
+                { "valor": "mostrando solo los pasos clave del cálculo", "texto": "Pasos Clave" },
+                { "valor": "mostrando únicamente la solución final", "texto": "Solo la Solución Final" }
+            ]
+        },
+        {
+            "id": "assumptions",
+            "etiqueta": "Supuestos o Restricciones (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Considerar solo soluciones reales. Asumir que x > 0.",
+            "requerido": false,
+            "tooltip": "Añade cualquier condición o supuesto que deba considerarse en la resolución."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un matemático experto y un profesor de matemáticas. Tu tarea es resolver la siguiente ecuación:\n\n**Ecuación:**\n`{{equation}}`\n\n{{#if solveFor}}**Variable a Despejar:** {{solveFor}}{{/if}}\n{{#if assumptions}}**Supuestos:** {{assumptions}}{{/if}}\n\n**Instrucciones:**\nResuelve la ecuación {{outputFormat}}. Presenta el resultado de forma clara y ordenada.",
+    "suggestedTools": [
+        { "name": "WolframAlpha", "url": "https://www.wolframalpha.com/" },
+        { "name": "Symbolab", "url": "https://www.symbolab.com/" },
+        { "name": "Microsoft Math Solver", "url": "https://math.microsoft.com/es" }
+    ]
+}

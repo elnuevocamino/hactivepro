@@ -1,0 +1,54 @@
+{
+    "id": "chart_data_extractor_form",
+    "nombre": "Extractor de Datos de Gráficos",
+    "descripcion": "Extrae datos numéricos de una imagen de un gráfico y los presenta en un formato estructurado.",
+    "campos": [
+        {
+            "id": "chartSource",
+            "etiqueta": "Fuente del Gráfico (URL o Descripción)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Pega aquí la URL de la imagen del gráfico, o describe el gráfico si no tienes un enlace.",
+            "requerido": true,
+            "tooltip": "Proporciona el enlace a la imagen del gráfico o una descripción detallada. Este campo es obligatorio."
+        },
+        {
+            "id": "chartType",
+            "etiqueta": "Tipo de Gráfico (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Gráfico de barras horizontales, gráfico de líneas con dos series.",
+            "requerido": false,
+            "tooltip": "Ayuda a la IA a entender la visualización si no es obvio."
+        },
+        {
+            "id": "dataToExtract",
+            "etiqueta": "Datos Específicos a Extraer (Opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Para cada barra, el nombre de la categoría y su valor numérico. Los valores del eje Y para cada punto en el año 2022.",
+            "requerido": false,
+            "tooltip": "Define qué información necesitas extraer del gráfico."
+        },
+        {
+            "id": "outputFormat",
+            "etiqueta": "Formato de Salida Deseado (Opcional)",
+            "tipo": "select",
+            "tooltip": "Elige cómo quieres que se estructuren los datos extraídos.",
+            "opciones": [
+                { "valor": "una tabla en formato Markdown", "texto": "Tabla (Markdown)", "selected": true },
+                { "valor": "un archivo en formato CSV", "texto": "CSV" },
+                { "valor": "un objeto en formato JSON", "texto": "JSON" }
+            ]
+        },
+        {
+            "id": "additionalContext",
+            "etiqueta": "Contexto o Notas Adicionales (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: El eje Y está en miles de millones de USD. Presta atención a la escala logarítmica.",
+            "requerido": false,
+            "tooltip": "Cualquier información extra que pueda ayudar a una interpretación precisa."
+        }
+    ],
+    "plantilla_prompt": "Actúa como una herramienta de OCR (Reconocimiento Óptico de Caracteres) especializada en la extracción de datos de gráficos. Tu tarea es analizar la siguiente fuente de gráfico y extraer la información solicitada.\n\nFuente del Gráfico:\n{{chartSource}}\n\n{{#if chartType}}El gráfico es un {{chartType}}.{{/if}}\n{{#if dataToExtract}}Los datos específicos que necesito que extraigas son:\n{{dataToExtract}}\n{{else}}Extrae todos los datos numéricos y sus etiquetas correspondientes que puedas identificar.{{/if}}\n\n{{#if additionalContext}}Ten en cuenta el siguiente contexto adicional para una extracción precisa: {{additionalContext}}.{{/if}}\n\nPresenta los datos extraídos en el formato de {{outputFormat}}."
+}

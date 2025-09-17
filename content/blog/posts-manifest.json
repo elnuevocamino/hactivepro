@@ -1,38 +1,129 @@
 [
-  {
-    "title": "El Arte perdido de la comunicación en la era digital",
-    "subtitle": "Un discurso de Churchill en 280 caracteres?",
-    "file": "posts/el-arte-perdido-de-la-comunicacion-en-la-era-digital.html",
-    "image": "el-arte-perdido-de-la-comunicacion.jpg",
-    "excerpt": "La brevedad no es un atajo sino una cima que exige una escalada mas empinada",
-    "publicationDate": "2025-07-01",
-    "slug": "el-arte-perdido-de-la-comunicacion-en-la-era-digital"
-  },
-  {
-    "file": "posts/DeLaPiedraAlAlgoritmo.html",
-    "title": "De la piedra al algoritmo",
-    "subtitle": "Una Breve Historia de la Innovación Humana y el Amanecer de la Era de la IA",
-    "image": "de-la-piedra.jpg.jpg",
-    "publicationDate": "2025-05-28",
-    "excerpt": "Hace aproximadamente unos 70.000 años, existian en la tierra dos especies distinas de primates...",
-    "slug": "DeLaPiedraAlAlgoritmo"
-  },
-  {
-    "file": "posts/VistemeDespacio.html",
-    "title": "Visteme despacio que la tecnología va de prisa",
-    "subtitle": "El paso firme y decidido hacia el progreso",
-    "image": "visteme-despacio.png",
-    "publicationDate": "2025-06-04",
-    "excerpt": "Desde que el primer rayo de sol iluminó la conciencia humana, hemos estado inmersos en una danza...",
-    "slug": "VistemeDespacio"
-  },
-  {
-    "file": "posts/LosDosGimnasios.html",
-    "title": "Los dos gimnasios",
-    "subtitle": "Entrenamiento las 24/7",
-    "image": "los-dos-gimnasios.jpg",
-    "publicationDate": "2025-06-11",
-    "excerpt": "Tal vez esto no te lo halla dicho ningún entrenador deportivo, pero lo cierto es que cuando te inscribes o pagas la mensualidad...",
-    "slug": "LosDosGimnasios"
-  }
+    {
+        "publicationDate": "2025-05-28",
+        "file": "posts/de-la-piedra-al-algoritmo.html",
+        "title": "De la piedra al algoritmo",
+        "subtitle": "Una Breve Historia de la Innovación Humana y el Amanecer de la Era de la IA",
+        "image": "de-la-piedra.jpg",
+        "excerpt": "Hace aproximadamente unos 70.000 años, existian en la tierra dos especies distinas de primates...",
+        "slug": "DeLaPiedraAlAlgoritmo"
+    },
+    {
+        "publicationDate": "2025-06-04",
+        "file": "posts/visteme-despacio.html",
+        "title": "Visteme despacio que la tecnología va de prisa",
+        "subtitle": "El paso firme y decidido hacia el progreso",
+        "image": "visteme-despacio.png",
+        "excerpt": "Desde que el primer rayo de sol iluminó la conciencia humana, hemos estado inmersos en una danza...",
+        "slug": "VistemeDespacio"
+    },
+    {
+        "publicationDate": "2025-06-11",
+        "file": "posts/los-dos-gimnasios.html",
+        "title": "Los dos gimnasios",
+        "subtitle": "Entrenamiento las 24/7",
+        "image": "los-dos-gimnasios.jpg",
+        "excerpt": "Tal vez esto no te lo halla dicho ningún entrenador deportivo, pero lo cierto es que cuando te inscribes o pagas la mensualidad...",
+        "slug": "LosDosGimnasios"
+    },
+    {
+        "publicationDate": "2025-07-01",
+        "title": "El Arte perdido de la comunicación en la era digital",
+        "subtitle": "Un discurso de Churchill en 280 caracteres?",
+        "file": "posts/el-arte-perdido-de-la-comunicacion-en-la-era-digital.html",
+        "image": "el-arte-perdido-de-la-comunicacion.jpg",
+        "excerpt": "La brevedad no es un atajo sino una cima que exige una escalada mas empinada",
+        "slug": "el-arte-perdido-de-la-comunicacion-en-la-era-digital"
+    },
+    {
+        "publicationDate": "2025-07-09",
+        "title": "Iniciación a la ingeniería de prompt",
+        "subtitle": "Domina la habilidad clave para desbloquear el verdadero potencial de la Inteligencia Artificial",
+        "file": "posts/guia-completa-ingenieria-prompt.html",
+        "image": "prompt-engineering-guide.jpg",
+        "excerpt": "Si alguna vez has sentido que la Inteligencia Artificial no te da exactamente lo que pides, no estás solo",
+        "slug": "guia-completa-ingenieria-prompt"
+    },
+    {
+        "publicationDate": "2025-07-16",
+        "title": "Perfeccionando la mecanografía",
+        "subtitle": "Tres Reglas de Oro para Escribir en el teclado como un Pro",
+        "file": "posts/perfeccionado-mecanografia.html",
+        "image": "perfeccionando-mecanografia.jpg",
+        "excerpt": "Aprender a escribir de forma rápida y eficiente, sin mirar el teclado y con todos los dedos, puede parecer una tarea compleja al principio",
+        "slug": "perfeccionado-mecanografia"
+    }
+    ,
+    {
+        "publicationDate": "2025-07-23",
+        "title": "El valle inquietante 2.0",
+        "subtitle": "Cuando las máquinas conversan tan bien que nos incomodan",
+        "file": "posts/el-valle-inquietante.html",
+        "image": "el-valle-inquietante.png",
+        "excerpt": "El concepto del \"Valle Inquietante\" (Uncanny Valley), acuñado por el profesor japonés Masahiro Mori en 1970, describe esa extraña sensación de incomodidad",
+        "slug": "perfeccionado-mecanografia"
+    },
+    {
+        "publicationDate": "2025-08-01",
+        "title": "Más allá del Prompt Perfecto",
+        "subtitle": "Descubre la Productividad de la Conversación Curiosa con la IA",
+        "file": "posts/mas-alla-del-prompt-perfecto.html",
+        "image": "mas-alla-del-prompt-perfecto.png",
+        "excerpt": "En la era de los Grandes Modelos de Lenguaje (LLMs) y los asistentes de IA, mucho se habla de la \"ingeniería de prompts\": la habilidad de formular la pregunta perfecta",
+        "slug": "model-context-protocol"
+    },
+    {
+        "publicationDate": "2025-08-08",
+        "title": "Navegación inteligente - Parte 1",
+        "subtitle": "Una travesía desde la intuición primitiva hasta el control del propio rumbo",
+        "file": "posts/navegacion-inteligente-uno.html",
+        "image": "navegacion-inteligente-uno.png",
+        "excerpt": "",
+        "slug": "navegacion-inteligente-uno"
+    },
+    {
+        "publicationDate": "2025-08-15",
+        "title": "Navegación inteligente - Parte 2",
+        "subtitle": "Convierte cada emoción en una oportunidad para dirigir tu propio viaje.",
+        "file": "posts/navegacion-inteligente-dos.html",
+        "image": "navegacion-inteligente-dos.png",
+        "excerpt": "",
+        "slug": "navegacion-inteligente-dos"
+    },
+    {
+        "publicationDate": "2025-08-22",
+        "title": "Subiendo la temperatura de la fiesta... y de la IA",
+        "subtitle": "Cómo un simple concepto de la termodinámica se convirtió en la clave para desatar la creatividad de la Inteligencia Artificial.",
+        "file": "posts/subiendo-la-temperatura.html",
+        "image": "subiendo-la-tempertura.png",
+        "excerpt": "",
+        "slug": "subiendo-la-tempertura"
+    },
+    {
+        "publicationDate": "2025-08-29",
+        "title": "¿Puedes dibujarlo? Entonces puedes entenderlo",
+        "subtitle": "Cómo la Visualización Impulsa tu Productividad en el Código",
+        "file": "posts/puedes-dibujarlo.html",
+        "image": "puedes-dibujarlo.png",
+        "excerpt": "",
+        "slug": "puedes-dibujarlo"
+    },
+    {
+        "publicationDate": "2025-09-05",
+        "title": "La Evolución del Teclado",
+        "subtitle": "Más que una Herramienta, una Extensión de la Productividad",
+        "file": "posts/la-evolucion-del-teclado.html",
+        "image": "Moonlander.webp",
+        "excerpt": "El teclado, esa herramienta omnipresente en nuestro trabajo diario, a menudo pasa desapercibido. Sin embargo, su diseño y evolución son cruciales para nuestra productividad y bienestar",
+        "slug": ""
+    },
+    {
+        "publicationDate": "2025-09-12",
+        "title": "Potencia tu contenido con IA",
+        "subtitle": "Cómo la Visualización Impulsa tu Productividad en el Código",
+        "file": "posts/potencia-tu-contenido-con-ia.html",
+        "image": "potencia-tu-contenido-con-ia.png",
+        "excerpt": "",
+        "slug": ""
+    }
 ]

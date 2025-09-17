@@ -1,0 +1,74 @@
+{
+    "id": "image_form",
+    "nombre": "Generador de Prompts para Imágenes (IA)",
+    "descripcion": "Crea prompts detallados para generar imágenes con modelos de IA, especificando sujeto, estilo, composición y más.",
+    "campos": [
+        {
+            "id": "subject",
+            "etiqueta": "Sujeto Principal",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Un astronauta montando a caballo en Marte, un gato cibernético en una ciudad de neón, un bosque encantado al amanecer.",
+            "requerido": true,
+            "tooltip": "Describe la idea central de la imagen. ¿Qué o quién es el protagonista?"
+        },
+        {
+            "id": "style",
+            "etiqueta": "Estilo Artístico",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Fotorrealista, pintura al óleo, arte digital, estilo Ghibli, acuarela, arte de 8-bits, modelo 3D.",
+            "requerido": false,
+            "tooltip": "Define la estética visual de la imagen."
+        },
+        {
+            "id": "composition",
+            "etiqueta": "Composición y Encuadre",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Plano general (wide shot), primer plano extremo (extreme close-up), vista desde arriba (top-down view), ángulo holandés.",
+            "requerido": false,
+            "tooltip": "Describe el tipo de plano, ángulo de la cámara y la disposición de los elementos."
+        },
+        {
+            "id": "lighting",
+            "etiqueta": "Iluminación",
+            "tipo": "text",
+            "placeholder": "Ej: Luz de atardecer, iluminación cinematográfica, neón, luz suave y difusa, claro de luna.",
+            "requerido": false,
+            "tooltip": "Describe cómo está iluminada la escena para crear una atmósfera."
+        },
+        {
+            "id": "colors",
+            "etiqueta": "Paleta de Colores",
+            "tipo": "text",
+            "placeholder": "Ej: Colores pastel, paleta vibrante y saturada, monocromático, tonos tierra.",
+            "requerido": false,
+            "tooltip": "Especifica los colores dominantes o la atmósfera cromática."
+        },
+        {
+            "id": "aspectRatio",
+            "etiqueta": "Relación de Aspecto (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: --ar 16:9, --ar 1:1, --ar 2:3",
+            "requerido": false,
+            "tooltip": "Formato de la imagen. Usa la sintaxis de tu herramienta preferida (ej. Midjourney)."
+        },
+        {
+            "id": "negativePrompt",
+            "etiqueta": "Prompt Negativo (Qué evitar)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: --no texto, manos feas, mala anatomía, borroso, marcas de agua.",
+            "requerido": false,
+            "tooltip": "Indica elementos que no deben aparecer en la imagen."
+        }
+    ],
+    "plantilla_prompt": "{{subject}}{{#if style}}, in the style of {{style}}{{/if}}{{#if composition}}, {{composition}}{{/if}}{{#if lighting}}, {{lighting}}{{/if}}{{#if colors}}, {{colors}} color palette{{/if}}. {{#if negativePrompt}}{{negativePrompt}}{{/if}} {{#if aspectRatio}}{{aspectRatio}}{{/if}}",
+    "suggestedTools": [
+        { "name": "Midjourney", "url": "https://www.midjourney.com/" },
+        { "name": "DALL-E 3", "url": "https://openai.com/dall-e-3" },
+        { "name": "Stable Diffusion", "url": "https://stablediffusionweb.com/" },
+        { "name": "Ideogram", "url": "https://ideogram.ai/" }
+    ]
+}

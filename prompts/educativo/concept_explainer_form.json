@@ -1,0 +1,58 @@
+{
+    "id": "concept_explainer_form",
+    "nombre": "Explicador de Conceptos",
+    "descripcion": "Obtén una explicación clara y a medida sobre cualquier tema, definiendo el rol del experto y el público objetivo.",
+    "campos": [
+        {
+            "id": "conceptToExplain",
+            "etiqueta": "Concepto que Quieres Entender",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Agujeros negros, inflación económica, la paradoja del abuelo, cómo funciona el DNS.",
+            "requerido": true,
+            "tooltip": "El tema o concepto específico que necesitas que te expliquen."
+        },
+        {
+            "id": "expertRole",
+            "etiqueta": "Rol del Experto que Explica",
+            "tipo": "text",
+            "placeholder": "Ej: Un físico para niños, un economista para principiantes, un historiador amigable.",
+            "requerido": true,
+            "tooltip": "Define la personalidad o el rol que debe adoptar la IA para explicar."
+        },
+        {
+            "id": "targetAudience",
+            "etiqueta": "Público Objetivo de la Explicación",
+            "tipo": "text",
+            "placeholder": "Ej: Un niño de 10 años, un estudiante universitario, un profesional de otro campo.",
+            "requerido": true,
+            "tooltip": "Define para quién es la explicación para ajustar la complejidad."
+        },
+        {
+            "id": "explanationDepth",
+            "etiqueta": "Nivel de Profundidad",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "simple y concisa", "texto": "Simple y Concisa", "selected": true },
+                { "valor": "detallada con ejemplos concretos", "texto": "Detallada con Ejemplos" },
+                { "valor": "profunda y técnica, incluyendo los fundamentos", "texto": "Profunda y Técnica" }
+            ],
+            "tooltip": "Elige qué tan a fondo quieres que sea la explicación."
+        },
+        {
+            "id": "includeAnalogy",
+            "etiqueta": "Incluir una Analogía",
+            "tipo": "checkbox",
+            "opciones": [
+                { "valor": "true", "texto": "Sí, usa una analogía fácil de entender." }
+            ],
+            "tooltip": "Marca esta casilla si quieres que la IA use una analogía para simplificar el concepto."
+        }
+    ],
+    "plantilla_prompt": "Actúa como {{expertRole}}. Tu tarea es explicar un concepto complejo de una manera que sea perfectamente comprensible para un público específico.\n\n**Información para la Explicación:**\n- **Concepto a Explicar:** {{conceptToExplain}}\n- **Público Objetivo:** {{targetAudience}}\n- **Nivel de Profundidad Requerido:** {{explanationDepth}}\n\n**Tarea:**\nExplica el concepto de \"{{conceptToExplain}}\". Adapta tu lenguaje, tono y ejemplos para que sean apropiados para {{targetAudience}}. {{#if includeAnalogy}}Asegúrate de incluir una analogía clara y efectiva para facilitar la comprensión.{{/if}} La explicación debe ser precisa, atractiva y cumplir con el nivel de profundidad solicitado.",
+    "suggestedTools": [
+        { "name": "Wikipedia", "url": "https://www.wikipedia.org/" },
+        { "name": "Khan Academy", "url": "https://www.khanacademy.org/" },
+        { "name": "YouTube", "url": "https://www.youtube.com/" }
+    ]
+}

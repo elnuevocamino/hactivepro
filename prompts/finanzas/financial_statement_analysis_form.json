@@ -1,0 +1,50 @@
+{
+    "id": "financial_statement_analysis_form",
+    "nombre": "Análisis de Estados Financieros",
+    "descripcion": "Analiza estados financieros como el de Resultados (P&G) o el Balance General y obtén insights y ratios clave.",
+    "campos": [
+        {
+            "id": "companyName",
+            "etiqueta": "Nombre de la Empresa y Período",
+            "tipo": "text",
+            "placeholder": "Ej: Acme Corp - Año Fiscal 2023",
+            "requerido": true,
+            "tooltip": "Identifica la empresa y el período del estado financiero."
+        },
+        {
+            "id": "statementType",
+            "etiqueta": "Tipo de Estado Financiero",
+            "tipo": "select",
+            "tooltip": "Elige el tipo de documento que vas a analizar.",
+            "opciones": [
+                { "valor": "Estado de Resultados (P&G)", "texto": "Estado de Resultados (P&G)", "selected": true },
+                { "valor": "Balance General", "texto": "Balance General" },
+                { "valor": "Estado de Flujo de Efectivo", "texto": "Estado de Flujo de Efectivo" }
+            ]
+        },
+        {
+            "id": "financialData",
+            "etiqueta": "Datos del Estado Financiero",
+            "tipo": "textarea",
+            "filas": 10,
+            "placeholder": "Pega aquí los datos del estado financiero. Puedes usar un formato de tabla simple o texto plano.",
+            "requerido": true,
+            "tooltip": "Copia y pega el contenido del estado financiero que quieres analizar."
+        },
+        {
+            "id": "analysisRequest",
+            "etiqueta": "Análisis Específico Requerido (opcional)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Calcular el margen bruto, ratio de endeudamiento y ROE.\nRealizar un análisis vertical.\nIdentificar 3 tendencias clave.",
+            "requerido": false,
+            "tooltip": "Especifica qué ratios, métricas o insights quieres obtener."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un analista financiero senior. Realiza un análisis del siguiente estado financiero.\n\n**Empresa y Período:** {{companyName}}\n**Tipo de Estado:** {{statementType}}\n\n**Datos Financieros:**\n```\n{{financialData}}\n```\n\n**Tarea de Análisis:**\n1. Revisa los datos proporcionados para asegurar su coherencia.\n2. {{#if analysisRequest}}Realiza el siguiente análisis específico:\n{{analysisRequest}}\n{{else}}Realiza un análisis completo que incluya los ratios financieros más relevantes para este tipo de estado, un análisis vertical/horizontal y un resumen ejecutivo con los principales hallazgos y conclusiones.{{/if}}\n\nPresenta los resultados de forma clara y estructurada.",
+    "suggestedTools": [
+        { "name": "Microsoft Excel", "url": "https://www.microsoft.com/excel" },
+        { "name": "Google Sheets", "url": "https://sheets.google.com/" },
+        { "name": "Yahoo Finance", "url": "https://finance.yahoo.com/" }
+    ]
+}

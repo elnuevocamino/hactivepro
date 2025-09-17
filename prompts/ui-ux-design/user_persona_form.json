@@ -1,0 +1,73 @@
+{
+    "id": "user_persona_form",
+    "nombre": "Generador de Perfiles de Usuario (Persona)",
+    "descripcion": "Crea perfiles de usuario detallados para entender mejor a tu público objetivo y guiar el diseño.",
+    "campos": [
+        {
+            "id": "productName",
+            "etiqueta": "Producto o Servicio",
+            "tipo": "text",
+            "placeholder": "Ej: App de gestión de tareas, E-commerce de moda",
+            "requerido": true,
+            "tooltip": "El producto para el cual estás creando este perfil de usuario."
+        },
+        {
+            "id": "audienceDescription",
+            "etiqueta": "Descripción General del Público Objetivo",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Jóvenes profesionales que trabajan de forma remota, estudiantes universitarios con poco tiempo",
+            "requerido": true,
+            "tooltip": "Una descripción amplia del grupo de usuarios."
+        },
+        {
+            "id": "userGoals",
+            "etiqueta": "Metas y Necesidades Principales del Usuario",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Organizar sus tareas diarias, encontrar ropa de calidad a buen precio, aprender una nueva habilidad",
+            "requerido": true,
+            "tooltip": "¿Qué quiere lograr el usuario?"
+        },
+        {
+            "id": "userFrustrations",
+            "etiqueta": "Frustraciones y Puntos de Dolor",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Se siente abrumado por demasiadas herramientas, no encuentra ropa que se ajuste a su estilo, los cursos online son muy caros",
+            "requerido": true,
+            "tooltip": "¿Qué problemas o molestias enfrenta el usuario actualmente?"
+        },
+        {
+            "id": "demographicsAge",
+            "etiqueta": "Rango de Edad (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: 25-35 años",
+            "requerido": false
+        },
+        {
+            "id": "demographicsOccupation",
+            "etiqueta": "Ocupación (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Diseñador Gráfico, Estudiante de Medicina",
+            "requerido": false
+        },
+        {
+            "id": "demographicsTechSavvy",
+            "etiqueta": "Nivel de Habilidad Tecnológica (Opcional)",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "", "texto": "(No especificar)", "selected": true },
+                { "valor": "bajo", "texto": "Bajo" },
+                { "valor": "intermedio", "texto": "Intermedio" },
+                { "valor": "alto", "texto": "Alto" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un investigador de UX y estratega de producto. Tu tarea es crear un perfil de usuario (persona) detallado y realista basado en la siguiente información. Este perfil ayudará a guiar las decisiones de diseño y desarrollo.\n\n**Producto/Servicio:**\n{{productName}}\n\n**Descripción del Público Objetivo:**\n{{audienceDescription}}\n\n**Información Clave del Usuario:**\n- **Metas y Necesidades:** {{userGoals}}\n- **Frustraciones y Puntos de Dolor:** {{userFrustrations}}\n\n{{#if demographicsAge}}**Datos Demográficos:**\n- **Edad:** {{demographicsAge}}\n{{/if}}{{#if demographicsOccupation}}- **Ocupación:** {{demographicsOccupation}}\n{{/if}}{{#if demographicsTechSavvy}}- **Habilidad Tecnológica:** {{demographicsTechSavvy}}\n{{/if}}\n\n**Tarea:**\nGenera un perfil de usuario completo. Asígnale un nombre ficticio y una foto (descripción de la foto). Luego, crea una narrativa en primera persona que describa un día en su vida, sus motivaciones, cómo interactúa con la tecnología y cómo el producto/servicio podría encajar en su vida. Finalmente, resume sus datos en una ficha de persona que incluya:\n1.  Nombre y Foto (descripción).\n2.  Cita clave que resuma su actitud.\n3.  Biografía breve.\n4.  Metas (3-4 puntos).\n5.  Frustraciones (3-4 puntos).\n6.  Motivaciones.",
+    "suggestedTools": [
+        { "name": "Figma", "url": "https://www.figma.com/" },
+        { "name": "Miro", "url": "https://miro.com/" },
+        { "name": "Xtensio", "url": "https://xtensio.com/user-persona-creator/" }
+    ]
+}

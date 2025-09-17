@@ -1,0 +1,78 @@
+{
+    "id": "entity_generator_form",
+    "nombre": "Generador de Entidades de Datos (Clases/Modelos)",
+    "descripcion": "Define y genera clases o modelos de datos para diferentes lenguajes, especificando atributos y tipos.",
+    "campos": [
+        {
+            "id": "programmingLanguage",
+            "etiqueta": "Lenguaje de Programación / Framework",
+            "tipo": "select",
+            "tooltip": "Elige el lenguaje o framework para el que quieres generar la entidad.",
+            "opciones": [
+                { "valor": "Python (dataclass)", "texto": "Python (dataclass)", "selected": true },
+                { "valor": "Java (JPA Entity)", "texto": "Java (JPA Entity)" },
+                { "valor": "TypeScript (interface)", "texto": "TypeScript (interface)" },
+                { "valor": "C# (Entity Framework)", "texto": "C# (Entity Framework)" },
+                { "valor": "JavaScript (class)", "texto": "JavaScript (class)" }
+            ]
+        },
+        {
+            "id": "entityName",
+            "etiqueta": "Nombre de la Entidad/Clase",
+            "tipo": "text",
+            "placeholder": "Ej: Usuario, Producto, Pedido",
+            "requerido": true,
+            "tooltip": "El nombre de la clase o modelo que se va a generar."
+        },
+        {
+            "id": "entityAttributes",
+            "etiqueta": "Atributos de la Entidad",
+            "tipo": "table",
+            "texto_boton_anadir": "Añadir Atributo",
+            "tooltip": "Define los campos que tendrá tu entidad, su tipo de dato y propiedades.",
+            "columnas": [
+                {
+                    "id": "attributeName",
+                    "etiqueta": "Nombre Atributo",
+                    "tipo": "text",
+                    "placeholder": "Ej: id, nombre, email",
+                    "requerido": true
+                },
+                {
+                    "id": "dataType",
+                    "etiqueta": "Tipo de Dato",
+                    "tipo": "text",
+                    "placeholder": "Ej: int, String, boolean",
+                    "requerido": true
+                },
+                {
+                    "id": "isNullable",
+                    "etiqueta": "¿Nulable?",
+                    "tipo": "checkbox"
+                },
+                {
+                    "id": "isPrimaryKey",
+                    "etiqueta": "¿PK?",
+                    "tipo": "checkbox"
+                }
+            ]
+        },
+        {
+            "id": "includeMethods",
+            "etiqueta": "Métodos Adicionales a Incluir",
+            "tipo": "checkbox-group",
+            "tooltip": "Selecciona los métodos comunes que quieres que se generen.",
+            "opciones": [
+                { "valor": "un constructor con todos los campos", "texto": "Constructor" },
+                { "valor": "getters y setters para cada atributo", "texto": "Getters y Setters" },
+                { "valor": "un método toString()", "texto": "Método toString()" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un ingeniero de software senior experto en {{programmingLanguage}} y diseño de modelos de datos. Tu tarea es generar el código para una clase/modelo de datos.\n\n**Nombre de la Entidad:** {{entityName}}\n**Lenguaje/Framework:** {{programmingLanguage}}\n\n**Atributos de la Entidad:**\n{{#each entityAttributes}}\n- **Nombre:** `{{this.attributeName}}`, **Tipo:** `{{this.dataType}}`{{#if this.isPrimaryKey}}, **(Clave Primaria)**{{/if}}{{#if this.isNullable}}, **(Admite nulos)**{{/if}}\n{{/each}}\n\n{{#if includeMethods}}**Métodos a Incluir:**\n{{{includeMethods}}}\n{{/if}}\n\n**Instrucciones:**\nGenera el código completo para la clase `{{entityName}}`. El código debe ser limpio, seguir las convenciones de nomenclatura de {{programmingLanguage}} y estar listo para ser usado. Añade la documentación o anotaciones apropiadas para cada atributo (ej: `@Id`, `@Column` en Java; decoradores en C# o Python) según corresponda para el framework especificado. Genera únicamente el bloque de código, sin explicaciones adicionales fuera del código.",
+    "suggestedTools": [
+        { "name": "VS Code", "url": "https://code.visualstudio.com/" },
+        { "name": "IntelliJ IDEA", "url": "https://www.jetbrains.com/idea/" },
+        { "name": "Replit", "url": "https://replit.com/" }
+    ]
+}

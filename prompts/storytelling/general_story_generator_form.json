@@ -1,0 +1,65 @@
+{
+    "id": "general_story_generator_form",
+    "nombre": "Cuentacuentos General",
+    "descripcion": "Genera historias de cualquier tipo, definiendo el tema, público y tono para capturar la imaginación.",
+    "campos": [
+        {
+            "id": "storyTopic",
+            "etiqueta": "Tema Principal o Moraleja de la Historia",
+            "tipo": "text",
+            "placeholder": "Ej: La perseverancia, la importancia de la amistad",
+            "requerido": true,
+            "tooltip": "El mensaje o idea central que quieres que la historia transmita."
+        },
+        {
+            "id": "storyType",
+            "etiqueta": "Tipo de Historia",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "un cuento de hadas", "texto": "Cuento de Hadas", "selected": true },
+                { "valor": "una fábula con animales", "texto": "Fábula con Animales" },
+                { "valor": "una historia educativa", "texto": "Historia Educativa" },
+                { "valor": "un relato de misterio", "texto": "Relato de Misterio" },
+                { "valor": "una leyenda histórica", "texto": "Leyenda Histórica" },
+                { "valor": "un cuento de ciencia ficción corto", "texto": "Cuento de Ciencia Ficción" }
+            ],
+            "tooltip": "Elige el formato o estilo general de la historia."
+        },
+        {
+            "id": "storyAudience",
+            "etiqueta": "Público Objetivo",
+            "tipo": "text",
+            "placeholder": "Ej: Niños de 5 a 8 años, adultos jóvenes, toda la familia",
+            "requerido": false,
+            "tooltip": "Define para quién está escrita la historia."
+        },
+        {
+            "id": "storyElements",
+            "etiqueta": "Elementos o Personajes a Incluir (Opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Un zorro astuto, un robot con sentimientos, un castillo abandonado",
+            "requerido": false,
+            "tooltip": "Menciona cualquier elemento que deba aparecer en la historia."
+        },
+        {
+            "id": "storyTone",
+            "etiqueta": "Tono de la Historia",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "inspirador y optimista", "texto": "Inspirador y Optimista", "selected": true },
+                { "valor": "misterioso y lleno de suspense", "texto": "Misterioso y con Suspense" },
+                { "valor": "divertido y ligero", "texto": "Divertido y Ligero" },
+                { "valor": "conmovedor y emocional", "texto": "Conmovedor y Emocional" },
+                { "valor": "épico y grandioso", "texto": "Épico y Grandioso" }
+            ],
+            "tooltip": "Elige la atmósfera o el sentimiento que debe evocar la historia."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un cuentacuentos universal, capaz de tejer historias que cautivan a cualquier audiencia. Tu tarea es crear una historia original basada en los siguientes elementos:\n\n- **Tipo de Historia:** {{storyType}}\n- **Tema Principal/Moraleja:** {{storyTopic}}\n- **Tono Deseado:** {{storyTone}}\n{{#if storyAudience}}- **Público Objetivo:** {{storyAudience}}\n{{/if}}{{#if storyElements}}- **Elementos a Incluir:** {{storyElements}}\n{{/if}}\n\n**Tarea:**\nEscribe una historia completa que incorpore todos los elementos solicitados. La historia debe tener un principio, un desarrollo y un final claros. Asegúrate de que la moraleja o el tema principal se transmita de manera efectiva a través de la narrativa. El lenguaje y la complejidad deben ser apropiados para el público objetivo especificado.",
+    "suggestedTools": [
+        { "name": "Notion", "url": "https://www.notion.so/" },
+        { "name": "Google Docs", "url": "https://docs.google.com/" },
+        { "name": "Milanote", "url": "https://milanote.com/" }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "id": "form_design_form",
+    "nombre": "Diseñador de Formularios (UI/UX)",
+    "descripcion": "Genera prompts para diseñar maquetas de formularios de datos, especificando campos, controles y formato de salida.",
+    "campos": [
+        {
+            "id": "formPurpose",
+            "etiqueta": "Propósito del Formulario",
+            "tipo": "text",
+            "placeholder": "Ej: Registro de nuevos usuarios, Formulario de contacto, Proceso de pago",
+            "requerido": true,
+            "tooltip": "Describe para qué se utilizará este formulario."
+        },
+        {
+            "id": "formFields",
+            "etiqueta": "Campos del Formulario",
+            "tipo": "table",
+            "texto_boton_anadir": "Añadir Campo",
+            "tooltip": "Define cada uno de los campos que el formulario debe contener.",
+            "columnas": [
+                {
+                    "id": "fieldName",
+                    "etiqueta": "Nombre del Campo",
+                    "tipo": "text",
+                    "placeholder": "Ej: Nombre completo, Correo electrónico",
+                    "requerido": true
+                },
+                {
+                    "id": "fieldType",
+                    "etiqueta": "Tipo de Control",
+                    "tipo": "select",
+                    "opciones": [
+                        { "valor": "Caja de texto (text)", "texto": "Texto", "selected": true },
+                        { "valor": "Caja de texto para email (email)", "texto": "Email" },
+                        { "valor": "Caja de texto para contraseña (password)", "texto": "Contraseña" },
+                        { "valor": "Área de texto (textarea)", "texto": "Área de texto" },
+                        { "valor": "Menú desplegable (select)", "texto": "Desplegable" },
+                        { "valor": "Casilla de verificación (checkbox)", "texto": "Checkbox" },
+                        { "valor": "Botón de opción (radio)", "texto": "Radio" },
+                        { "valor": "Selector de fecha (date)", "texto": "Fecha" }
+                    ]
+                },
+                {
+                    "id": "isRequired",
+                    "etiqueta": "¿Requerido?",
+                    "tipo": "checkbox"
+                }
+            ]
+        },
+        {
+            "id": "designStyle",
+            "etiqueta": "Estilo de Diseño Preferido",
+            "tipo": "text",
+            "placeholder": "Ej: Minimalista, Material Design, Neumorfismo, Brutalista",
+            "requerido": false,
+            "tooltip": "Si tienes una preferencia de estilo visual, indícala aquí."
+        },
+        {
+            "id": "outputFormat",
+            "etiqueta": "Formato de Salida Deseado",
+            "tipo": "select",
+            "tooltip": "Elige cómo quieres que se presente el diseño del formulario.",
+            "opciones": [
+                { "valor": "una descripción detallada de la estructura y el flujo del usuario", "texto": "Descripción Detallada (UI/UX)", "selected": true },
+                { "valor": "el código HTML y CSS básico para una maqueta funcional", "texto": "Código HTML/CSS" },
+                { "valor": "una lista de recomendaciones de usabilidad y mejores prácticas para este formulario", "texto": "Análisis de Usabilidad" }
+            ]
+        },
+        {
+            "id": "additionalNotes",
+            "etiqueta": "Notas Adicionales",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: El formulario debe ser accesible (WCAG 2.1). Incluir validación en tiempo real. El botón de envío debe estar deshabilitado hasta que se completen los campos requeridos.",
+            "requerido": false,
+            "tooltip": "Cualquier otro requisito, como accesibilidad, validación, etc."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un experto diseñador de UI/UX especializado en la creación de formularios usables y eficientes. Tu tarea es diseñar un formulario basado en los siguientes requisitos:\n\n**Propósito del Formulario:**\n{{formPurpose}}\n\n**Campos Requeridos:**\n{{#each formFields}}\n- **Campo:** {{this.fieldName}}, **Tipo:** {{this.fieldType}}{{#if this.isRequired}}, **(Requerido)**{{/if}}\n{{/each}}\n\n{{#if designStyle}}**Estilo de Diseño Preferido:**\n{{designStyle}}\n{{/if}}\n\n{{#if additionalNotes}}**Requisitos Adicionales:**\n{{additionalNotes}}\n{{/if}}\n\n**Tarea:**\nGenera {{outputFormat}}. El diseño debe priorizar la claridad, la facilidad de uso y una experiencia de usuario positiva. Considera las mejores prácticas de diseño de formularios, como etiquetas claras, mensajes de error útiles y una disposición lógica de los campos.",
+    "suggestedTools": [
+        { "name": "Figma", "url": "https://www.figma.com/" },
+        { "name": "Adobe XD", "url": "https://www.adobe.com/products/xd.html" },
+        { "name": "Sketch", "url": "https://www.sketch.com/" }
+    ]
+}

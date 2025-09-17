@@ -1,191 +1,534 @@
 [
     {
-        "id": "blog_form",
-        "categoryId": "contenido-escrito",
-        "title": "Artículos de Blog (SEO)",
-        "description": "Genera prompts optimizados para la creación de artículos de blog con IA, incluyendo SEO y estructura.",
-        "customPagePath": "/content/prompts/custom/blog_form.html"
+        "id": "chart_generator_form",
+        "title": "Generador de Gráficos",
+        "description": "Crea prompts para generar código de visualizaciones de datos como gráficos de barras, líneas, etc.",
+        "categoryId": "analisis-datos",
+        "templatedJsonPath": "/prompts/analisis-datos/chart_generator_form.json"
     },
     {
-        "id": "book_generator_form",
-        "categoryId": "contenido-escrito",
-        "title": "Generador de Contenido para Libros",
-        "description": "Crea prompts para desarrollar la trama, personajes y estructura de un libro.",
-        "customPagePath": "/content/prompts/custom/book_generator_form.html"
+        "id": "data_interpretation_form",
+        "title": "Intérprete de Conjuntos de Datos",
+        "description": "Obtén un análisis e interpretación experta de tus datos, respondiendo preguntas clave y generando insights.",
+        "categoryId": "analisis-datos",
+        "templatedJsonPath": "/prompts/analisis-datos/data_interpretation_form.json"
     },
     {
-        "id": "poem_lyrics_form",
-        "categoryId": "contenido-escrito",
-        "title": "Generador de Poesía y Letras de Canciones",
-        "description": "Crea prompts para escribir poemas o letras de canciones, definiendo el tema, el estilo y la estructura.",
-        "customPagePath": "/content/prompts/custom/poem_lyrics_form.html"
+        "id": "web_data_scraper_form",
+        "title": "Buscador de Datos Web",
+        "description": "Genera prompts para buscar y extraer datos específicos de la web, definiendo fuentes, filtros y formato.",
+        "categoryId": "analisis-datos",
+        "templatedJsonPath": "/prompts/analisis-datos/web_data_scraper_form.json"
     },
     {
-        "id": "product_description_form",
-        "categoryId": "contenido-escrito",
-        "title": "Generador de Descripciones de Productos",
-        "description": "Crea prompts para redactar descripciones de productos persuasivas y optimizadas para e-commerce.",
-        "customPagePath": "/content/prompts/custom/product_description_form.html"
+        "id": "probability_stats_form",
+        "title": "Calculador de Probabilidad y Estadística",
+        "description": "Realiza cálculos estadísticos y de probabilidad, desde distribuciones hasta pruebas de hipótesis.",
+        "categoryId": "analisis-datos",
+        "templatedJsonPath": "/prompts/analisis-datos/probability_stats_form.json"
     },
     {
-        "id": "email_writer_form",
-        "categoryId": "contenido-escrito",
-        "title": "Redactor de Emails Profesionales",
-        "description": "Crea prompts para redactar emails efectivos para diferentes propósitos, desde marketing hasta comunicación interna.",
-        "customPagePath": "/content/prompts/custom/email_writer_form.html"
+        "id": "chart_data_extractor_form",
+        "title": "Extractor de Datos de Gráficos",
+        "description": "Extrae datos numéricos de una imagen de un gráfico y los presenta en un formato estructurado.",
+        "categoryId": "analisis-datos",
+        "templatedJsonPath": "/prompts/analisis-datos/chart_data_extractor_form.json"
     },
     {
-        "id": "advertising_campaign_form",
-        "categoryId": "marketing",
-        "title": "Diseñador de Campañas Publicitarias",
-        "description": "Crea prompts para desarrollar conceptos creativos y estrategias para campañas publicitarias completas.",
-        "customPagePath": "/content/prompts/custom/advertising_campaign_form.html"
-    },
-    {
-        "id": "ad_copy_form",
-        "categoryId": "marketing",
-        "title": "Generador de Textos para Anuncios (Copywriting)",
-        "description": "Crea textos (copy) persuasivos para anuncios en diferentes plataformas como Google Ads, Facebook, etc.",
-        "customPagePath": "/content/prompts/custom/ad_copy_form.html"
-    },
-    {
-        "id": "ad_platform_selector_form",
-        "categoryId": "marketing",
-        "title": "Selector de Plataforma Publicitaria",
-        "description": "Recibe una recomendación de las mejores plataformas publicitarias para tu campaña basada en tu público y objetivos.",
-        "customPagePath": "/content/prompts/custom/ad_platform_selector_form.html"
-    },
-    {
-        "id": "value_proposition_form",
-        "categoryId": "marketing",
-        "title": "Creador de Ofertas de Valor",
-        "description": "Define y redacta una propuesta de valor irresistible que conecte con tu público y destaque sobre la competencia.",
-        "customPagePath": "/content/prompts/custom/value_proposition_form.html"
-    },
-    {
-        "id": "social_media_form",
-        "categoryId": "marketing",
-        "title": "Publicaciones para Redes Sociales",
-        "description": "Crea prompts para posts impactantes en diversas plataformas de redes sociales.",
-        "customPagePath": "/content/prompts/custom/social_media_form.html"
+        "id": "data_cleaning_form",
+        "title": "Generador de Script de Limpieza de Datos",
+        "description": "Crea un script de Python (Pandas) para limpiar y preprocesar datos, manejando valores nulos, duplicados y más.",
+        "categoryId": "analisis-datos",
+        "templatedJsonPath": "/prompts/analisis-datos/data_cleaning_form.json"
     },
     {
         "id": "image_form",
         "categoryId": "arte-digital",
         "title": "Generador de Prompts para Imágenes (IA)",
-        "description": "Crea prompts detallados para generar imágenes con modelos de IA como Midjourney o DALL-E.",
-        "customPagePath": "/content/prompts/custom/image_form.html"
+        "description": "Crea prompts detallados para generar imágenes con modelos de IA, especificando sujeto, estilo, composición y más.",
+        "templatedJsonPath": "/prompts/arte-digital/image_form.json"
     },
     {
         "id": "logo_design_form",
         "categoryId": "arte-digital",
         "title": "Generador de Prompts para Logos",
         "description": "Crea prompts detallados para diseñar logos únicos y profesionales para marcas o proyectos.",
-        "customPagePath": "/content/prompts/custom/logo_design_form.html"
+        "templatedJsonPath": "/prompts/arte-digital/logo_design_form.json"
     },
     {
         "id": "video_script_form",
         "categoryId": "arte-digital",
         "title": "Generador de Guiones para Video",
         "description": "Crea prompts para desarrollar guiones completos para videos (YouTube, TikTok, etc.), incluyendo estructura y tono.",
-        "customPagePath": "/content/prompts/custom/video_script_form.html"
+        "templatedJsonPath": "/prompts/arte-digital/video_script_form.json"
     },
     {
         "id": "instagram_post_form",
         "categoryId": "arte-digital",
         "title": "Generador de Contenido para Instagram",
         "description": "Crea prompts para planificar posts de Instagram (carruseles, Reels, etc.) enfocados en el contenido visual y el copy.",
-        "customPagePath": "/content/prompts/custom/instagram_post_form.html"
+        "templatedJsonPath": "/prompts/arte-digital/instagram_post_form.json"
+    },
+    {
+        "id": "blog_form",
+        "categoryId": "contenido-escrito",
+        "title": "Artículos de Blog (SEO)",
+        "description": "Genera prompts optimizados para la creación de artículos de blog con IA, incluyendo SEO y estructura.",
+        "templatedJsonPath": "/prompts/contenido-escrito/blog_form.json"
+    },
+    {
+        "id": "book_generator_form",
+        "categoryId": "contenido-escrito",
+        "title": "Generador de Contenido para Libros",
+        "description": "Crea prompts para desarrollar la trama, personajes y estructura de un libro.",
+        "templatedJsonPath": "/prompts/contenido-escrito/book_generator_form.json"
+    },
+    {
+        "id": "poem_lyrics_form",
+        "categoryId": "contenido-escrito",
+        "title": "Generador de Poesía y Letras de Canciones",
+        "description": "Crea prompts para escribir poemas o letras de canciones, definiendo el tema, el estilo y la estructura.",
+        "templatedJsonPath": "/prompts/contenido-escrito/poem_lyrics_form.json"
+    },
+    {
+        "id": "product_description_form",
+        "categoryId": "contenido-escrito",
+        "title": "Generador de Descripciones de Productos",
+        "description": "Crea prompts para redactar descripciones de productos persuasivas y optimizadas para e-commerce.",
+        "templatedJsonPath": "/prompts/contenido-escrito/product_description_form.json"
+    },
+    {
+        "id": "email_writer_form",
+        "categoryId": "contenido-escrito",
+        "title": "Redactor de Emails Profesionales",
+        "description": "Crea prompts para redactar emails efectivos para diferentes propósitos, desde marketing hasta comunicación interna.",
+        "templatedJsonPath": "/prompts/contenido-escrito/email_writer_form.json"
+    },
+    {
+        "id": "cash_flow_projector_form",
+        "title": "Proyector de Flujo de Caja",
+        "description": "Genera una proyección de flujo de caja detallada basada en tus ingresos, egresos y supuestos.",
+        "categoryId": "finanzas",
+        "templatedJsonPath": "/prompts/finanzas/cash_flow_projector_form.json"
+    },
+    {
+        "id": "account_balance_projector_form",
+        "title": "Proyector de Saldos de Cuentas",
+        "description": "Proyecta el saldo de una cuenta bancaria basado en ingresos y gastos recurrentes y puntuales.",
+        "categoryId": "finanzas",
+        "templatedJsonPath": "/prompts/finanzas/account_balance_projector_form.json"
+    },
+    {
+        "id": "advanced_finance_calculator_form",
+        "title": "Calculadora Financiera Avanzada",
+        "description": "Calcula métricas de inversión como el Valor Presente Neto (VPN/NPV) y la Tasa Interna de Retorno (TIR/IRR).",
+        "categoryId": "finanzas",
+        "templatedJsonPath": "/prompts/finanzas/advanced_finance_calculator_form.json"
+    },
+    {
+        "id": "financial_statement_analysis_form",
+        "title": "Análisis de Estados Financieros",
+        "description": "Analiza estados financieros como el de Resultados (P&G) o el Balance General y obtén insights y ratios clave.",
+        "categoryId": "finanzas",
+        "templatedJsonPath": "/prompts/finanzas/financial_statement_analysis_form.json"
+    },
+    {
+        "id": "market_trend_analysis_form",
+        "title": "Análisis de Tendencias de Mercado",
+        "description": "Analiza tendencias de activos financieros (acciones, divisas, etc.) usando análisis técnico y fundamental.",
+        "categoryId": "finanzas",
+        "templatedJsonPath": "/prompts/finanzas/market_trend_analysis_form.json"
+    },
+    {
+        "id": "loan_amortization_form",
+        "title": "Plan de Amortización de Deuda",
+        "description": "Genera una tabla de amortización detallada para un préstamo, mostrando pagos, intereses y capital.",
+        "categoryId": "finanzas",
+        "templatedJsonPath": "/prompts/finanzas/loan_amortization_form.json"
+    },
+    {
+        "id": "budget_planner_form",
+        "title": "Planificador de Presupuesto",
+        "description": "Crea un presupuesto personal o familiar detallado, aplicando reglas como la 50/30/20 para organizar tus finanzas.",
+        "categoryId": "finanzas",
+        "templatedJsonPath": "/prompts/finanzas/budget_planner_form.json"
+    },
+    {
+        "id": "automatic_framework_form",
+        "title": "Framework AUTOMATIC",
+        "description": "Genera prompts complejos usando el framework AUTOMATIC para obtener resultados precisos de la IA.",
+        "categoryId": "genericos-ai",
+        "templatedJsonPath": "/prompts/genericos-ai/automatic_framework_form.json"
+    },
+    {
+        "id": "co_star_framework_form",
+        "title": "Framework CO-STAR",
+        "description": "Genera prompts efectivos usando el framework CO-STAR (Contexto, Objetivo, Estilo, Tono, Audiencia, Respuesta).",
+        "categoryId": "genericos-ai",
+        "templatedJsonPath": "/prompts/genericos-ai/co_star_framework_form.json"
+    },
+    {
+        "id": "rtft_framework_form",
+        "title": "Framework RTFT",
+        "description": "Genera prompts concisos usando el framework RTFT (Rol, Tarea, Formato, Tono).",
+        "categoryId": "genericos-ai",
+        "templatedJsonPath": "/prompts/genericos-ai/rtft_framework_form.json"
+    },
+    {
+        "id": "pgcf_framework_form",
+        "title": "Framework PGCF",
+        "description": "Genera prompts claros usando el framework PGCF (Persona, Meta, Contexto, Formato).",
+        "categoryId": "genericos-ai",
+        "templatedJsonPath": "/prompts/genericos-ai/pgcf_framework_form.json"
+    },
+    {
+        "id": "icep_framework_form",
+        "title": "Framework ICEP",
+        "description": "Genera prompts con el framework ICEP (Instrucción, Contexto, Ejemplo, Persona) para tareas específicas.",
+        "categoryId": "genericos-ai",
+        "templatedJsonPath": "/prompts/genericos-ai/icep_framework_form.json"
+    },
+    {
+        "id": "crispe_framework_form",
+        "title": "Framework CRISPE",
+        "description": "Genera prompts detallados con el framework CRISPE (Capacidad, Petición, Insight, Estilo, Persona, Experimento).",
+        "categoryId": "genericos-ai",
+        "templatedJsonPath": "/prompts/genericos-ai/crispe_framework_form.json"
+    },
+    {
+        "id": "company_name_generator_form",
+        "title": "Generador de Nombres de Empresa",
+        "description": "Crea nombres únicos y memorables para tu nuevo negocio o proyecto basados en su esencia y mercado.",
+        "categoryId": "ideas-creativas",
+        "templatedJsonPath": "/prompts/ideas-creativas/company_name_generator_form.json"
+    },
+    {
+        "id": "brainstorming_form",
+        "title": "Generador de Tormenta de Ideas",
+        "description": "Genera una lista de ideas creativas sobre un tema específico, definiendo el enfoque y el formato.",
+        "categoryId": "ideas-creativas",
+        "templatedJsonPath": "/prompts/ideas-creativas/brainstorming_form.json"
+    },
+    {
+        "id": "problem_solving_form",
+        "title": "Solucionador de Problemas",
+        "description": "Aplica técnicas estructuradas como los 5 Porqués o los 6 Sombreros para analizar y resolver problemas complejos.",
+        "categoryId": "ideas-creativas",
+        "templatedJsonPath": "/prompts/ideas-creativas/problem_solving_form.json"
+    },
+    {
+        "id": "startup_plan_form",
+        "title": "Generador de Plan de Startup",
+        "description": "Esboza un plan de negocios inicial para una nueva startup, definiendo el problema, la solución y el mercado.",
+        "categoryId": "ideas-creativas",
+        "templatedJsonPath": "/prompts/ideas-creativas/startup_plan_form.json"
+    },
+    {
+        "id": "cad_design_form",
+        "title": "Diseñador Asistido por Computadora (CAD)",
+        "description": "Genera especificaciones para crear modelos CAD (3D, planos), definiendo normas, materiales y dimensiones.",
+        "categoryId": "ingenieria",
+        "templatedJsonPath": "/prompts/ingenieria/cad_design_form.json"
+    },
+    {
+        "id": "architectural_plan_form",
+        "title": "Generador de Planos Arquitectónicos",
+        "description": "Genera especificaciones para planos de edificaciones, definiendo tipo, áreas, niveles y distribución.",
+        "categoryId": "ingenieria",
+        "templatedJsonPath": "/prompts/ingenieria/architectural_plan_form.json"
+    },
+    {
+        "id": "math_equation_solver_form",
+        "title": "Solucionador de Ecuaciones Matemáticas",
+        "description": "Resuelve ecuaciones matemáticas, mostrando el proceso paso a paso y explicando los métodos utilizados.",
+        "categoryId": "ingenieria",
+        "templatedJsonPath": "/prompts/ingenieria/math_equation_solver_form.json"
+    },
+    {
+        "id": "engineering_project_planner_form",
+        "title": "Planificador de Proyectos de Ingeniería",
+        "description": "Genera un plan de proyecto estructurado (WBS, Gantt, riesgos) basado en los objetivos, alcance y restricciones.",
+        "categoryId": "ingenieria",
+        "templatedJsonPath": "/prompts/ingenieria/engineering_project_planner_form.json"
+    },
+    {
+        "id": "diagram_generator_form",
+        "title": "Generador de Diagramas Técnicos",
+        "description": "Crea prompts para generar diagramas (flujo, bloques, circuitos) especificando elementos y relaciones.",
+        "categoryId": "ingenieria",
+        "templatedJsonPath": "/prompts/ingenieria/diagram_generator_form.json"
+    },
+    {
+        "id": "advertising_campaign_form",
+        "categoryId": "marketing",
+        "title": "Diseñador de Campañas Publicitarias",
+        "description": "Crea prompts para desarrollar conceptos creativos y estrategias para campañas publicitarias completas.",
+        "templatedJsonPath": "/prompts/marketing/advertising_campaign_form.json"
+    },
+    {
+        "id": "ad_copy_form",
+        "categoryId": "marketing",
+        "title": "Generador de Textos para Anuncios (Copywriting)",
+        "description": "Crea textos (copy) persuasivos para anuncios en diferentes plataformas como Google Ads, Facebook, etc.",
+        "templatedJsonPath": "/prompts/marketing/ad_copy_form.json"
+    },
+    {
+        "id": "ad_platform_selector_form",
+        "categoryId": "marketing",
+        "title": "Selector de Plataforma Publicitaria",
+        "description": "Recibe una recomendación de las mejores plataformas publicitarias para tu campaña basada en tu público y objetivos.",
+        "templatedJsonPath": "/prompts/marketing/ad_platform_selector_form.json"
+    },
+    {
+        "id": "value_proposition_form",
+        "categoryId": "marketing",
+        "title": "Creador de Ofertas de Valor",
+        "description": "Define y redacta una propuesta de valor irresistible que conecte con tu público y destaque sobre la competencia.",
+        "templatedJsonPath": "/prompts/marketing/value_proposition_form.json"
+    },
+    {
+        "id": "social_media_form",
+        "categoryId": "marketing",
+        "title": "Publicaciones para Redes Sociales",
+        "description": "Crea prompts para posts impactantes en diversas plataformas de redes sociales.",
+        "templatedJsonPath": "/prompts/marketing/social_media_form.json"
     },
     {
         "id": "form_design_form",
         "categoryId": "ui-ux-design",
         "title": "Diseñador de Formularios (UI/UX)",
         "description": "Genera prompts para diseñar maquetas de formularios de datos, especificando campos, controles y formato de salida.",
-        "customPagePath": "/content/prompts/custom/form_design_form.html"
+        "templatedJsonPath": "/prompts/ui-ux-design/form_design_form.json"
     },
     {
         "id": "landing_page_form",
         "categoryId": "ui-ux-design",
         "title": "Diseñador de Landing Page",
         "description": "Genera prompts para diseñar landing pages efectivas, definiendo cada sección y su contenido.",
-        "customPagePath": "/content/prompts/custom/landing_page_form.html"
+        "templatedJsonPath": "/prompts/ui-ux-design/landing_page_form.json"
     },
     {
         "id": "user_persona_form",
         "categoryId": "ui-ux-design",
         "title": "Generador de Perfiles de Usuario (Persona)",
         "description": "Crea perfiles de usuario detallados para entender mejor a tu público objetivo y guiar el diseño.",
-        "customPagePath": "/content/prompts/custom/user_persona_form.html"
+        "templatedJsonPath": "/prompts/ui-ux-design/user_persona_form.json"
+    },
+    {
+        "id": "ui_ux_critique_form",
+        "categoryId": "ui-ux-design",
+        "title": "Crítica de Diseño UX/UI",
+        "description": "Genera un prompt detallado para realizar un análisis experto de una interfaz de usuario.",
+        "templatedJsonPath": "/prompts/ui-ux-design/ui_ux_critique_form.json"
     },
     {
         "id": "function_generator_form",
         "categoryId": "programacion",
         "title": "Generador de Funciones de Código",
         "description": "Crea prompts detallados para generar funciones de código en diferentes lenguajes de programación.",
-        "customPagePath": "/content/prompts/custom/function_generator_form.html"
+        "templatedJsonPath": "/prompts/programacion/function_generator_form.json"
     },
     {
         "id": "entity_generator_form",
         "categoryId": "programacion",
         "title": "Generador de Entidades de Datos (Clases/Modelos)",
         "description": "Define y genera clases o modelos de datos para diferentes lenguajes, especificando atributos y tipos.",
-        "customPagePath": "/content/prompts/custom/entity_generator_form.html"
+        "templatedJsonPath": "/prompts/programacion/entity_generator_form.json"
     },
     {
         "id": "project_design_form",
         "categoryId": "programacion",
         "title": "Diseñador de Arquitectura de Software",
         "description": "Genera prompts para diseñar la arquitectura completa de un proyecto de software, desde patrones hasta tecnologías.",
-        "customPagePath": "/content/prompts/custom/project_design_form.html"
+        "templatedJsonPath": "/prompts/programacion/project_design_form.json"
     },
     {
         "id": "database_design_form",
         "categoryId": "programacion",
         "title": "Diseñador de Base de Datos",
         "description": "Genera prompts para diseñar esquemas de bases de datos, incluyendo entidades, atributos y relaciones.",
-        "customPagePath": "/content/prompts/custom/database_design_form.html"
+        "templatedJsonPath": "/prompts/programacion/database_design_form.json"
     },
     {
         "id": "unit_test_generator_form",
         "categoryId": "programacion",
         "title": "Generador de Pruebas Unitarias (Unit Tests)",
         "description": "Crea prompts para generar pruebas unitarias para tu código, especificando casos de prueba y frameworks.",
-        "customPagePath": "/content/prompts/custom/unit_test_generator_form.html"
+        "templatedJsonPath": "/prompts/programacion/unit_test_generator_form.json"
+    },
+    {
+        "id": "password_generator_form",
+        "title": "Generador de Contraseñas Seguras",
+        "description": "Crea contraseñas seguras y aleatorias basadas en un conjunto de reglas y requisitos.",
+        "categoryId": "programacion",
+        "templatedJsonPath": "/prompts/programacion/password_generator_form.json"
     },
     {
         "id": "story_development_form",
         "categoryId": "storytelling",
         "title": "Desarrollador de Historias",
         "description": "Crea prompts para desarrollar tramas, personajes y mundos para tus historias.",
-        "customPagePath": "/content/prompts/custom/story_development_form.html"
+        "templatedJsonPath": "/prompts/storytelling/story_development_form.json"
     },
     {
         "id": "movie_script_form",
         "categoryId": "storytelling",
         "title": "Generador de Guiones de Película",
         "description": "Crea prompts para escribir escenas, diálogos y tratamientos para guiones de cine.",
-        "customPagePath": "/content/prompts/custom/movie_script_form.html"
+        "templatedJsonPath": "/prompts/storytelling/movie_script_form.json"
     },
     {
         "id": "podcast_script_form",
         "categoryId": "storytelling",
         "title": "Generador de Guiones para Podcast",
         "description": "Crea prompts para estructurar y escribir guiones para episodios de podcast, desde entrevistas hasta narrativas.",
-        "customPagePath": "/content/prompts/custom/podcast_script_form.html"
+        "templatedJsonPath": "/prompts/storytelling/podcast_script_form.json"
     },
     {
         "id": "character_impersonator_form",
         "categoryId": "storytelling",
         "title": "Intérprete de Personajes (Role-playing)",
         "description": "Configura un prompt para que la IA actúe y responda como tu personaje favorito de cualquier universo.",
-        "customPagePath": "/content/prompts/custom/character_impersonator_form.html"
+        "templatedJsonPath": "/prompts/storytelling/character_impersonator_form.json"
     },
     {
         "id": "general_story_generator_form",
         "categoryId": "storytelling",
         "title": "Cuentacuentos General",
         "description": "Genera historias de cualquier tipo, definiendo el tema, público y tono para capturar la imaginación.",
-        "customPagePath": "/content/prompts/custom/general_story_generator_form.html"
+        "templatedJsonPath": "/prompts/storytelling/general_story_generator_form.json"
+    },
+    {
+        "id": "learn_new_topic_form",
+        "title": "Aprender un Tema Nuevo",
+        "description": "Genera un plan de estudio estructurado para aprender cualquier tema desde cero, adaptado a tu nivel y metas.",
+        "categoryId": "educativo",
+        "templatedJsonPath": "/prompts/educativo/learn_new_topic_form.json"
+    },
+    {
+        "id": "study_plan_generator_form",
+        "title": "Generador de Planes de Estudio",
+        "description": "Crea un plan de estudio completo y estructurado para aprender cualquier habilidad, lenguaje o idioma.",
+        "categoryId": "educativo",
+        "templatedJsonPath": "/prompts/educativo/study_plan_generator_form.json"
+    },
+    {
+        "id": "exam_generator_form",
+        "title": "Generador de Exámenes y Cuestionarios",
+        "description": "Crea exámenes personalizados sobre cualquier tema, definiendo el número, tipo de preguntas y nivel de dificultad.",
+        "categoryId": "educativo",
+        "templatedJsonPath": "/prompts/educativo/exam_generator_form.json"
+    },
+    {
+        "id": "research_paper_form",
+        "title": "Generador de Propuesta de Investigación",
+        "description": "Esboza una propuesta de investigación completa, definiendo el tema, marco teórico, metodología y más.",
+        "categoryId": "educativo",
+        "templatedJsonPath": "/prompts/educativo/research_paper_form.json"
+    },
+    {
+        "id": "concept_explainer_form",
+        "title": "Explicador de Conceptos",
+        "description": "Obtén una explicación clara y a medida sobre cualquier tema, definiendo el rol del experto y el público objetivo.",
+        "categoryId": "educativo",
+        "templatedJsonPath": "/prompts/educativo/concept_explainer_form.json"
+    },
+    {
+        "id": "meal_plan_form",
+        "title": "Generador de Plan de Alimentación",
+        "description": "Crea un plan de comidas personalizado basado en datos personales, objetivos y preferencias gastronómicas.",
+        "categoryId": "culinario",
+        "templatedJsonPath": "/prompts/culinario/meal_plan_form.json"
+    },
+    {
+        "id": "recipe_generator_form",
+        "title": "Generador de Recetas",
+        "description": "Crea recetas únicas y deliciosas basadas en tus preferencias, ingredientes y tiempo disponible.",
+        "categoryId": "culinario",
+        "templatedJsonPath": "/prompts/culinario/recipe_generator_form.json"
+    },
+    {
+        "id": "restaurant_menu_form",
+        "title": "Generador de Menú de Restaurante",
+        "description": "Diseña un menú completo para un restaurante, definiendo categorías, platos, precios y descripciones.",
+        "categoryId": "culinario",
+        "templatedJsonPath": "/prompts/culinario/restaurant_menu_form.json"
+    },
+    {
+        "id": "conversational_email_form",
+        "title": "Generador de Emails Conversacionales",
+        "description": "Crea borradores de email para cualquier situación, definiendo el propósito, el tono y la información clave.",
+        "categoryId": "conversacional",
+        "templatedJsonPath": "/prompts/conversacional/conversational_email_form.json"
+    },
+    {
+        "id": "virtual_assistant_form",
+        "title": "Creador de Asistentes Virtuales (Chatbots)",
+        "description": "Define la personalidad, el conocimiento y las capacidades de un chatbot o asistente virtual para cualquier propósito.",
+        "categoryId": "conversacional",
+        "templatedJsonPath": "/prompts/conversacional/virtual_assistant_form.json"
+    },
+    {
+        "id": "customer_review_responder_form",
+        "title": "Generador de Respuestas a Reseñas",
+        "description": "Crea respuestas profesionales y personalizadas para reseñas de clientes, ya sean positivas, negativas o mixtas.",
+        "categoryId": "conversacional",
+        "templatedJsonPath": "/prompts/conversacional/customer_review_responder_form.json"
+    },
+    {
+        "id": "call_script_generator_form",
+        "title": "Generador de Guiones para Llamadas",
+        "description": "Crea guiones estructurados para llamadas de ventas, soporte técnico o seguimiento, definiendo cada etapa de la conversación.",
+        "categoryId": "conversacional",
+        "templatedJsonPath": "/prompts/conversacional/call_script_generator_form.json"
+    },
+    {
+        "id": "job_interview_simulator_form",
+        "title": "Simulador de Entrevistas de Trabajo",
+        "description": "Prepárate para entrevistas simulando una conversación con un entrevistador de IA.",
+        "categoryId": "conversacional",
+        "templatedJsonPath": "/prompts/conversacional/job_interview_simulator_form.json"
+    },
+    {
+        "id": "pronunciation_assistant_form",
+        "title": "Asistente de Pronunciación",
+        "description": "Obtén la pronunciación fonética de textos en cualquier idioma, adaptada a tu lengua nativa.",
+        "categoryId": "conversacional",
+        "templatedJsonPath": "/prompts/conversacional/pronunciation_assistant_form.json"
+    },
+    {
+        "id": "travel_itinerary_planner_form",
+        "title": "Planificador de Itinerarios de Viaje",
+        "description": "Crea un itinerario de viaje detallado, definiendo origen, destino, duración, intereses y restricciones.",
+        "categoryId": "viajes-y-estilo-de-vida",
+        "templatedJsonPath": "/prompts/viajes-y-estilo-de-vida/travel_itinerary_planner_form.json"
+    },
+    {
+        "id": "hotel_finder_form",
+        "title": "Buscador de Hoteles y Alojamiento",
+        "description": "Encuentra el alojamiento perfecto para tu viaje, especificando destino, fechas, presupuesto y comodidades.",
+        "categoryId": "viajes-y-estilo-de-vida",
+        "templatedJsonPath": "/prompts/viajes-y-estilo-de-vida/hotel_finder_form.json"
+    },
+    {
+        "id": "restaurant_finder_form",
+        "title": "Buscador de Restaurantes y Bares",
+        "description": "Encuentra los mejores restaurantes, bares y sitios de ocio según tus preferencias de cocina, ambiente y presupuesto.",
+        "categoryId": "viajes-y-estilo-de-vida",
+        "templatedJsonPath": "/prompts/viajes-y-estilo-de-vida/restaurant_finder_form.json"
+    },
+    {
+        "id": "ground_transport_finder_form",
+        "title": "Buscador de Transporte Terrestre",
+        "description": "Encuentra las mejores opciones de transporte terrestre (tren, bus, auto) para tu viaje.",
+        "categoryId": "viajes-y-estilo-de-vida",
+        "templatedJsonPath": "/prompts/viajes-y-estilo-de-vida/ground_transport_finder_form.json"
+    },
+    {
+        "id": "points_of_interest_finder_form",
+        "title": "Buscador de Puntos de Interés",
+        "description": "Descubre atracciones, museos, parques y joyas ocultas en tu destino de viaje.",
+        "categoryId": "viajes-y-estilo-de-vida",
+        "templatedJsonPath": "/prompts/viajes-y-estilo-de-vida/points_of_interest_finder_form.json"
     }
 ]

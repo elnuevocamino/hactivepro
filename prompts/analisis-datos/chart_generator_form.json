@@ -1,0 +1,88 @@
+{
+    "id": "chart_generator_form",
+    "nombre": "Generador de Gráficos",
+    "descripcion": "Crea prompts para generar código de visualizaciones de datos como gráficos de barras, líneas, etc.",
+    "campos": [
+        {
+            "id": "chartType",
+            "etiqueta": "Tipo de Gráfico",
+            "tipo": "select",
+            "requerido": true,
+            "tooltip": "Elige la visualización más adecuada para tus datos. Este campo es obligatorio.",
+            "opciones": [
+                { "valor": "", "texto": "-- Selecciona un tipo de gráfico --", "disabled": true, "selected": true },
+                { "valor": "de barras", "texto": "Gráfico de Barras" },
+                { "valor": "de líneas", "texto": "Gráfico de Líneas" },
+                { "valor": "circular o de pastel", "texto": "Gráfico Circular (Pastel)" },
+                { "valor": "de dispersión (scatter plot)", "texto": "Gráfico de Dispersión" },
+                { "valor": "de área", "texto": "Gráfico de Área" },
+                { "valor": "un histograma", "texto": "Histograma" },
+                { "valor": "un diagrama de caja (box plot)", "texto": "Diagrama de Caja (Box Plot)" },
+                { "valor": "un mapa de calor (heatmap)", "texto": "Mapa de Calor (Heatmap)" },
+                { "valor": "de burbujas", "texto": "Gráfico de Burbujas" }
+            ]
+        },
+        {
+            "id": "chartData",
+            "etiqueta": "Datos a Visualizar",
+            "tipo": "textarea",
+            "filas": 5,
+            "placeholder": "Pega aquí tus datos en formato CSV, JSON, o una descripción clara. Ej:\nAño,Ventas\n2020,150\n2021,220\n2022,310",
+            "requerido": true,
+            "tooltip": "Proporciona el conjunto de datos. Este campo es obligatorio."
+        },
+        {
+            "id": "chartTitle",
+            "etiqueta": "Título del Gráfico (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Evolución de Ventas Anuales",
+            "requerido": false,
+            "tooltip": "Un título claro y conciso para tu gráfico."
+        },
+        {
+            "id": "chartAxes",
+            "etiqueta": "Descripción de los Ejes (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Eje X: Año, Eje Y: Ventas (en miles de USD).",
+            "requerido": false,
+            "tooltip": "Describe qué representa cada eje y sus unidades."
+        },
+        {
+            "id": "chartLibrary",
+            "etiqueta": "Librería o Herramienta Preferida (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Matplotlib (Python), D3.js, Chart.js, Google Sheets.",
+            "requerido": false,
+            "tooltip": "Indica si prefieres el código en un lenguaje o herramienta específica."
+        },
+        {
+            "id": "chartStyle",
+            "etiqueta": "Estilo Visual y Notas Adicionales (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Usar una paleta de colores azules. Etiquetar cada barra con su valor. Sin rejilla de fondo.",
+            "requerido": false,
+            "tooltip": "Describe cualquier preferencia de diseño o instrucción adicional."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un experto en visualización de datos. Tu tarea es proporcionar instrucciones claras y paso a paso para que un usuario sin conocimientos técnicos pueda crear un gráfico {{chartType}}.\n\nLos datos a utilizar son los siguientes:\n\n```\n{{chartData}}\n```\n\n{{#if chartTitle}}El título del gráfico debe ser '{{chartTitle}}'.{{/if}}\n{{#if chartAxes}}Los ejes deben representar lo siguiente: {{chartAxes}}.{{/if}}\n{{#if chartStyle}}Adicionalmente, ten en cuenta estas preferencias de estilo: {{chartStyle}}.{{/if}}\n\n{{#if chartLibrary}}La herramienta preferida para crear este gráfico es {{chartLibrary}}. Proporciona las instrucciones detalladas para construirlo en esa herramienta.{{/if}}\n\nSi no se especificó una herramienta, sugiere la más sencilla y accesible (como Google Sheets o Microsoft Excel) y proporciona las instrucciones para ella. El resultado final debe ser una guía paso a paso, fácil de seguir, y no un bloque de código de programación.",
+    "suggestedTools": [
+        {
+            "name": "Google Sheets",
+            "url": "https://sheets.google.com"
+        },
+        {
+            "name": "Microsoft Excel",
+            "url": "https://www.microsoft.com/excel"
+        },
+        {
+            "name": "Canva",
+            "url": "https://www.canva.com/graphs/"
+        },
+        {
+            "name": "Datawrapper",
+            "url": "https://www.datawrapper.de/"
+        }
+    ]
+}

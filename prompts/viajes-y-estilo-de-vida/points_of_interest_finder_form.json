@@ -1,0 +1,72 @@
+{
+    "id": "points_of_interest_finder_form",
+    "nombre": "Buscador de Puntos de Interés",
+    "descripcion": "Descubre atracciones, museos, parques y joyas ocultas en tu destino de viaje.",
+    "campos": [
+        {
+            "id": "destination",
+            "etiqueta": "Destino (Ciudad, Región)",
+            "tipo": "text",
+            "placeholder": "Ej: Florencia, Italia",
+            "requerido": true,
+            "tooltip": "El lugar que quieres explorar."
+        },
+        {
+            "id": "attractionType",
+            "etiqueta": "Tipo de Atracción",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Museos, parques, sitios históricos, mercados locales, miradores, joyas ocultas.",
+            "requerido": false,
+            "tooltip": "Define qué tipo de lugares te interesan más."
+        },
+        {
+            "id": "specificInterests",
+            "etiqueta": "Intereses Específicos",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Arte del Renacimiento, senderismo, fotografía callejera, Segunda Guerra Mundial.",
+            "requerido": false,
+            "tooltip": "Detalla tus pasiones o temas de interés."
+        },
+        {
+            "id": "audience",
+            "etiqueta": "Ideal para",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "cualquier público", "texto": "Cualquier público", "selected": true },
+                { "valor": "viajeros solos", "texto": "Viajeros solos" },
+                { "valor": "parejas", "texto": "Parejas" },
+                { "valor": "familias con niños", "texto": "Familias con niños" },
+                { "valor": "grupos de amigos", "texto": "Grupos de amigos" }
+            ],
+            "tooltip": "¿Para quién es la actividad?"
+        },
+        {
+            "id": "budget",
+            "etiqueta": "Presupuesto",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "cualquiera", "texto": "Cualquiera", "selected": true },
+                { "valor": "actividades gratuitas", "texto": "Gratis" },
+                { "valor": "económico", "texto": "Económico" },
+                { "valor": "precio medio", "texto": "Medio" }
+            ],
+            "tooltip": "Define tu rango de precios para las entradas o actividades."
+        },
+        {
+            "id": "timeAvailable",
+            "etiqueta": "Tiempo Disponible",
+            "tipo": "text",
+            "placeholder": "Ej: 2-3 horas, medio día, un día completo.",
+            "requerido": false,
+            "tooltip": "¿Cuánto tiempo tienes para esta actividad?"
+        }
+    ],
+    "plantilla_prompt": "Actúa como un guía turístico local y experto en viajes para {{destination}}. Tu tarea es recomendar los mejores puntos de interés basados en las siguientes preferencias:\n\n**Detalles de la Búsqueda:**\n- **Destino:** {{destination}}\n- **Ideal para:** {{audience}}\n- **Presupuesto:** {{budget}}\n{{#if attractionType}}- **Tipo de Atracción:** {{attractionType}}\n{{/if}}{{#if specificInterests}}- **Intereses Específicos:** {{specificInterests}}\n{{/if}}{{#if timeAvailable}}- **Tiempo Disponible:** {{timeAvailable}}\n{{/if}}\n\n**Tarea:**\nGenera una lista de 5 puntos de interés recomendados. Para cada punto, proporciona:\n1.  **Nombre del Lugar.**\n2.  **Breve Descripción:** ¿Qué es y por qué vale la pena visitarlo?\n3.  **Ubicación Aproximada (Barrio o Zona).**\n4.  **Información Práctica:** Horarios, precio de entrada estimado (si aplica).\n5.  **Consejo Local:** Un truco o recomendación para aprovechar al máximo la visita.",
+    "suggestedTools": [
+        { "name": "Google Maps", "url": "https://maps.google.com/" },
+        { "name": "Tripadvisor", "url": "https://www.tripadvisor.com/" },
+        { "name": "GetYourGuide", "url": "https://www.getyourguide.com/" }
+    ]
+}

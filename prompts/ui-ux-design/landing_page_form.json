@@ -1,0 +1,66 @@
+{
+    "id": "landing_page_form",
+    "nombre": "Diseñador de Landing Page",
+    "descripcion": "Genera prompts para diseñar landing pages efectivas, definiendo cada sección y su contenido.",
+    "campos": [
+        {
+            "id": "productName",
+            "etiqueta": "Nombre del Producto/Servicio",
+            "tipo": "text",
+            "placeholder": "Ej: Curso de Marketing Digital, App de Meditación 'ZenMind'",
+            "requerido": true,
+            "tooltip": "El nombre del producto o servicio que se promocionará."
+        },
+        {
+            "id": "targetAudience",
+            "etiqueta": "Público Objetivo",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Emprendedores que quieren mejorar su presencia online, personas con estrés buscando relajación.",
+            "requerido": true,
+            "tooltip": "Describe a quién se dirige esta landing page."
+        },
+        {
+            "id": "mainGoal",
+            "etiqueta": "Objetivo Principal de la Página",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "capturar leads (emails, registros)", "texto": "Capturar Leads", "selected": true },
+                { "valor": "vender un producto directamente", "texto": "Venta Directa" },
+                { "valor": "promocionar un evento o webinar", "texto": "Promocionar Evento" },
+                { "valor": "generar descargas de una app o software", "texto": "Generar Descargas" }
+            ],
+            "tooltip": "Selecciona la acción más importante que quieres que el usuario realice."
+        },
+        {
+            "id": "keySections",
+            "etiqueta": "Secciones Clave de la Página (una por línea)",
+            "tipo": "textarea",
+            "filas": 5,
+            "placeholder": "Ej:\nSección de Héroe con un titular impactante\nSección de Beneficios (3-4 puntos clave)\nSección de Testimonios\nSección de Precios\nLlamada a la Acción (CTA) final",
+            "requerido": true,
+            "tooltip": "Enumera las secciones que debe tener la landing page, en orden."
+        },
+        {
+            "id": "ctaText",
+            "etiqueta": "Texto de la Llamada a la Acción (CTA)",
+            "tipo": "text",
+            "placeholder": "Ej: ¡Comienza ahora!, Descargar mi guía gratis, Reservar mi plaza",
+            "requerido": true,
+            "tooltip": "El texto exacto que irá en el botón principal."
+        },
+        {
+            "id": "designInspiration",
+            "etiqueta": "Inspiración de Diseño o Tono (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Moderno y limpio, similar a Stripe. Tono amigable y cercano.",
+            "tooltip": "Menciona sitios web de referencia o el estilo visual y de comunicación deseado."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un diseñador de conversión (CRO) y experto en UI/UX. Tu tarea es crear un borrador detallado para una landing page de alta conversión.\n\n**Información del Proyecto:**\n- **Producto/Servicio:** {{productName}}\n- **Público Objetivo:** {{targetAudience}}\n- **Objetivo Principal:** {{mainGoal}}\n\n**Estructura y Contenido:**\n- **Secciones Clave Propuestas:**\n{{keySections}}\n\n- **Texto para la Llamada a la Acción (CTA):** \"{{ctaText}}\"\n\n{{#if designInspiration}}- **Inspiración de Diseño y Tono:** {{designInspiration}}\n{{/if}}\n\n**Tarea:**\nBasado en la información, genera una descripción detallada para cada sección de la landing page. Para cada sección, incluye:\n1.  **Objetivo:** ¿Qué se busca lograr en esta sección?\n2.  **Copywriting Sugerido:** Propón titulares, subtítulos y textos clave que sean persuasivos.\n3.  **Elementos Visuales:** Sugiere qué tipo de imágenes, iconos o gráficos deberían usarse.\n4.  **Disposición (Layout):** Describe brevemente cómo se deberían organizar los elementos en la sección.\n\nEl diseño final debe estar enfocado en guiar al usuario hacia la acción principal: {{mainGoal}}.",
+    "suggestedTools": [
+        { "name": "Unbounce", "url": "https://unbounce.com/" },
+        { "name": "Leadpages", "url": "https://www.leadpages.com/" },
+        { "name": "Figma", "url": "https://www.figma.com/" }
+    ]
+}

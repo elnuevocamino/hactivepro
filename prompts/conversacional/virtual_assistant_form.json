@@ -1,0 +1,68 @@
+{
+    "id": "virtual_assistant_form",
+    "nombre": "Creador de Asistentes Virtuales (Chatbots)",
+    "descripcion": "Define la personalidad, el conocimiento y las capacidades de un chatbot o asistente virtual para cualquier propósito.",
+    "campos": [
+        {
+            "id": "assistantName",
+            "etiqueta": "Nombre del Asistente Virtual",
+            "tipo": "text",
+            "placeholder": "Ej: AstroBot, Guía de Soporte, ChefBot",
+            "requerido": true,
+            "tooltip": "El nombre que tendrá tu chatbot."
+        },
+        {
+            "id": "assistantRole",
+            "etiqueta": "Rol Principal del Asistente",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Asistente de soporte técnico para una empresa de software, un chatbot para ayudar a los usuarios a encontrar recetas, un guía turístico para la ciudad de Roma.",
+            "requerido": true,
+            "tooltip": "Describe la función principal y el propósito del asistente."
+        },
+        {
+            "id": "assistantPersonality",
+            "etiqueta": "Personalidad y Tono",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "amigable y servicial", "texto": "Amigable y Servicial", "selected": true },
+                { "valor": "profesional y eficiente", "texto": "Profesional y Eficiente" },
+                { "valor": "ingenioso y con humor", "texto": "Ingenioso y con Humor" },
+                { "valor": "paciente y empático", "texto": "Paciente y Empático" }
+            ],
+            "tooltip": "Elige el estilo de comunicación del asistente."
+        },
+        {
+            "id": "knowledgeBase",
+            "etiqueta": "Base de Conocimiento (Temas que domina)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Solución de problemas comunes de nuestro software, ingredientes y pasos de recetas de cocina italiana, historia y puntos de interés de Roma.",
+            "requerido": true,
+            "tooltip": "Enumera los temas o la información que el chatbot debe conocer."
+        },
+        {
+            "id": "keyCapabilities",
+            "etiqueta": "Capacidades Clave (Acciones que puede realizar)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Guiar a los usuarios a través de pasos de solución de problemas, generar listas de compras, reservar tours, responder preguntas frecuentes.",
+            "requerido": false,
+            "tooltip": "Describe las tareas específicas que el asistente puede realizar."
+        },
+        {
+            "id": "greetingMessage",
+            "etiqueta": "Mensaje de Bienvenida (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: ¡Hola! Soy AstroBot, ¿en qué puedo ayudarte hoy?",
+            "requerido": false,
+            "tooltip": "Cómo debe saludar el asistente al iniciar una conversación."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un ingeniero de IA especializado en el diseño de personalidades para asistentes virtuales. Tu tarea es crear la \"personalidad central\" y las directrices para un nuevo chatbot.\n\n**Perfil del Asistente Virtual:**\n- **Nombre:** {{assistantName}}\n- **Rol Principal:** {{assistantRole}}\n- **Personalidad y Tono:** {{assistantPersonality}}\n\n**Base de Conocimiento y Capacidades:**\n- **Domina los siguientes temas:**\n{{knowledgeBase}}\n{{#if keyCapabilities}}\n- **Puede realizar las siguientes acciones:**\n{{keyCapabilities}}\n{{/if}}\n\n**Directrices de Comportamiento:**\n1.  **Saludo Inicial:** {{#if greetingMessage}}Debe presentarse con la frase: \"{{greetingMessage}}\"{{else}}Debe presentarse con un saludo amigable y mencionando su nombre y propósito.{{/if}}\n2.  **Manejo de Desconocimiento:** Si no sabe una respuesta, debe decirlo honestamente y ofrecer ayuda para contactar a un humano o buscar en otro lugar. No debe inventar información.\n3.  **Tono:** Mantener siempre un tono {{assistantPersonality}}.\n4.  **Proactividad:** Debe intentar anticipar las necesidades del usuario cuando sea apropiado.\n\n**Tarea:**\nGenera un prompt de sistema detallado que pueda ser usado para configurar este chatbot en una plataforma como ChatGPT. Este prompt debe contener todas las instrucciones, reglas y la información de personalidad necesarias para que la IA actúe consistentemente como {{assistantName}}.",
+    "suggestedTools": [
+        { "name": "Dialogflow", "url": "https://cloud.google.com/dialogflow" },
+        { "name": "Microsoft Bot Framework", "url": "https://dev.botframework.com/" },
+        { "name": "Rasa", "url": "https://rasa.com/" }
+    ]
+}

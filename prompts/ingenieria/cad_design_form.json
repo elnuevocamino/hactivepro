@@ -1,0 +1,66 @@
+{
+    "id": "cad_design_form",
+    "nombre": "Diseñador Asistido por Computadora (CAD)",
+    "descripcion": "Genera especificaciones para crear modelos CAD (3D, planos), definiendo normas, materiales y dimensiones.",
+    "campos": [
+        {
+            "id": "objectName",
+            "etiqueta": "Nombre del Objeto o Pieza",
+            "tipo": "text",
+            "placeholder": "Ej: Soporte de motor, carcasa de dispositivo electrónico, engranaje.",
+            "requerido": true,
+            "tooltip": "El nombre de la pieza o ensamblaje a diseñar."
+        },
+        {
+            "id": "designType",
+            "etiqueta": "Tipo de Diseño",
+            "tipo": "select",
+            "tooltip": "Elige el tipo de entregable que necesitas.",
+            "opciones": [
+                { "valor": "un modelo 3D sólido", "texto": "Modelo 3D Sólido", "selected": true },
+                { "valor": "un plano técnico 2D con vistas (frontal, superior, lateral)", "texto": "Plano Técnico 2D" },
+                { "valor": "un ensamblaje de varias piezas", "texto": "Ensamblaje de Múltiples Piezas" }
+            ]
+        },
+        {
+            "id": "dimensions",
+            "etiqueta": "Dimensiones y Tolerancias Clave",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Enumera las dimensiones críticas. Ej:\n- Longitud total: 150mm (±0.5mm)\n- Diámetro del agujero central: 25mm (H7)\n- Espesor de la pared: 3mm",
+            "requerido": false,
+            "tooltip": "Especifica las medidas más importantes y sus tolerancias."
+        },
+        {
+            "id": "materials",
+            "etiqueta": "Material(es) y Acabados",
+            "tipo": "text",
+            "placeholder": "Ej: Acero inoxidable 304, Aluminio 6061-T6, plástico ABS. Acabado pulido.",
+            "requerido": false,
+            "tooltip": "El material del que estará hecha la pieza y su tratamiento superficial."
+        },
+        {
+            "id": "standards",
+            "etiqueta": "Normas Aplicables",
+            "tipo": "text",
+            "placeholder": "Ej: ISO 2768-m, ASME Y14.5-2009.",
+            "requerido": false,
+            "tooltip": "Cualquier estándar de diseño, dimensionamiento o tolerancia que deba seguirse."
+        },
+        {
+            "id": "specialFeatures",
+            "etiqueta": "Características o Requisitos Especiales",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Debe soportar una carga de 500N. Requiere roscas M6 en los agujeros laterales. Optimizar para impresión 3D.",
+            "requerido": false,
+            "tooltip": "Cualquier otra restricción funcional, de fabricación o de rendimiento."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un ingeniero de diseño mecánico experto en CAD. Tu tarea es generar una especificación técnica detallada para el diseño de una pieza o ensamblaje.\n\n**Objeto a Diseñar:** {{objectName}}\n**Tipo de Diseño Requerido:** {{designType}}\n\n**Especificaciones Técnicas:**\n{{#if dimensions}}**Dimensiones y Tolerancias:**\n{{dimensions}}\n{{/if}}\n{{#if materials}}**Material y Acabado:** {{materials}}\n{{/if}}\n{{#if standards}}**Normas Aplicables:** {{standards}}\n{{/if}}\n{{#if specialFeatures}}**Requisitos Especiales:**\n{{specialFeatures}}\n{{/if}}\n\n**Tarea:**\nGenera una descripción textual detallada que un diseñador CAD pueda seguir para crear {{designType}}. Describe la geometría, las características principales y las relaciones entre sus partes. Si es un plano 2D, especifica las vistas necesarias y qué acotaciones deben incluirse en cada una.",
+    "suggestedTools": [
+        { "name": "AutoCAD", "url": "https://www.autodesk.com/products/autocad/overview" },
+        { "name": "SolidWorks", "url": "https://www.solidworks.com/" },
+        { "name": "Fusion 360", "url": "https://www.autodesk.com/products/fusion-360/overview" }
+    ]
+}

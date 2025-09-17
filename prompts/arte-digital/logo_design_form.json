@@ -1,0 +1,70 @@
+{
+    "id": "logo_design_form",
+    "nombre": "Generador de Prompts para Logos",
+    "descripcion": "Crea prompts detallados para diseñar logos únicos y profesionales para marcas o proyectos.",
+    "campos": [
+        {
+            "id": "logoName",
+            "etiqueta": "Nombre de la Empresa o Marca",
+            "tipo": "text",
+            "placeholder": "Ej: Quantum Café, Aura Cosméticos",
+            "requerido": true,
+            "tooltip": "El nombre que aparecerá en el logo. Este campo es obligatorio."
+        },
+        {
+            "id": "logoIndustry",
+            "etiqueta": "Industria o Sector",
+            "tipo": "text",
+            "placeholder": "Ej: Tecnología, Cafetería, Moda Sostenible",
+            "requerido": false,
+            "tooltip": "El sector al que pertenece la marca ayuda a definir el estilo."
+        },
+        {
+            "id": "logoValues",
+            "etiqueta": "Valores o Conceptos a Transmitir",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Innovación, calidez, naturaleza, confianza",
+            "requerido": false,
+            "tooltip": "Las ideas o emociones que el logo debe evocar."
+        },
+        {
+            "id": "logoStyle",
+            "etiqueta": "Estilo del Logo",
+            "tipo": "select",
+            "tooltip": "Elige la estética general del logo.",
+            "opciones": [
+                { "valor": "minimalista y moderno", "texto": "Minimalista / Moderno", "selected": true },
+                { "valor": "vintage o retro", "texto": "Vintage / Retro" },
+                { "valor": "elegante y lujoso", "texto": "Elegante / Lujoso" },
+                { "valor": "divertido y amigable", "texto": "Divertido / Amigable" },
+                { "valor": "abstracto y geométrico", "texto": "Abstracto / Geométrico" },
+                { "valor": "hecho a mano o artesanal", "texto": "Hecho a mano / Artesanal" }
+            ]
+        },
+        {
+            "id": "logoColors",
+            "etiqueta": "Paleta de Colores",
+            "tipo": "text",
+            "placeholder": "Ej: Tonos tierra, azul y blanco, degradado neón",
+            "requerido": false,
+            "tooltip": "Especifica los colores que te gustaría usar."
+        },
+        {
+            "id": "logoElements",
+            "etiqueta": "Elementos a Incluir o Excluir",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Incluir un grano de café, evitar formas de corazón, que el ícono sea una 'Q'",
+            "requerido": false,
+            "tooltip": "Define elementos gráficos específicos para el logo."
+        }
+    ],
+    "plantilla_prompt": "Diseño de logo para '{{logoName}}'{{#if logoIndustry}}, una empresa en el sector de {{logoIndustry}}{{/if}}. El logo debe ser de estilo {{logoStyle}}{{#if logoValues}} y transmitir los siguientes conceptos: {{logoValues}}{{/if}}. {{#if logoColors}}La paleta de colores preferida es {{logoColors}}.{{/if}} {{#if logoElements}}Consideraciones de elementos: {{logoElements}}.{{/if}} El resultado debe ser un logo vectorial, limpio y memorable, presentado sobre un fondo blanco.",
+    "suggestedTools": [
+        { "name": "Ideogram", "url": "https://ideogram.ai/" },
+        { "name": "Midjourney", "url": "https://www.midjourney.com/" },
+        { "name": "DALL-E 3", "url": "https://openai.com/dall-e-3" },
+        { "name": "Canva Logo Maker", "url": "https://www.canva.com/logo-maker/" }
+    ]
+}

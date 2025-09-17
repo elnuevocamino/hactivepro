@@ -1,0 +1,83 @@
+{
+    "id": "project_design_form",
+    "nombre": "Diseñador de Arquitectura de Software",
+    "descripcion": "Genera prompts para diseñar la arquitectura completa de un proyecto de software, desde patrones hasta tecnologías.",
+    "campos": [
+        {
+            "id": "projectName",
+            "etiqueta": "Nombre o Concepto del Proyecto",
+            "tipo": "text",
+            "placeholder": "Ej: Plataforma de e-learning, Red social para mascotas",
+            "requerido": true,
+            "tooltip": "El nombre o la idea principal de tu aplicación."
+        },
+        {
+            "id": "projectObjective",
+            "etiqueta": "Objetivo Principal",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Conectar a estudiantes con tutores, permitir a los dueños de mascotas compartir fotos y consejos",
+            "requerido": true,
+            "tooltip": "Describe el propósito fundamental del proyecto."
+        },
+        {
+            "id": "projectFeatures",
+            "etiqueta": "Funcionalidades Clave (una por línea)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Registro de usuarios\nBúsqueda de cursos\nSistema de mensajería",
+            "tooltip": "Enumera las características más importantes que debe tener el software."
+        },
+        {
+            "id": "archPattern",
+            "etiqueta": "Patrón de Arquitectura Preferido",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "que elijas el más adecuado", "texto": "Dejar que la IA elija", "selected": true },
+                { "valor": "Arquitectura Monolítica", "texto": "Monolítica" },
+                { "valor": "Arquitectura de Microservicios", "texto": "Microservicios" },
+                { "valor": "Arquitectura Serverless", "texto": "Serverless" },
+                { "valor": "Arquitectura Orientada a Eventos", "texto": "Orientada a Eventos" }
+            ]
+        },
+        {
+            "id": "targetPlatforms",
+            "etiqueta": "Plataformas de Destino",
+            "tipo": "checkbox-group",
+            "opciones": [
+                { "valor": "Aplicación Web (Navegador)", "texto": "Web" },
+                { "valor": "Aplicación Móvil (iOS y Android)", "texto": "Móvil" },
+                { "valor": "Aplicación de Escritorio (Windows, macOS, Linux)", "texto": "Escritorio" }
+            ]
+        },
+        {
+            "id": "techStack",
+            "etiqueta": "Pila Tecnológica Preferida (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: MERN (MongoDB, Express, React, Node), Python/Django, .NET",
+            "tooltip": "Si tienes alguna preferencia de tecnologías, indícala aquí."
+        },
+        {
+            "id": "constraints",
+            "etiqueta": "Limitaciones y Requisitos No Funcionales",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Presupuesto limitado, debe soportar 10,000 usuarios concurrentes, alta seguridad de datos",
+            "tooltip": "Aspectos como rendimiento, seguridad, escalabilidad, presupuesto, etc."
+        },
+        {
+            "id": "additionalComments",
+            "etiqueta": "Comentarios Adicionales (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: La escalabilidad es la máxima prioridad. Se necesita integración con pasarelas de pago.",
+            "tooltip": "Cualquier otro detalle relevante para el diseño."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un arquitecto de software senior con experiencia en múltiples dominios. Tu tarea es diseñar una arquitectura robusta y escalable para el siguiente proyecto:\n\n**Nombre del Proyecto:** {{projectName}}\n**Objetivo Principal:** {{projectObjective}}\n\n**Funcionalidades Clave:**\n{{projectFeatures}}\n\n**Detalles de Arquitectura y Tecnología:**\n- **Patrón de Arquitectura Preferido:** {{archPattern}}\n{{#if targetPlatforms}}- **Plataformas de Destino:**\n{{{targetPlatforms}}}\n{{/if}}{{#if techStack}}- **Pila Tecnológica Preferida:** {{techStack}}{{/if}}\n\n{{#if constraints}}**Limitaciones y Requisitos No Funcionales:**\n{{constraints}}\n{{/if}}\n\n{{#if additionalComments}}**Comentarios Adicionales:**\n{{additionalComments}}\n{{/if}}\n\n**Tarea:**\nBasado en toda la información proporcionada, genera un documento de diseño de arquitectura que incluya:\n1.  **Patrón de Arquitectura Recomendado:** Justifica tu elección (o la elección del usuario).\n2.  **Diagrama de Componentes:** Describe los componentes principales del sistema y sus interacciones (puedes usar texto o formato para Mermaid.js).\n3.  **Pila Tecnológica Sugerida:** Recomienda un stack tecnológico completo (frontend, backend, base de datos, etc.), justificando cada elección.\n4.  **Diseño de la Base de Datos:** Propón un esquema inicial para la base de datos (relacional o NoSQL según corresponda).\n5.  **Consideraciones Clave:** Aborda los requisitos no funcionales como escalabilidad, seguridad y rendimiento.",
+    "suggestedTools": [
+        { "name": "Excalidraw", "url": "https://excalidraw.com/" },
+        { "name": "Miro", "url": "https://miro.com/" },
+        { "name": "Diagrams.net", "url": "https://app.diagrams.net/" }
+    ]
+}

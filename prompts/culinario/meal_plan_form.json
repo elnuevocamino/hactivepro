@@ -1,0 +1,66 @@
+{
+    "id": "meal_plan_form",
+    "nombre": "Generador de Plan de Alimentación",
+    "descripcion": "Crea un plan de comidas personalizado basado en datos personales, objetivos y preferencias gastronómicas.",
+    "campos": [
+        {
+            "id": "mainGoal",
+            "etiqueta": "Objetivo Principal",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "perder peso de forma saludable", "texto": "Perder Peso", "selected": true },
+                { "valor": "ganar masa muscular", "texto": "Ganar Músculo" },
+                { "valor": "mantener mi peso actual comiendo más sano", "texto": "Mantener y Comer Sano" },
+                { "valor": "mejorar mi rendimiento deportivo", "texto": "Rendimiento Deportivo" }
+            ],
+            "tooltip": "Elige tu meta principal para que el plan se adapte a ella."
+        },
+        {
+            "id": "personalData",
+            "etiqueta": "Datos Personales (Opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Hombre, 30 años, 80kg, 180cm, nivel de actividad moderado (ejercicio 3-4 veces por semana).",
+            "tooltip": "Proporcionar estos datos ayuda a calcular mejor las porciones y calorías."
+        },
+        {
+            "id": "dietaryRestrictions",
+            "etiqueta": "Restricciones Dietéticas o Alergias",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Vegetariano, sin gluten, alergia a los frutos secos.",
+            "tooltip": "Indica cualquier restricción alimentaria para que el plan sea seguro y adecuado."
+        },
+        {
+            "id": "dislikedFoods",
+            "etiqueta": "Alimentos que No te Gustan (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Brócoli, hígado, pescado azul.",
+            "tooltip": "Enumera los alimentos que prefieres evitar."
+        },
+        {
+            "id": "mealsPerDay",
+            "etiqueta": "Número de Comidas al Día",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "3 comidas principales (desayuno, almuerzo, cena)", "texto": "3 Comidas", "selected": true },
+                { "valor": "5 comidas (3 principales y 2 snacks)", "texto": "5 Comidas (con snacks)" }
+            ],
+            "tooltip": "Elige cómo quieres distribuir tus comidas a lo largo del día."
+        },
+        {
+            "id": "planDuration",
+            "etiqueta": "Duración del Plan",
+            "tipo": "text",
+            "placeholder": "Ej: 7 días",
+            "valor_defecto": "7 días",
+            "tooltip": "Indica para cuántos días necesitas el plan de comidas."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un nutricionista y chef profesional. Tu tarea es crear un plan de alimentación personalizado, delicioso y fácil de seguir.\n\n**Información del Usuario:**\n- **Objetivo Principal:** {{mainGoal}}\n{{#if personalData}}- **Datos Personales:** {{personalData}}\n{{/if}}{{#if dietaryRestrictions}}- **Restricciones/Alergias:** {{dietaryRestrictions}}\n{{/if}}{{#if dislikedFoods}}- **Alimentos a Evitar:** {{dislikedFoods}}\n{{/if}}\n\n**Estructura del Plan:**\n- **Comidas por Día:** {{mealsPerDay}}\n- **Duración:** {{planDuration}}\n\n**Tarea:**\nGenera un plan de comidas detallado para la duración especificada. Para cada día, proporciona opciones para cada comida (desayuno, almuerzo, cena, y snacks si aplica). Incluye una breve descripción de la receta para cada opción y una lista de la compra semanal organizada por categorías (frutas y verduras, proteínas, carbohidratos, etc.). El plan debe ser equilibrado, variado y alineado con el objetivo del usuario.",
+    "suggestedTools": [
+        { "name": "MyFitnessPal", "url": "https://www.myfitnesspal.com/" },
+        { "name": "Cronometer", "url": "https://cronometer.com/" },
+        { "name": "Yummly", "url": "https://www.yummly.com/" }
+    ]
+}

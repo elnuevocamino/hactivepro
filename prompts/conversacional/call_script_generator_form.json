@@ -1,0 +1,67 @@
+{
+    "id": "call_script_generator_form",
+    "nombre": "Generador de Guiones para Llamadas",
+    "descripcion": "Crea guiones estructurados para llamadas de ventas, soporte técnico o seguimiento, definiendo cada etapa de la conversación.",
+    "campos": [
+        {
+            "id": "callPurpose",
+            "etiqueta": "Propósito Principal de la Llamada",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Resolver un problema técnico con el router. Realizar una venta en frío del software CRM.",
+            "requerido": true,
+            "tooltip": "Describe el objetivo de la llamada."
+        },
+        {
+            "id": "callerRole",
+            "etiqueta": "Rol de Quien Llama",
+            "tipo": "text",
+            "placeholder": "Ej: Agente de soporte técnico Nivel 1, Vendedor Senior.",
+            "requerido": false,
+            "tooltip": "¿Quién está realizando la llamada?"
+        },
+        {
+            "id": "recipientProfile",
+            "etiqueta": "Perfil de Quien Recibe la Llamada",
+            "tipo": "text",
+            "placeholder": "Ej: Cliente molesto por una falla, Director de TI, Cliente que pidió más información.",
+            "requerido": false,
+            "tooltip": "¿A quién se está llamando? Ayuda a definir el enfoque."
+        },
+        {
+            "id": "scriptTone",
+            "etiqueta": "Tono Deseado del Guion",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "empático y resolutivo", "texto": "Empático y Resolutivo", "selected": true },
+                { "valor": "persuasivo y enérgico", "texto": "Persuasivo y Enérgico" },
+                { "valor": "profesional y directo", "texto": "Profesional y Directo" },
+                { "valor": "consultivo y amigable", "texto": "Consultivo y Amigable" }
+            ],
+            "tooltip": "Elige el estilo de la conversación."
+        },
+        {
+            "id": "keyInfo",
+            "etiqueta": "Puntos Clave a Comunicar o Preguntar",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej:\n- Preguntar por el número de serie del producto.\n- Mencionar el descuento del 20% válido hasta el viernes.\n- Confirmar la dirección de envío.",
+            "requerido": false,
+            "tooltip": "Información que no puede faltar en la llamada."
+        },
+        {
+            "id": "desiredOutcome",
+            "etiqueta": "Resultado Deseado de la Llamada",
+            "tipo": "text",
+            "placeholder": "Ej: Agendar una demostración, confirmar la resolución del problema, cerrar la venta.",
+            "requerido": false,
+            "tooltip": "¿Cuál es el objetivo final de la llamada?"
+        }
+    ],
+    "plantilla_prompt": "Actúa como un experto en comunicación y diseño de guiones de conversación. Tu tarea es crear un guion estructurado y efectivo para una llamada.\n\n**Contexto de la Llamada:**\n- **Propósito Principal:** {{callPurpose}}\n- **Rol de Quien Llama:** {{#if callerRole}}{{callerRole}}{{else}}un representante de la empresa{{/if}}\n- **Perfil del Receptor:** {{#if recipientProfile}}{{recipientProfile}}{{else}}un cliente o prospecto{{/if}}\n- **Tono Deseado:** {{scriptTone}}\n\n**Información Clave:**\n{{#if keyInfo}}- **Puntos a Comunicar/Preguntar:**\n{{keyInfo}}\n{{/if}}- **Resultado Deseado:** {{#if desiredOutcome}}{{desiredOutcome}}{{else}}lograr el propósito principal{{/if}}\n\n**Tarea:**\nGenera un guion completo para la llamada. El guion debe estar dividido en las siguientes fases:\n1.  **Apertura:** Saludo, presentación y declaración del propósito de la llamada.\n2.  **Descubrimiento/Diagnóstico:** Preguntas clave para entender la situación del cliente.\n3.  **Presentación/Solución:** Exposición de la información o solución.\n4.  **Manejo de Objeciones:** Posibles objeciones y cómo responder a ellas.\n5.  **Cierre:** Resumen de lo acordado y próximos pasos (la llamada a la acción).\n\nEl guion debe ser claro, lógico y guiar la conversación hacia el resultado deseado.",
+    "suggestedTools": [
+        { "name": "Aircall", "url": "https://aircall.io/" },
+        { "name": "Salesloft", "url": "https://salesloft.com/" },
+        { "name": "HubSpot", "url": "https://www.hubspot.com/products/sales/call-tracker" }
+    ]
+}

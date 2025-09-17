@@ -1,0 +1,76 @@
+{
+    "id": "engineering_project_planner_form",
+    "nombre": "Planificador de Proyectos de Ingeniería",
+    "descripcion": "Genera un plan de proyecto estructurado (WBS, Gantt, riesgos) basado en los objetivos, alcance y restricciones.",
+    "campos": [
+        {
+            "id": "projectName",
+            "etiqueta": "Nombre del Proyecto",
+            "tipo": "text",
+            "placeholder": "Ej: Diseño y construcción de un puente peatonal.",
+            "requerido": true,
+            "tooltip": "El nombre oficial del proyecto."
+        },
+        {
+            "id": "projectObjectives",
+            "etiqueta": "Objetivos Principales del Proyecto",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Enumera los objetivos SMART del proyecto. Ej:\n- Diseñar un puente que soporte 500 kg/m².\n- Completar la construcción en 6 meses.\n- Mantener el costo por debajo de 50,000 EUR.",
+            "requerido": true,
+            "tooltip": "Las metas específicas, medibles, alcanzables, relevantes y con un plazo definido."
+        },
+        {
+            "id": "projectScope",
+            "etiqueta": "Alcance del Proyecto (Inclusiones y Exclusiones)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Define claramente los límites del proyecto. Ej:\n- Incluye: Diseño estructural, cimientos, montaje.\n- Excluye: Iluminación decorativa, paisajismo circundante.",
+            "requerido": false,
+            "tooltip": "Qué está dentro y qué está fuera del alcance del proyecto."
+        },
+        {
+            "id": "keyDeliverables",
+            "etiqueta": "Entregables Clave",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Planos de diseño finalizados, informe de cálculo estructural, plan de seguridad.",
+            "requerido": false,
+            "tooltip": "Los productos o resultados tangibles que se entregarán."
+        },
+        {
+            "id": "projectTimeline",
+            "etiqueta": "Plazo o Hitos Clave",
+            "tipo": "text",
+            "placeholder": "Ej: 6 meses, Finalización del diseño: 30/09, Inicio de construcción: 15/10.",
+            "requerido": false,
+            "tooltip": "La duración total o las fechas importantes del proyecto."
+        },
+        {
+            "id": "projectStakeholders",
+            "etiqueta": "Interesados Principales (Stakeholders)",
+            "tipo": "text",
+            "placeholder": "Ej: Ayuntamiento, comunidad de vecinos, empresa constructora.",
+            "requerido": false,
+            "tooltip": "Las personas o grupos involucrados o afectados por el proyecto."
+        },
+        {
+            "id": "outputRequest",
+            "etiqueta": "Plan a Generar",
+            "tipo": "select",
+            "tooltip": "Elige qué componente del plan de proyecto necesitas.",
+            "opciones": [
+                { "valor": "una Estructura de Desglose del Trabajo (WBS/EDT)", "texto": "Estructura de Desglose del Trabajo (WBS)", "selected": true },
+                { "valor": "un cronograma de alto nivel en formato de tabla (similar a un Gantt)", "texto": "Cronograma (Gantt)" },
+                { "valor": "un análisis de riesgos inicial con matriz de probabilidad e impacto", "texto": "Análisis de Riesgos" },
+                { "valor": "un plan de proyecto completo que incluya WBS, cronograma y riesgos", "texto": "Plan de Proyecto Completo" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un Director de Proyectos de Ingeniería (PMP certificado). Tu tarea es generar un plan estructurado para el siguiente proyecto:\n\n**Nombre del Proyecto:** {{projectName}}\n**Objetivos:**\n{{projectObjectives}}\n\n{{#if projectScope}}**Alcance:**\n{{projectScope}}\n{{/if}}\n\n{{#if keyDeliverables}}**Entregables Clave:**\n{{keyDeliverables}}\n{{/if}}\n\n{{#if projectTimeline}}**Plazo/Hitos:** {{projectTimeline}}\n{{/if}}\n\n{{#if projectStakeholders}}**Interesados:** {{projectStakeholders}}\n{{/if}}\n\n**Tarea Específica:**\nBasado en la información proporcionada, genera {{outputRequest}}. Presenta la información de manera clara, profesional y fácil de entender para el equipo del proyecto.",
+    "suggestedTools": [
+        { "name": "MS Project", "url": "https://www.microsoft.com/es-es/microsoft-365/project/project-management-software" },
+        { "name": "Jira", "url": "https://www.atlassian.com/software/jira" },
+        { "name": "Asana", "url": "https://asana.com/" }
+    ]
+}

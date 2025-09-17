@@ -1,0 +1,1 @@
+import{initializePageLayout}from"./main-template.js";import{initializeSubscriptionForm}from"./subscribe.js";document.addEventListener("DOMContentLoaded",async()=>{try{await initializePageLayout(),initializeSubscriptionForm()}catch(i){console.error("Error fatal durante la inicialización de la página:",i)}});

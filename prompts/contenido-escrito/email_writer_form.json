@@ -1,0 +1,58 @@
+{
+    "id": "email_writer_form",
+    "nombre": "Redactor de Emails Profesionales",
+    "descripcion": "Crea prompts para redactar emails efectivos para diferentes propósitos, desde marketing hasta comunicación interna.",
+    "campos": [
+        {
+            "id": "emailPurpose",
+            "etiqueta": "Propósito del Email",
+            "tipo": "text",
+            "placeholder": "Ej: Seguimiento de una reunión, solicitar información, presentar un nuevo producto.",
+            "requerido": true,
+            "tooltip": "Define el objetivo principal de tu email. Este campo es obligatorio."
+        },
+        {
+            "id": "emailRecipient",
+            "etiqueta": "Destinatario",
+            "tipo": "text",
+            "placeholder": "Ej: Un cliente potencial, el equipo de marketing, un proveedor.",
+            "requerido": true,
+            "tooltip": "Describe a quién va dirigido el email para ajustar el contexto."
+        },
+        {
+            "id": "keyInfo",
+            "etiqueta": "Información Clave a Incluir",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Enumera los puntos más importantes que deben estar en el email. Ej:\n- Recordar los acuerdos de la reunión del martes.\n- Adjuntar la presentación en PDF.\n- Confirmar la fecha de la próxima llamada.",
+            "requerido": true,
+            "tooltip": "Los puntos esenciales que el email debe comunicar."
+        },
+        {
+            "id": "emailTone",
+            "etiqueta": "Tono del Email",
+            "tipo": "select",
+            "tooltip": "Elige el estilo de comunicación.",
+            "opciones": [
+                { "valor": "profesional y formal", "texto": "Profesional y Formal", "selected": true },
+                { "valor": "amigable y cercano", "texto": "Amigable y Cercano" },
+                { "valor": "persuasivo y directo", "texto": "Persuasivo y Directo" },
+                { "valor": "urgente e informativo", "texto": "Urgente e Informativo" }
+            ]
+        },
+        {
+            "id": "callToAction",
+            "etiqueta": "Llamada a la Acción (CTA)",
+            "tipo": "text",
+            "placeholder": "Ej: 'Por favor, responde confirmando tu disponibilidad', 'Haz clic aquí para ver el producto'.",
+            "requerido": false,
+            "tooltip": "La acción específica que esperas que el destinatario realice."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un experto en comunicación escrita. Redacta un email profesional.\n\n**Propósito:** {{emailPurpose}}\n**Destinatario:** {{emailRecipient}}\n**Tono:** {{emailTone}}\n\n**Información Clave a Incluir:**\n{{keyInfo}}\n\n{{#if callToAction}}El email debe concluir con una clara llamada a la acción: '{{callToAction}}'.{{/if}}\n\nGenera el asunto y el cuerpo del email.",
+    "suggestedTools": [
+        { "name": "Gmail", "url": "https://mail.google.com/" },
+        { "name": "Outlook", "url": "https://outlook.live.com/" },
+        { "name": "Thunderbird", "url": "https://www.thunderbird.net/" }
+    ]
+}

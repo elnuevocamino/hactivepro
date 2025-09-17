@@ -1,0 +1,70 @@
+{
+    "id": "database_design_form",
+    "nombre": "Diseñador de Base de Datos",
+    "descripcion": "Genera prompts para diseñar esquemas de bases de datos, incluyendo entidades, atributos y relaciones.",
+    "campos": [
+        {
+            "id": "dbType",
+            "etiqueta": "Tipo de Base de Datos",
+            "tipo": "select",
+            "tooltip": "Elige el tipo de base de datos que mejor se adapta a tu proyecto.",
+            "opciones": [
+                { "valor": "Relacional (ej. PostgreSQL, MySQL)", "texto": "Relacional (SQL)", "selected": true },
+                { "valor": "Documental (ej. MongoDB, Firestore)", "texto": "Documental (NoSQL)" },
+                { "valor": "Grafo (ej. Neo4j)", "texto": "Grafo (NoSQL)" },
+                { "valor": "Columna ancha (ej. Cassandra)", "texto": "Columna Ancha (NoSQL)" }
+            ]
+        },
+        {
+            "id": "appName",
+            "etiqueta": "Nombre de la Aplicación/Sistema",
+            "tipo": "text",
+            "placeholder": "Ej: Sistema de gestión de biblioteca, Red social de viajes",
+            "requerido": true,
+            "tooltip": "El nombre del sistema para el cual se diseña la base de datos."
+        },
+        {
+            "id": "appDescription",
+            "etiqueta": "Breve Descripción de la Aplicación",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Una plataforma para que los usuarios presten y devuelvan libros.",
+            "requerido": true,
+            "tooltip": "Describe en una o dos frases el propósito principal de la aplicación."
+        },
+        {
+            "id": "mainEntities",
+            "etiqueta": "Entidades Principales y sus Atributos (una por línea)",
+            "tipo": "textarea",
+            "filas": 5,
+            "placeholder": "Ej:\nLibro (id, titulo, autor, isbn, año_publicacion)\nUsuario (id, nombre, email, fecha_registro)\nPrestamo (id, libro_id, usuario_id, fecha_prestamo, fecha_devolucion)",
+            "requerido": true,
+            "tooltip": "Enumera las entidades principales y entre paréntesis sus atributos más importantes."
+        },
+        {
+            "id": "relationships",
+            "etiqueta": "Relaciones entre Entidades (una por línea)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej:\nUn Usuario puede tener muchos Préstamos (uno a muchos)\nUn Libro puede estar en muchos Préstamos (uno a muchos)",
+            "tooltip": "Describe cómo se conectan las entidades entre sí (uno a uno, uno a muchos, muchos a muchos)."
+        },
+        {
+            "id": "outputFormat",
+            "etiqueta": "Formato de Salida Deseado",
+            "tipo": "select",
+            "tooltip": "Elige cómo quieres que se presente el diseño de la base de datos.",
+            "opciones": [
+                { "valor": "un script SQL DDL (Data Definition Language) para crear las tablas y relaciones", "texto": "Script SQL (DDL)", "selected": true },
+                { "valor": "un diagrama Entidad-Relación en formato Mermaid.js", "texto": "Diagrama ER (Mermaid.js)" },
+                { "valor": "un esquema en formato JSON Schema para una base de datos NoSQL", "texto": "Esquema JSON (para NoSQL)" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un diseñador de bases de datos y arquitecto de datos. Tu tarea es crear un esquema de base de datos bien estructurado para una nueva aplicación.\n\n**Información del Proyecto:**\n- **Nombre de la Aplicación:** {{appName}}\n- **Descripción:** {{appDescription}}\n- **Tipo de Base de Datos Preferido:** {{dbType}}\n\n**Requisitos de Datos:**\n- **Entidades y Atributos Principales:**\n{{mainEntities}}\n\n- **Relaciones Clave:**\n{{relationships}}\n\n**Tarea:**\nBasado en la información proporcionada, genera {{outputFormat}}. El diseño debe estar normalizado (si es relacional), ser eficiente y escalable. Asegúrate de incluir claves primarias, claves foráneas y los tipos de datos más apropiados para cada atributo.",
+    "suggestedTools": [
+        { "name": "dbdiagram.io", "url": "https://dbdiagram.io/" },
+        { "name": "Lucidchart", "url": "https://www.lucidchart.com/" },
+        { "name": "Mermaid Live Editor", "url": "https://mermaid.live/" }
+    ]
+}

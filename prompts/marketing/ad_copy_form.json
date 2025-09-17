@@ -1,0 +1,79 @@
+{
+    "id": "ad_copy_form",
+    "nombre": "Generador de Textos para Anuncios (Copywriting)",
+    "descripcion": "Crea textos (copy) persuasivos para anuncios en diferentes plataformas como Google Ads, Facebook, etc.",
+    "campos": [
+        {
+            "id": "adPlatform",
+            "etiqueta": "Plataforma del Anuncio",
+            "tipo": "select",
+            "tooltip": "Elige la plataforma donde se mostrará el anuncio.",
+            "opciones": [
+                { "valor": "Google Ads (Search)", "texto": "Google Ads (Búsqueda)", "selected": true },
+                { "valor": "Facebook/Instagram Ads", "texto": "Facebook / Instagram Ads" },
+                { "valor": "LinkedIn Ads", "texto": "LinkedIn Ads" },
+                { "valor": "Twitter/X Ads", "texto": "Twitter / X Ads" },
+                { "valor": "un anuncio de video (YouTube)", "texto": "Anuncio de Video (YouTube)" }
+            ]
+        },
+        {
+            "id": "productName",
+            "etiqueta": "Nombre del Producto/Servicio",
+            "tipo": "text",
+            "placeholder": "Ej: Curso de marketing digital, zapatillas 'EcoRun'",
+            "requerido": true,
+            "tooltip": "El nombre del producto o servicio que estás promocionando."
+        },
+        {
+            "id": "targetAudience",
+            "etiqueta": "Público Objetivo",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Emprendedores que quieren mejorar sus ventas online.",
+            "requerido": false,
+            "tooltip": "Describe a quién te diriges para adaptar el mensaje."
+        },
+        {
+            "id": "keyBenefit",
+            "etiqueta": "Beneficio Clave o Propuesta Única de Venta (PUV)",
+            "tipo": "text",
+            "placeholder": "Ej: 'Aprende a duplicar tus ventas en 30 días'",
+            "requerido": true,
+            "tooltip": "La razón principal por la que alguien debería elegir tu producto."
+        },
+        {
+            "id": "callToAction",
+            "etiqueta": "Llamada a la Acción (CTA)",
+            "tipo": "text",
+            "placeholder": "Ej: 'Inscríbete ahora', 'Compra ya', 'Más información'",
+            "requerido": true,
+            "tooltip": "La acción que quieres que el usuario realice."
+        },
+        {
+            "id": "copyTone",
+            "etiqueta": "Tono del Texto",
+            "tipo": "select",
+            "tooltip": "Elige el estilo de comunicación del anuncio.",
+            "opciones": [
+                { "valor": "persuasivo y directo", "texto": "Persuasivo y Directo", "selected": true },
+                { "valor": "urgente y promocional", "texto": "Urgente y Promocional" },
+                { "valor": "informativo y profesional", "texto": "Informativo y Profesional" },
+                { "valor": "creativo y divertido", "texto": "Creativo y Divertido" }
+            ]
+        },
+        {
+            "id": "copyCount",
+            "etiqueta": "Número de Variaciones",
+            "tipo": "text",
+            "placeholder": "Ej: 3",
+            "requerido": false,
+            "tooltip": "¿Cuántas versiones diferentes del anuncio quieres generar?"
+        }
+    ],
+    "plantilla_prompt": "Actúa como un copywriter experto en publicidad digital. Tu tarea es crear el texto (copy) para un anuncio.\n\n**Plataforma:** {{adPlatform}}\n**Producto/Servicio:** {{productName}}\n**Beneficio Clave/PUV:** {{keyBenefit}}\n**Llamada a la Acción (CTA):** {{callToAction}}\n\n{{#if targetAudience}}**Público Objetivo:** {{targetAudience}}\n{{/if}}\n\n**Tono:** {{copyTone}}\n\n**Tarea:**\nGenera {{#if copyCount}}{{copyCount}}{{else}}3{{/if}} variaciones del texto para el anuncio. Para cada variación, proporciona:\n- Un Título/Headline llamativo.\n- El cuerpo del anuncio (descripción).\n\nAdapta la longitud y el formato del texto a las mejores prácticas de la plataforma seleccionada ({{adPlatform}}).",
+    "suggestedTools": [
+        { "name": "Google Ads", "url": "https://ads.google.com/" },
+        { "name": "Facebook Ads Manager", "url": "https://www.facebook.com/business/tools/ads-manager" },
+        { "name": "LinkedIn Campaign Manager", "url": "https://www.linkedin.com/campaignmanager/" }
+    ]
+}

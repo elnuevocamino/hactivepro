@@ -1,0 +1,74 @@
+{
+    "id": "function_generator_form",
+    "nombre": "Generador de Funciones de Código",
+    "descripcion": "Crea prompts detallados para generar funciones de código en diferentes lenguajes de programación.",
+    "campos": [
+        {
+            "id": "programmingLanguage",
+            "etiqueta": "Lenguaje de Programación",
+            "tipo": "select",
+            "tooltip": "Elige el lenguaje para el que quieres generar la función.",
+            "opciones": [
+                { "valor": "Python", "texto": "Python", "selected": true },
+                { "valor": "JavaScript", "texto": "JavaScript" },
+                { "valor": "Java", "texto": "Java" },
+                { "valor": "C++", "texto": "C++" },
+                { "valor": "C#", "texto": "C#" },
+                { "valor": "TypeScript", "texto": "TypeScript" },
+                { "valor": "Go", "texto": "Go" },
+                { "valor": "Rust", "texto": "Rust" },
+                { "valor": "PHP", "texto": "PHP" }
+            ]
+        },
+        {
+            "id": "functionDescription",
+            "etiqueta": "Descripción de la Función",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Una función que toma una lista de números y devuelve la suma de los números pares.",
+            "requerido": true,
+            "tooltip": "Describe en lenguaje natural qué debe hacer la función."
+        },
+        {
+            "id": "functionParameters",
+            "etiqueta": "Parámetros de Entrada (uno por línea)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: numeros: list[int]",
+            "requerido": false,
+            "tooltip": "Define los parámetros de entrada de la función, incluyendo su nombre y tipo si es posible."
+        },
+        {
+            "id": "functionReturnValue",
+            "etiqueta": "Valor de Retorno",
+            "tipo": "text",
+            "placeholder": "Ej: Un número entero (int) con la suma.",
+            "requerido": false,
+            "tooltip": "Describe qué tipo de valor debe devolver la función."
+        },
+        {
+            "id": "functionExamples",
+            "etiqueta": "Ejemplos de Uso (Opcional)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: \nEntrada: [1, 2, 3, 4, 5, 6]\nSalida: 12",
+            "requerido": false,
+            "tooltip": "Proporciona ejemplos de entrada y salida para aclarar el comportamiento esperado."
+        },
+        {
+            "id": "includeComments",
+            "etiqueta": "Incluir Comentarios en el Código",
+            "tipo": "checkbox",
+            "tooltip": "Marca esta casilla para que la IA añada comentarios explicando el código.",
+            "opciones": [
+                { "valor": "true", "texto": "Sí, añadir comentarios explicativos" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un programador experto en {{programmingLanguage}}. Tu tarea es escribir una función de código completa y eficiente.\n\n**Descripción de la Función:**\n{{functionDescription}}\n\n{{#if functionParameters}}**Parámetros de Entrada:**\n{{functionParameters}}\n{{/if}}\n\n{{#if functionReturnValue}}**Valor de Retorno Esperado:**\n{{functionReturnValue}}\n{{/if}}\n\n{{#if functionExamples}}**Ejemplos:**\n{{functionExamples}}\n{{/if}}\n\n**Requisitos Adicionales:**\n- El código debe ser limpio, legible y seguir las mejores prácticas de {{programmingLanguage}}.\n{{#if includeComments}}- Incluye comentarios en el código para explicar las partes más importantes.{{/if}}\n\nGenera únicamente el bloque de código de la función, sin explicaciones adicionales fuera del código.",
+    "suggestedTools": [
+        { "name": "VS Code", "url": "https://code.visualstudio.com/" },
+        { "name": "Replit", "url": "https://replit.com/" },
+        { "name": "GitHub Copilot", "url": "https://github.com/features/copilot" }
+    ]
+}

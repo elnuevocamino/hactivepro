@@ -1,0 +1,68 @@
+{
+    "id": "value_proposition_form",
+    "nombre": "Creador de Ofertas de Valor",
+    "descripcion": "Define y redacta una propuesta de valor irresistible que conecte con tu público y destaque sobre la competencia.",
+    "campos": [
+        {
+            "id": "productName",
+            "etiqueta": "Nombre del Producto/Servicio",
+            "tipo": "text",
+            "placeholder": "Ej: 'ConnectaPro', 'Café Amanecer'",
+            "requerido": true,
+            "tooltip": "El nombre de tu producto, servicio o marca."
+        },
+        {
+            "id": "targetAudience",
+            "etiqueta": "Público Objetivo",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Gerentes de marketing en startups de SaaS, estudiantes universitarios.",
+            "requerido": true,
+            "tooltip": "Describe a tu cliente ideal, sus necesidades y sus 'dolores'."
+        },
+        {
+            "id": "problemSolved",
+            "etiqueta": "Problema que Resuelve / Necesidad que Satisface",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: La dificultad de encontrar colaboradores cualificados para proyectos a corto plazo.",
+            "requerido": true,
+            "tooltip": "El 'dolor' o la necesidad fundamental que tu producto aborda."
+        },
+        {
+            "id": "keyBenefits",
+            "etiqueta": "Beneficios Clave (Resultados)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Ahorra tiempo en la contratación, reduce costos operativos, aumenta la calidad de los entregables.",
+            "requerido": true,
+            "tooltip": "Los resultados positivos y tangibles que el cliente obtiene."
+        },
+        {
+            "id": "differentiators",
+            "etiqueta": "Diferenciadores (¿Por qué eres único?)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Usamos IA para el matching, ofrecemos garantía de satisfacción, nuestra comunidad es la más grande de LATAM.",
+            "requerido": false,
+            "tooltip": "Qué te hace diferente y mejor que la competencia."
+        },
+        {
+            "id": "outputFormat",
+            "etiqueta": "Formato de Salida Deseado",
+            "tipo": "select",
+            "tooltip": "Elige cómo quieres que se presente la propuesta de valor.",
+            "opciones": [
+                { "valor": "una declaración de valor concisa (formato: Para [público] que [necesidad], [producto] es [categoría] que [beneficio]. A diferencia de [competencia], nuestro producto [diferenciador])", "texto": "Declaración de Valor Concisa", "selected": true },
+                { "valor": "un desglose completo usando el 'Value Proposition Canvas' (Cliente: trabajos, dolores, alegrías; Propuesta: productos, aliviadores de dolor, creadores de alegría)", "texto": "Análisis con Value Proposition Canvas" },
+                { "valor": "tres variaciones de eslóganes o titulares basados en la propuesta de valor", "texto": "3 Variaciones de Eslogan/Titular" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un estratega de marca y experto en marketing. Tu tarea es construir una propuesta de valor sólida y persuasiva basada en la siguiente información:\n\n**Producto/Servicio:** {{productName}}\n**Público Objetivo:** {{targetAudience}}\n**Problema/Necesidad:** {{problemSolved}}\n**Beneficios Clave:** {{keyBenefits}}\n\n{{#if differentiators}}**Diferenciadores Clave:**\n{{differentiators}}\n{{/if}}\n\n**Tarea:**\nGenera {{outputFormat}}. Asegúrate de que el resultado sea claro, convincente y centrado en el cliente.",
+    "suggestedTools": [
+        { "name": "Miro", "url": "https://miro.com/templates/value-proposition-canvas/" },
+        { "name": "Notion", "url": "https://www.notion.so/" },
+        { "name": "Google Slides", "url": "https://slides.google.com/" }
+    ]
+}

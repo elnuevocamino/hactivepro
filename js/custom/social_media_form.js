@@ -1,1 +1,0 @@
-export function generate(a){const e=e=>a.querySelector(`#${e}`)?.value.trim()||"";return`Crea una publicación para ${e("socialPlatform")} sobre "${e("socialTopic")}". El objetivo principal es ${e("socialGoal")}.`}

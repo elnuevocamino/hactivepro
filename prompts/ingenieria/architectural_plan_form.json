@@ -1,0 +1,71 @@
+{
+    "id": "architectural_plan_form",
+    "nombre": "Generador de Planos Arquitectónicos",
+    "descripcion": "Genera especificaciones para planos de edificaciones, definiendo tipo, áreas, niveles y distribución.",
+    "campos": [
+        {
+            "id": "buildingType",
+            "etiqueta": "Tipo de Edificación",
+            "tipo": "text",
+            "placeholder": "Ej: Vivienda unifamiliar, edificio de oficinas, local comercial.",
+            "requerido": true,
+            "tooltip": "Define el uso principal de la construcción."
+        },
+        {
+            "id": "totalArea",
+            "etiqueta": "Área Total del Terreno (m²)",
+            "tipo": "text",
+            "placeholder": "Ej: 250",
+            "requerido": false,
+            "tooltip": "La superficie total del lote donde se construirá."
+        },
+        {
+            "id": "levels",
+            "etiqueta": "Número de Niveles o Pisos",
+            "tipo": "text",
+            "placeholder": "Ej: 2",
+            "requerido": false,
+            "tooltip": "¿Cuántas plantas tendrá la edificación?"
+        },
+        {
+            "id": "areaDistribution",
+            "etiqueta": "Distribución de Áreas Deseada",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Describe los espacios que necesitas. Ej:\n- Planta Baja: Sala, comedor, cocina, 1/2 baño, jardín.\n- Planta Alta: 3 recámaras (la principal con baño propio), 2 baños.",
+            "requerido": false,
+            "tooltip": "Enumera los espacios y su distribución por nivel."
+        },
+        {
+            "id": "architecturalStyle",
+            "etiqueta": "Estilo Arquitectónico",
+            "tipo": "text",
+            "placeholder": "Ej: Moderno, minimalista, colonial, industrial, rústico.",
+            "requerido": false,
+            "tooltip": "Define la estética general de la edificación."
+        },
+        {
+            "id": "buildingCodes",
+            "etiqueta": "Normativas y Códigos de Construcción",
+            "tipo": "text",
+            "placeholder": "Ej: Código de edificación local, normas de accesibilidad, restricciones de altura.",
+            "requerido": false,
+            "tooltip": "Menciona cualquier regulación que deba cumplirse."
+        },
+        {
+            "id": "specialRequirements",
+            "etiqueta": "Requisitos Especiales",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Cualquier otro detalle importante. Ej:\n- Sostenibilidad (paneles solares, recolección de agua).\n- Incluir una piscina y una terraza en la azotea.\n- Necesita un estudio u oficina en casa.",
+            "requerido": false,
+            "tooltip": "Añade características únicas o requerimientos específicos."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un arquitecto experimentado. Tu tarea es generar una descripción detallada y las especificaciones para un proyecto arquitectónico que pueda ser utilizado como base para un diseño en software CAD o BIM.\n\n**Tipo de Edificación:** {{buildingType}}\n{{#if architecturalStyle}}**Estilo Arquitectónico:** {{architecturalStyle}}{{/if}}\n\n**Especificaciones del Proyecto:**\n{{#if totalArea}}- **Área del Terreno:** {{totalArea}} m²{{/if}}\n{{#if levels}}- **Número de Niveles:** {{levels}}{{/if}}\n\n{{#if areaDistribution}}**Distribución de Áreas Requerida:**\n{{areaDistribution}}\n{{/if}}\n\n{{#if buildingCodes}}**Normativas a Considerar:**\n{{buildingCodes}}\n{{/if}}\n\n{{#if specialRequirements}}**Requisitos Especiales:**\n{{specialRequirements}}\n{{/if}}\n\n**Tarea:**\nGenera un documento de especificaciones que incluya:\n1.  Un resumen conceptual del proyecto.\n2.  Una lista detallada de los espacios por nivel con sus áreas estimadas.\n3.  Sugerencias de materiales y acabados acordes al estilo.\n4.  Consideraciones estructurales y de instalaciones básicas.\n5.  Una descripción para el plano de planta de cada nivel.",
+    "suggestedTools": [
+        { "name": "AutoCAD", "url": "https://www.autodesk.com/products/autocad/overview" },
+        { "name": "Revit", "url": "https://www.autodesk.com/products/revit/overview" },
+        { "name": "SketchUp", "url": "https://www.sketchup.com/" }
+    ]
+}

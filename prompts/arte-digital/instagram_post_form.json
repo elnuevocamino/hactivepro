@@ -1,0 +1,69 @@
+{
+    "id": "instagram_post_form",
+    "nombre": "Generador de Contenido para Instagram",
+    "descripcion": "Crea prompts para planificar posts de Instagram (carruseles, Reels, etc.) enfocados en el contenido visual y el copy.",
+    "campos": [
+        {
+            "id": "postTopic",
+            "etiqueta": "Tema Principal del Post",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: 5 consejos para cuidar las plantas de interior, lanzamiento de nuestro nuevo producto de café, resumen del último evento.",
+            "requerido": true,
+            "tooltip": "Describe la idea central de tu publicación. Este campo es obligatorio."
+        },
+        {
+            "id": "postType",
+            "etiqueta": "Tipo de Publicación",
+            "tipo": "select",
+            "tooltip": "Elige el formato de tu contenido en Instagram.",
+            "opciones": [
+                { "valor": "un carrusel de varias imágenes", "texto": "Carrusel", "selected": true },
+                { "valor": "un Reel de video corto", "texto": "Reel" },
+                { "valor": "una publicación con una sola imagen", "texto": "Imagen Única" },
+                { "valor": "una serie de Stories", "texto": "Stories" }
+            ]
+        },
+        {
+            "id": "visualDescription",
+            "etiqueta": "Ideas para el Contenido Visual",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Para el carrusel, una imagen por cada consejo con un diseño minimalista. Para el Reel, un video rápido mostrando el producto en uso.",
+            "requerido": false,
+            "tooltip": "Describe qué se debería ver en las imágenes o videos."
+        },
+        {
+            "id": "copyText",
+            "etiqueta": "Puntos Clave para el Copy (Texto)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Empezar con una pregunta para enganchar. Mencionar los beneficios clave. Usar emojis para separar ideas.",
+            "requerido": false,
+            "tooltip": "Indica qué información o ideas debe incluir el texto de la publicación."
+        },
+        {
+            "id": "callToAction",
+            "etiqueta": "Llamada a la Acción (CTA)",
+            "tipo": "text",
+            "placeholder": "Ej: 'Guarda este post', 'Comenta tu consejo favorito', 'Visita el enlace en la bio'.",
+            "requerido": false,
+            "tooltip": "¿Qué quieres que hagan los usuarios después de ver tu post?"
+        },
+        {
+            "id": "hashtags",
+            "etiqueta": "Hashtags (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: #decoracioninteriores #plantasdeinterior, o 'sugiere 5 hashtags relevantes'.",
+            "requerido": false,
+            "tooltip": "Incluye hashtags específicos o pide a la IA que los genere."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un experto en marketing de redes sociales. Necesito crear contenido para Instagram.\n\n**Tema:** {{postTopic}}\n**Formato:** {{postType}}\n\n{{#if visualDescription}}**Ideas para el contenido visual:**\n{{visualDescription}}\n{{/if}}\n\n**Tarea:**\n1. Escribe un copy (texto) atractivo para esta publicación. {{#if copyText}}Debe incluir las siguientes ideas: {{copyText}}.{{/if}}\n2. {{#if callToAction}}Termina el copy con la siguiente llamada a la acción: '{{callToAction}}'.{{else}}Incluye una llamada a la acción apropiada al final.{{/if}}\n3. {{#if hashtags}}Usa estos hashtags: {{hashtags}}.{{else}}Sugiere un conjunto de 5 a 7 hashtags relevantes y populares para este tema.{{/if}}\n\nPresenta el resultado de forma clara, separando el copy de la lista de hashtags.",
+    "suggestedTools": [
+        { "name": "Instagram", "url": "https://www.instagram.com/" },
+        { "name": "Canva", "url": "https://www.canva.com/" },
+        { "name": "CapCut", "url": "https://www.capcut.com/" },
+        { "name": "Meta Business Suite", "url": "https://business.facebook.com/" }
+    ]
+}

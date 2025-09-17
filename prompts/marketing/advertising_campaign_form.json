@@ -1,0 +1,85 @@
+{
+    "id": "advertising_campaign_form",
+    "nombre": "Diseñador de Campañas Publicitarias",
+    "descripcion": "Crea prompts para desarrollar conceptos creativos y estrategias para campañas publicitarias completas.",
+    "campos": [
+        {
+            "id": "campaignProduct",
+            "etiqueta": "Producto, Servicio o Marca a Anunciar",
+            "tipo": "text",
+            "placeholder": "Ej: Nuevas zapatillas 'AirFlex', Café 'Amanecer'",
+            "requerido": true,
+            "tooltip": "El producto o marca central de la campaña."
+        },
+        {
+            "id": "campaignGoal",
+            "etiqueta": "Objetivo Principal de la Campaña",
+            "tipo": "select",
+            "tooltip": "Selecciona la meta principal que quieres alcanzar.",
+            "opciones": [
+                { "valor": "aumentar el reconocimiento de marca (brand awareness)", "texto": "Aumentar Reconocimiento de Marca", "selected": true },
+                { "valor": "generar leads o clientes potenciales", "texto": "Generar Leads" },
+                { "valor": "impulsar las ventas directas", "texto": "Impulsar Ventas" },
+                { "valor": "promocionar un evento o lanzamiento", "texto": "Promocionar un Evento/Lanzamiento" },
+                { "valor": "mejorar la percepción de la marca", "texto": "Mejorar Percepción de Marca" }
+            ]
+        },
+        {
+            "id": "campaignAudience",
+            "etiqueta": "Público Objetivo",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Describe a tu cliente ideal. Ej: Jóvenes deportistas de 18-25 años, profesionales urbanos interesados en la sostenibilidad.",
+            "requerido": false,
+            "tooltip": "Define a quién se dirige la campaña para personalizar el mensaje."
+        },
+        {
+            "id": "campaignMessage",
+            "etiqueta": "Mensaje Clave (La idea principal)",
+            "tipo": "text",
+            "placeholder": "Ej: 'Corre más rápido, siéntete más ligero', 'El café que te entiende'",
+            "requerido": false,
+            "tooltip": "La idea central que quieres comunicar en una frase."
+        },
+        {
+            "id": "campaignTone",
+            "etiqueta": "Tono de la Campaña",
+            "tipo": "select",
+            "tooltip": "Elige la personalidad y el estilo de la comunicación.",
+            "opciones": [
+                { "valor": "humorístico e ingenioso", "texto": "Humorístico e Ingenioso", "selected": true },
+                { "valor": "emotivo e inspirador", "texto": "Emotivo e Inspirador" },
+                { "valor": "directo y informativo", "texto": "Directo e Informativo" },
+                { "valor": "sofisticado y exclusivo", "texto": "Sofisticado y Exclusivo" },
+                { "valor": "enérgico y juvenil", "texto": "Enérgico y Juvenil" }
+            ]
+        },
+        {
+            "id": "campaignChannels",
+            "etiqueta": "Canales de Difusión",
+            "tipo": "checkbox",
+            "tooltip": "Selecciona los medios donde se ejecutará la campaña.",
+            "opciones": [
+                { "valor": "Redes Sociales (Instagram, TikTok)", "texto": "Redes Sociales" },
+                { "valor": "Video Online (YouTube, Vimeo)", "texto": "Video Online" },
+                { "valor": "Publicidad en buscadores (SEM)", "texto": "Buscadores (SEM)" },
+                { "valor": "Email Marketing", "texto": "Email Marketing" },
+                { "valor": "Medios tradicionales (TV, Radio, Prensa)", "texto": "Medios Tradicionales" }
+            ]
+        },
+        {
+            "id": "campaignCTA",
+            "etiqueta": "Llamada a la Acción (CTA)",
+            "tipo": "text",
+            "placeholder": "Ej: Descubre la colección, Regístrate ahora, Compra ya",
+            "requerido": false,
+            "tooltip": "La acción específica que quieres que el público realice."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un director creativo y estratega de marketing. Tu tarea es diseñar una campaña publicitaria completa.\n\n**Producto/Marca:** {{campaignProduct}}\n**Objetivo Principal:** {{campaignGoal}}\n\n{{#if campaignAudience}}**Público Objetivo:**\n{{campaignAudience}}\n{{/if}}\n\n{{#if campaignMessage}}**Mensaje Clave:** {{campaignMessage}}\n{{/if}}\n\n**Tono de la Campaña:** {{campaignTone}}\n\n{{#if campaignChannels}}**Canales Sugeridos:**\n{{#each campaignChannels}}- {{this}}\n{{/each}}{{/if}}\n\n{{#if campaignCTA}}**Llamada a la Acción (CTA):** {{campaignCTA}}\n{{/if}}\n\n**Tarea:**\nDesarrolla un concepto creativo para la campaña. Propón 3 ideas para anuncios o piezas de contenido específicas para los canales seleccionados, incluyendo un eslogan y una breve descripción visual o del copy.",
+    "suggestedTools": [
+        { "name": "Google Ads", "url": "https://ads.google.com/" },
+        { "name": "Facebook Ads Manager", "url": "https://www.facebook.com/business/tools/ads-manager" },
+        { "name": "Canva", "url": "https://www.canva.com/" }
+    ]
+}

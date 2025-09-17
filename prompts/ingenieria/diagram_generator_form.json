@@ -1,0 +1,65 @@
+{
+    "id": "diagram_generator_form",
+    "nombre": "Generador de Diagramas Técnicos",
+    "descripcion": "Crea prompts para generar diagramas (flujo, bloques, circuitos) especificando elementos y relaciones.",
+    "campos": [
+        {
+            "id": "diagramType",
+            "etiqueta": "Tipo de Diagrama",
+            "tipo": "select",
+            "tooltip": "Elige el tipo de diagrama que quieres generar.",
+            "opciones": [
+                { "valor": "un diagrama de flujo", "texto": "Diagrama de Flujo", "selected": true },
+                { "valor": "un diagrama de bloques", "texto": "Diagrama de Bloques" },
+                { "valor": "un diagrama de circuito simple", "texto": "Diagrama de Circuito" },
+                { "valor": "un diagrama de secuencia", "texto": "Diagrama de Secuencia" },
+                { "valor": "un diagrama de clases (UML)", "texto": "Diagrama de Clases (UML)" }
+            ]
+        },
+        {
+            "id": "diagramElements",
+            "etiqueta": "Elementos del Diagrama (uno por línea)",
+            "tipo": "textarea",
+            "filas": 5,
+            "placeholder": "Ej: A[Inicio]; B{Decisión}; C(Proceso 1); D[Fin]",
+            "requerido": true,
+            "tooltip": "Define los nodos, componentes o actores de tu diagrama."
+        },
+        {
+            "id": "diagramRelationships",
+            "etiqueta": "Relaciones y Conexiones (una por línea)",
+            "tipo": "textarea",
+            "filas": 5,
+            "placeholder": "Ej: A --> B; B -- Sí --> C; B -- No --> D",
+            "requerido": true,
+            "tooltip": "Define cómo se conectan los elementos entre sí."
+        },
+        {
+            "id": "diagramLayout",
+            "etiqueta": "Dirección o Disposición (Opcional)",
+            "tipo": "select",
+            "tooltip": "Elige la orientación del diagrama.",
+            "opciones": [
+                { "valor": "de arriba hacia abajo (Top to Bottom)", "texto": "Arriba a Abajo (TB)", "selected": true },
+                { "valor": "de izquierda a derecha (Left to Right)", "texto": "Izquierda a Derecha (LR)" }
+            ]
+        },
+        {
+            "id": "outputSyntax",
+            "etiqueta": "Sintaxis de Salida",
+            "tipo": "select",
+            "tooltip": "Elige el lenguaje de marcado para el diagrama.",
+            "opciones": [
+                { "valor": "sintaxis de Mermaid", "texto": "Mermaid", "selected": true },
+                { "valor": "sintaxis de PlantUML", "texto": "PlantUML" },
+                { "valor": "sintaxis de Graphviz (DOT)", "texto": "Graphviz (DOT)" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un experto en la generación de diagramas a partir de texto. Tu tarea es crear el código para {{diagramType}} utilizando {{outputSyntax}}.\n\n**Elementos del Diagrama:**\n{{diagramElements}}\n\n**Relaciones:**\n{{diagramRelationships}}\n\n{{#if diagramLayout}}**Disposición:**\nEl diagrama debe tener una disposición {{diagramLayout}}.{{/if}}\n\nGenera únicamente el bloque de código completo para el diagrama, sin explicaciones adicionales.",
+    "suggestedTools": [
+        { "name": "Mermaid Live Editor", "url": "https://mermaid.live/" },
+        { "name": "PlantUML Online", "url": "http://www.plantuml.com/plantuml/uml/" },
+        { "name": "Graphviz Online", "url": "https://dreampuf.github.io/GraphvizOnline/" }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "id": "probability_stats_form",
+    "nombre": "Calculador de Probabilidad y Estadística",
+    "descripcion": "Realiza cálculos estadísticos y de probabilidad, desde distribuciones hasta pruebas de hipótesis.",
+    "campos": [
+        {
+            "id": "calculationType",
+            "etiqueta": "Tipo de Cálculo Estadístico",
+            "tipo": "select",
+            "tooltip": "Elige el tipo de análisis que necesitas realizar.",
+            "opciones": [
+                { "valor": "Estadística Descriptiva", "texto": "Estadística Descriptiva (media, mediana, etc.)" },
+                { "valor": "Distribución de Probabilidad", "texto": "Distribución de Probabilidad (Binomial, Normal, etc.)" },
+                { "valor": "Prueba de Hipótesis", "texto": "Prueba de Hipótesis (t-test, chi-cuadrado, etc.)" },
+                { "valor": "Análisis de Regresión", "texto": "Análisis de Regresión (Lineal, Logística, etc.)" },
+                { "valor": "Cálculo de Correlación", "texto": "Cálculo de Correlación" }
+            ]
+        },
+        {
+            "id": "problemDescription",
+            "etiqueta": "Describe el Problema o Pregunta",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Quiero saber si hay una diferencia significativa en las ventas promedio entre el Grupo A y el Grupo B. ¿Cuál es la probabilidad de obtener 3 caras al lanzar una moneda 5 veces?",
+            "requerido": true,
+            "tooltip": "Explica claramente qué necesitas calcular o qué hipótesis quieres probar."
+        },
+        {
+            "id": "dataSet",
+            "etiqueta": "Conjunto de Datos (si aplica)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Grupo A: 15, 18, 22, 19, 25. Grupo B: 28, 32, 29, 35, 31.",
+            "requerido": false,
+            "tooltip": "Pega aquí los datos numéricos necesarios para el cálculo."
+        },
+        {
+            "id": "outputFormat",
+            "etiqueta": "Formato de Respuesta Deseado (Opcional)",
+            "tipo": "select",
+            "tooltip": "Elige cómo quieres que se presente la respuesta.",
+            "opciones": [
+                { "valor": "una explicación detallada paso a paso del cálculo y la interpretación del resultado", "texto": "Explicación Paso a Paso", "selected": true },
+                { "valor": "únicamente el resultado final del cálculo", "texto": "Solo el Resultado Final" },
+                { "valor": "el código en Python o R para realizar el cálculo", "texto": "Código (Python/R)" }
+            ]
+        }
+    ]
+,
+    "plantilla_prompt": "Actúa como un estadístico experto. Mi objetivo es realizar un cálculo de {{calculationType}}.\n\n**Problema a resolver:**\n{{problemDescription}}\n\n{{#if dataSet}}Los datos para este análisis son los siguientes:\n```\n{{dataSet}}\n```{{/if}}\n\nNecesito que la respuesta sea {{outputFormat}}.",
+    "suggestedTools": [
+        {
+            "name": "WolframAlpha",
+            "url": "https://www.wolframalpha.com/"
+        },
+        {
+            "name": "ChatGPT (Code Interpreter)",
+            "url": "https://chat.openai.com/"
+        },
+        {
+            "name": "Gemini",
+            "url": "https://gemini.google.com/"
+        }
+    ]
+}

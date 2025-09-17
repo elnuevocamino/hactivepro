@@ -1,0 +1,77 @@
+{
+    "id": "account_balance_projector_form",
+    "nombre": "Proyector de Saldos de Cuentas",
+    "descripcion": "Proyecta el saldo de una cuenta bancaria basado en ingresos y gastos recurrentes y puntuales.",
+    "campos": [
+        {
+            "id": "initialBalance",
+            "etiqueta": "Saldo Inicial de la Cuenta",
+            "tipo": "text",
+            "placeholder": "Ej: 1500",
+            "requerido": true,
+            "tooltip": "El saldo actual de tu cuenta."
+        },
+        {
+            "id": "projectionPeriod",
+            "etiqueta": "Período de Proyección",
+            "tipo": "text",
+            "placeholder": "Ej: 6 meses, 1 año",
+            "requerido": true,
+            "tooltip": "Define el horizonte de tiempo para la proyección."
+        },
+        {
+            "id": "recurringInflows",
+            "etiqueta": "Entradas Recurrentes (opcional)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Enumera tus ingresos recurrentes con monto y frecuencia. Ej:\n- Salario: $2,500 (mensual, día 30)\n- Ingresos freelance: $500 (quincenal)",
+            "requerido": false,
+            "tooltip": "Describe los ingresos que recibes de forma periódica."
+        },
+        {
+            "id": "recurringOutflows",
+            "etiqueta": "Salidas Recurrentes (opcional)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Enumera tus gastos fijos con monto y frecuencia. Ej:\n- Alquiler/Hipoteca: $1,200 (mensual, día 1)\n- Suscripción a Netflix: $15 (mensual, día 10)",
+            "requerido": false,
+            "tooltip": "Describe los gastos que tienes de forma periódica."
+        },
+        {
+            "id": "oneTimeEvents",
+            "etiqueta": "Eventos Únicos (Ingresos o Gastos) (opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Enumera transacciones puntuales con fecha y monto. Ej:\n- Bono de Navidad: +$1,000 (15 de Diciembre)\n- Reparación del coche: -$600 (20 de Enero)",
+            "requerido": false,
+            "tooltip": "Añade cualquier transacción que no sea recurrente."
+        },
+        {
+            "id": "outputGranularity",
+            "etiqueta": "Granularidad de la Proyección",
+            "tipo": "select",
+            "tooltip": "Elige el nivel de detalle para la tabla de proyección.",
+            "opciones": [
+                { "valor": "mensual", "texto": "Mensual", "selected": true },
+                { "valor": "semanal", "texto": "Semanal" },
+                { "valor": "diaria (para el primer mes)", "texto": "Diaria (para el primer mes)" }
+            ]
+        },
+        {
+            "id": "generateChart",
+            "etiqueta": "Generar Gráfico (opcional)",
+            "tipo": "select",
+            "tooltip": "Elige si deseas una representación visual de la proyección.",
+            "opciones": [
+                { "valor": "No generar un gráfico.", "texto": "No", "selected": true },
+                { "valor": "Además de la tabla, genera un gráfico de líneas que muestre la evolución del saldo final.", "texto": "Sí, generar un gráfico de líneas" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un planificador financiero personal. Tu tarea es crear una proyección del saldo de una cuenta.\n\n**Datos Iniciales:**\n- **Saldo Inicial:** {{initialBalance}}\n- **Período de Proyección:** {{projectionPeriod}}\n\n{{#if recurringInflows}}**Ingresos Recurrentes:**\n{{recurringInflows}}\n{{/if}}\n\n{{#if recurringOutflows}}**Egresos Recurrentes:**\n{{recurringOutflows}}\n{{/if}}\n\n{{#if oneTimeEvents}}**Eventos Únicos:**\n{{oneTimeEvents}}\n{{/if}}\n\n**Instrucciones:**\n1. Genera una tabla que proyecte el saldo de la cuenta a lo largo del período especificado.\n2. La tabla debe tener una granularidad {{outputGranularity}}.\n3. Las columnas deben ser: Período, Saldo Inicial, Ingresos, Egresos, Saldo Final.\n4. Considera las fechas o frecuencias de los flujos recurrentes y puntuales para aplicarlos en el período correcto.\n5. {{generateChart}}\n\nGenera la proyección completa.",
+    "suggestedTools": [
+        { "name": "Google Sheets", "url": "https://sheets.google.com/" },
+        { "name": "Microsoft Excel", "url": "https://www.microsoft.com/excel" },
+        { "name": "YNAB (You Need A Budget)", "url": "https://www.youneedabudget.com/" }
+    ]
+}

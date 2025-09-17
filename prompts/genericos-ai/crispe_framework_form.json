@@ -1,0 +1,65 @@
+{
+    "id": "crispe_framework_form",
+    "nombre": "Framework CRISPE",
+    "descripcion": "Genera prompts detallados con el framework CRISPE (Capacidad, Petición, Insight, Estilo, Persona, Experimento).",
+    "campos": [
+        {
+            "id": "crispeCapacity",
+            "etiqueta": "C - Capacidad y Rol",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Actúa como un estratega de marketing digital con 10 años de experiencia en startups de SaaS.",
+            "requerido": false,
+            "tooltip": "Define la capacidad, el rol y la experiencia que debe tener la IA."
+        },
+        {
+            "id": "crispeRequest",
+            "etiqueta": "R - Petición (Request)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Genera una estrategia de contenido para el lanzamiento de nuestro nuevo producto.",
+            "requerido": true,
+            "tooltip": "La tarea principal y específica que quieres que la IA realice. Este campo es obligatorio."
+        },
+        {
+            "id": "crispeInsight",
+            "etiqueta": "I - Insight (Contexto)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: El producto es una app de productividad. Nuestro competidor principal es 'SuperTask'. El presupuesto es limitado.",
+            "requerido": false,
+            "tooltip": "Proporciona el contexto, los antecedentes y los datos clave necesarios."
+        },
+        {
+            "id": "crispeStyle",
+            "etiqueta": "S - Estilo",
+            "tipo": "text",
+            "placeholder": "Ej: Profesional pero accesible. Usa listas y negritas para mayor claridad.",
+            "requerido": false,
+            "tooltip": "Define el estilo de escritura deseado."
+        },
+        {
+            "id": "crispePersona",
+            "etiqueta": "P - Persona (Audiencia)",
+            "tipo": "text",
+            "placeholder": "Ej: El CEO y el equipo de marketing de la empresa.",
+            "requerido": false,
+            "tooltip": "Define el público al que se dirige la respuesta."
+        },
+        {
+            "id": "crispeExperiment",
+            "etiqueta": "E - Experimento (Variaciones)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Proporciona 3 enfoques diferentes para la estrategia: uno conservador, uno agresivo y uno creativo.",
+            "requerido": false,
+            "tooltip": "Pide a la IA que genere múltiples versiones o variaciones de la respuesta."
+        }
+    ],
+    "plantilla_prompt": "{{#if crispeCapacity}}{{crispeCapacity}}\n\n{{/if}}**Petición:**\n{{crispeRequest}}\n\n{{#if crispeInsight}}**Contexto (Insight):**\n{{crispeInsight}}\n{{/if}}\n\n{{#if crispeStyle}}**Estilo:** {{crispeStyle}}\n{{/if}}{{#if crispePersona}}**Audiencia (Persona):** {{crispePersona}}\n{{/if}}{{#if crispeExperiment}}**Experimento:** {{crispeExperiment}}\n{{/if}}",
+    "suggestedTools": [
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" },
+        { "name": "Claude", "url": "https://claude.ai/" },
+        { "name": "Gemini", "url": "https://gemini.google.com/" }
+    ]
+}

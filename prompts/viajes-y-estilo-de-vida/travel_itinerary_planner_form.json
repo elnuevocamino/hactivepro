@@ -1,0 +1,68 @@
+{
+    "id": "travel_itinerary_planner_form",
+    "nombre": "Planificador de Itinerarios de Viaje",
+    "descripcion": "Crea un itinerario de viaje detallado, definiendo origen, destino, duración, intereses y restricciones.",
+    "campos": [
+        {
+            "id": "destination",
+            "etiqueta": "Destino Principal",
+            "tipo": "text",
+            "placeholder": "Ej: París, Francia; Tokio, Japón; Costa Rica",
+            "requerido": true,
+            "tooltip": "La ciudad, región o país que quieres visitar."
+        },
+        {
+            "id": "travelDuration",
+            "etiqueta": "Duración del Viaje",
+            "tipo": "text",
+            "placeholder": "Ej: 7 días, 2 semanas",
+            "requerido": true,
+            "tooltip": "El número total de días de tu viaje."
+        },
+        {
+            "id": "travelersProfile",
+            "etiqueta": "Perfil de los Viajeros",
+            "tipo": "text",
+            "placeholder": "Ej: Pareja joven, familia con niños pequeños, viajero solitario",
+            "requerido": false,
+            "tooltip": "Describe quiénes viajan para personalizar las actividades."
+        },
+        {
+            "id": "budget",
+            "etiqueta": "Presupuesto del Viaje",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "económico (mochilero, hostales, comida callejera)", "texto": "Económico / Mochilero", "selected": true },
+                { "valor": "moderado (hoteles 3-4 estrellas, restaurantes variados)", "texto": "Moderado" },
+                { "valor": "lujo (hoteles 5 estrellas, experiencias exclusivas)", "texto": "Lujo" }
+            ],
+            "tooltip": "Elige el nivel de gasto para tu viaje."
+        },
+        {
+            "id": "interests",
+            "etiqueta": "Intereses y Tipo de Actividades",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Arte y museos, senderismo y naturaleza, vida nocturna, gastronomía local, historia.",
+            "requerido": true,
+            "tooltip": "Enumera los tipos de actividades que más te gustan."
+        },
+        {
+            "id": "travelPace",
+            "etiqueta": "Ritmo del Viaje",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "relajado, con tiempo libre para explorar", "texto": "Relajado", "selected": true },
+                { "valor": "equilibrado, mezclando actividades y descanso", "texto": "Equilibrado" },
+                { "valor": "intenso, aprovechando cada minuto", "texto": "Intenso" }
+            ],
+            "tooltip": "Elige cómo de ocupado quieres que sea tu itinerario."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un agente de viajes experto y un guía local para {{destination}}. Tu tarea es crear un itinerario de viaje detallado y personalizado.\n\n**Detalles del Viaje:**\n- **Destino:** {{destination}}\n- **Duración:** {{travelDuration}}\n- **Presupuesto:** {{budget}}\n- **Ritmo del Viaje:** {{travelPace}}\n{{#if travelersProfile}}- **Perfil de los Viajeros:** {{travelersProfile}}\n{{/if}}\n\n**Preferencias:**\n- **Intereses Principales:**\n{{interests}}\n\n**Tarea:**\nGenera un itinerario de viaje día por día. Para cada día, incluye:\n1.  **Mañana:** Una actividad principal sugerida (ej. visita a un museo, tour a pie).\n2.  **Almuerzo:** Una recomendación de un tipo de restaurante o zona para comer.\n3.  **Tarde:** Una segunda actividad o una opción más relajada.\n4.  **Noche:** Sugerencias para la cena y actividades nocturnas (si aplica).\n\nAdemás, incluye una sección de \"Consejos Prácticos\" con información sobre transporte local, moneda, y alguna recomendación cultural. El itinerario debe ser lógico, realista y emocionante.",
+    "suggestedTools": [
+        { "name": "Google Maps", "url": "https://maps.google.com/" },
+        { "name": "Skyscanner", "url": "https://www.skyscanner.com/" },
+        { "name": "Booking.com", "url": "https://www.booking.com/" }
+    ]
+}

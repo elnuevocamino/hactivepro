@@ -1,0 +1,72 @@
+{
+    "id": "data_interpretation_form",
+    "nombre": "Intérprete de Conjuntos de Datos",
+    "descripcion": "Obtén un análisis e interpretación experta de tus datos, respondiendo preguntas clave y generando insights.",
+    "campos": [
+        {
+            "id": "dataSet",
+            "etiqueta": "Conjunto de Datos a Interpretar",
+            "tipo": "textarea",
+            "filas": 6,
+            "placeholder": "Pega aquí tus datos en formato CSV, JSON, o una descripción clara. Ej:\nPaís,Población,PIB\nEspaña,47,1.4\nFrancia,65,2.9",
+            "requerido": true,
+            "tooltip": "Proporciona el conjunto de datos que quieres analizar. Este campo es obligatorio."
+        },
+        {
+            "id": "dataContext",
+            "etiqueta": "Contexto de los Datos (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Datos de ventas del último trimestre para la región de Europa. El objetivo es identificar el producto más vendido.",
+            "requerido": false,
+            "tooltip": "Describe de dónde vienen los datos y cuál es su propósito general."
+        },
+        {
+            "id": "specificQuestions",
+            "etiqueta": "Preguntas Específicas a Responder (Opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: ¿Cuál es la correlación entre la inversión en marketing y las ventas? ¿Qué país tuvo el mayor crecimiento? ¿Hay algún valor atípico (outlier) que debamos investigar?",
+            "requerido": false,
+            "tooltip": "Indica las preguntas concretas que quieres que el análisis responda."
+        },
+        {
+            "id": "targetAudience",
+            "etiqueta": "Audiencia del Análisis (Opcional)",
+            "tipo": "select",
+            "tooltip": "Elige el nivel de detalle y el lenguaje del informe final.",
+            "opciones": [
+                { "valor": "un equipo directivo (enfocado en conclusiones y recomendaciones de negocio)", "texto": "Equipo Directivo (Resumen Ejecutivo)", "selected": true },
+                { "valor": "un equipo técnico (con detalles estadísticos y metodológicos)", "texto": "Equipo Técnico (Detallado)" },
+                { "valor": "una audiencia general (explicaciones claras y sencillas)", "texto": "Audiencia General (Sencillo)" }
+            ]
+        },
+        {
+            "id": "outputFormat",
+            "etiqueta": "Formato de Salida Deseado (Opcional)",
+            "tipo": "select",
+            "tooltip": "¿Cómo quieres que se presente la interpretación?",
+            "opciones": [
+                { "valor": "un informe estructurado con secciones claras", "texto": "Informe Estructurado", "selected": true },
+                { "valor": "una lista de puntos clave (bullet points) con los hallazgos más importantes", "texto": "Lista de Puntos Clave" },
+                { "valor": "una narrativa que cuente la historia que revelan los datos", "texto": "Narrativa / Storytelling" }
+            ]
+        }
+    ]
+,
+    "plantilla_prompt": "Actúa como un analista de datos experto. Tu tarea es realizar una interpretación exhaustiva del siguiente conjunto de datos:\n\n```\n{{dataSet}}\n```\n\n{{#if dataContext}}Para tu análisis, considera el siguiente contexto: {{dataContext}}.{{/if}}\n\n{{#if specificQuestions}}Enfoca tu análisis en responder estas preguntas específicas:\n{{specificQuestions}}\n{{/if}}\n\nEl análisis debe estar dirigido a {{targetAudience}}.\n\nPresenta los resultados en el formato de {{outputFormat}}.",
+    "suggestedTools": [
+        {
+            "name": "ChatGPT",
+            "url": "https://chat.openai.com/"
+        },
+        {
+            "name": "Gemini",
+            "url": "https://gemini.google.com/"
+        },
+        {
+            "name": "Claude",
+            "url": "https://claude.ai/"
+        }
+    ]
+}

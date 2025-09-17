@@ -1,0 +1,65 @@
+{
+    "id": "cash_flow_projector_form",
+    "nombre": "Proyector de Flujo de Caja",
+    "descripcion": "Genera una proyección de flujo de caja detallada basada en tus ingresos, egresos y supuestos.",
+    "campos": [
+        {
+            "id": "initialBalance",
+            "etiqueta": "Saldo Inicial",
+            "tipo": "text",
+            "placeholder": "Ej: 5000",
+            "requerido": true,
+            "tooltip": "El saldo inicial de tu cuenta al comenzar el período de proyección."
+        },
+        {
+            "id": "projectionPeriod",
+            "etiqueta": "Período de Proyección",
+            "tipo": "text",
+            "placeholder": "Ej: 12 meses, 4 trimestres",
+            "requerido": true,
+            "tooltip": "El horizonte de tiempo para la proyección."
+        },
+        {
+            "id": "recurringIncome",
+            "etiqueta": "Ingresos Recurrentes (por período)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Enumera tus ingresos fijos por período (ej. mensual):\n- Salario: 3000\n- Renta de propiedad: 500",
+            "requerido": true,
+            "tooltip": "Ingresos que recibes de forma regular."
+        },
+        {
+            "id": "recurringExpenses",
+            "etiqueta": "Egresos Recurrentes (por período)",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Enumera tus gastos fijos por período (ej. mensual):\n- Hipoteca/Alquiler: 1200\n- Servicios (luz, agua): 150\n- Comida: 400",
+            "requerido": true,
+            "tooltip": "Gastos que realizas de forma regular."
+        },
+        {
+            "id": "oneTimeTransactions",
+            "etiqueta": "Transacciones Puntuales (opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ingresos o gastos que ocurren una sola vez:\n- Bono anual (Enero): +2000\n- Pago de impuestos (Abril): -800\n- Vacaciones (Agosto): -1500",
+            "requerido": false,
+            "tooltip": "Eventos financieros únicos dentro del período de proyección."
+        },
+        {
+            "id": "assumptions",
+            "etiqueta": "Supuestos y Crecimiento (opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Define cualquier supuesto que afecte la proyección:\n- Incremento de salario del 3% a partir de Junio.\n- Inflación estimada del 2% anual aplicada a los gastos.",
+            "requerido": false,
+            "tooltip": "Variables que pueden afectar tus ingresos o gastos a lo largo del tiempo."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un analista financiero. Tu tarea es crear una proyección de flujo de caja detallada en formato de tabla.\n\n**Datos de Entrada:**\n- **Saldo Inicial:** {{initialBalance}}\n- **Período de Proyección:** {{projectionPeriod}}\n\n**Flujos Recurrentes (por período):**\n- **Ingresos:**\n{{recurringIncome}}\n- **Egresos:**\n{{recurringExpenses}}\n\n{{#if oneTimeTransactions}}**Transacciones Puntuales:**\n{{oneTimeTransactions}}\n{{/if}}\n\n{{#if assumptions}}**Supuestos Adicionales:**\n{{assumptions}}\n{{/if}}\n\n**Instrucciones:**\n1. Crea una tabla con las siguientes columnas: Período, Ingresos Totales, Egresos Totales, Flujo Neto (Ingresos - Egresos), Saldo Final.\n2. Calcula los valores para cada período dentro del horizonte de proyección.\n3. El Saldo Final de un período es el Saldo Inicial del siguiente.\n4. Aplica las transacciones puntuales y los supuestos en los períodos correspondientes.\n\nGenera la tabla de proyección de flujo de caja completa.",
+    "suggestedTools": [
+        { "name": "Google Sheets", "url": "https://sheets.google.com/" },
+        { "name": "Microsoft Excel", "url": "https://www.microsoft.com/excel" },
+        { "name": "ChatGPT (con análisis de datos)", "url": "https://chat.openai.com/" }
+    ]
+}

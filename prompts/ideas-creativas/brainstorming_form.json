@@ -1,0 +1,71 @@
+{
+    "id": "brainstorming_form",
+    "nombre": "Generador de Tormenta de Ideas",
+    "descripcion": "Genera una lista de ideas creativas sobre un tema específico, definiendo el enfoque y el formato.",
+    "campos": [
+        {
+            "id": "brainstormTopic",
+            "etiqueta": "Tema Central de la Tormenta de Ideas",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Formas innovadoras de reciclar plástico en el hogar.",
+            "requerido": true,
+            "tooltip": "Describe el problema a resolver o el concepto sobre el que quieres generar ideas."
+        },
+        {
+            "id": "brainstormRole",
+            "etiqueta": "Actuar como (Opcional)",
+            "tipo": "select",
+            "tooltip": "Elige la 'personalidad' de la IA para enfocar el tipo de ideas generadas.",
+            "opciones": [
+                { "valor": "un facilitador experto en creatividad e innovación", "texto": "Facilitador de Creatividad (General)", "selected": true },
+                { "valor": "un innovador disruptivo al estilo de Silicon Valley", "texto": "Innovador Disruptivo" },
+                { "valor": "un estratega de negocios pragmático", "texto": "Estratega de Negocios" },
+                { "valor": "un creativo publicitario", "texto": "Creativo Publicitario" },
+                { "valor": "un ingeniero y solucionador de problemas práctico", "texto": "Solucionador de Problemas Práctico" }
+            ]
+        },
+        {
+            "id": "brainstormAudience",
+            "etiqueta": "Público o Contexto (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Familias con niños pequeños, startups tecnológicas.",
+            "requerido": false,
+            "tooltip": "¿Para quién o para qué son estas ideas? Esto ayuda a enfocar la creatividad."
+        },
+        {
+            "id": "brainstormCount",
+            "etiqueta": "Cantidad de Ideas (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: 10",
+            "requerido": false,
+            "tooltip": "¿Cuántas ideas distintas te gustaría generar?"
+        },
+        {
+            "id": "brainstormDetail",
+            "etiqueta": "Nivel de Detalle por Idea (Opcional)",
+            "tipo": "select",
+            "tooltip": "Define qué tan desarrollada debe estar cada idea generada.",
+            "opciones": [
+                { "valor": "solo el titular", "texto": "Bajo (Solo el titular de la idea)", "selected": true },
+                { "valor": "una breve descripción", "texto": "Medio (Titular y una breve descripción)" },
+                { "valor": "una descripción detallada con posibles primeros pasos", "texto": "Alto (Titular, descripción y posibles primeros pasos)" }
+            ]
+        },
+        {
+            "id": "brainstormConstraints",
+            "etiqueta": "Restricciones o Enfoques a Evitar (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Evitar ideas que requieran una gran inversión inicial. No sugerir aplicaciones móviles.",
+            "requerido": false,
+            "tooltip": "Indica cualquier limitación o camino que no se deba explorar."
+        }
+    ],
+    "plantilla_prompt": "Actúa como {{brainstormRole}}. Tu tarea es generar una tormenta de ideas sobre el siguiente tema: \"{{brainstormTopic}}\".\n\n{{#if brainstormAudience}}Las ideas deben estar enfocadas en el siguiente público o contexto: {{brainstormAudience}}.{{/if}}\n\nGenera una lista de {{#if brainstormCount}}{{brainstormCount}}{{else}}10{{/if}} ideas. Cada idea debe tener el siguiente nivel de detalle: {{brainstormDetail}}.\n\n{{#if brainstormConstraints}}Ten en cuenta las siguientes restricciones: {{brainstormConstraints}}.{{/if}}\n\nPresenta las ideas en una lista numerada.",
+    "suggestedTools": [
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" },
+        { "name": "Claude", "url": "https://claude.ai/" },
+        { "name": "Gemini", "url": "https://gemini.google.com/" }
+    ]
+}

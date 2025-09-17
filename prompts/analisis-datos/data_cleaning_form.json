@@ -1,0 +1,48 @@
+{
+    "id": "data_cleaning_form",
+    "nombre": "Generador de Script de Limpieza de Datos",
+    "descripcion": "Crea un script de Python (Pandas) para limpiar y preprocesar datos, manejando valores nulos, duplicados y más.",
+    "campos": [
+        {
+            "id": "dataDescription",
+            "etiqueta": "Descripción de los Datos de Entrada",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: Tengo un archivo CSV con las columnas: 'ID_Cliente', 'Fecha_Compra', 'Monto', 'Categoria'. La columna 'Monto' tiene algunos valores nulos y hay filas duplicadas.",
+            "requerido": true,
+            "tooltip": "Describe la estructura de tus datos y los problemas que has observado. Este campo es obligatorio."
+        },
+        {
+            "id": "cleaningTasks",
+            "etiqueta": "Tareas de Limpieza a Realizar",
+            "tipo": "textarea",
+            "filas": 4,
+            "placeholder": "Ej: 1. Eliminar filas completamente duplicadas.\n2. Rellenar los valores nulos en 'Monto' con el valor 0.\n3. Convertir 'Fecha_Compra' a formato de fecha (YYYY-MM-DD).\n4. Eliminar la columna 'ID_Cliente'.",
+            "requerido": true,
+            "tooltip": "Enumera las operaciones de limpieza que necesitas que el script realice."
+        },
+        {
+            "id": "scriptLanguage",
+            "etiqueta": "Lenguaje y Librería (Opcional)",
+            "tipo": "text",
+            "placeholder": "Python (Pandas)",
+            "requerido": false,
+            "tooltip": "Especifica el lenguaje de programación y las librerías que debe usar el script. Por defecto, se usará Python con Pandas."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un programador de datos senior. Tu tarea es generar un script de limpieza de datos bien comentado.\n\n**Descripción de los datos de entrada:**\n{{dataDescription}}\n\n**Tareas de limpieza requeridas:**\n{{cleaningTasks}}\n\n{{#if scriptLanguage}}El script debe ser escrito en {{scriptLanguage}}.{{else}}El script debe ser escrito en Python usando la librería Pandas.{{/if}}\n\nEl resultado debe ser únicamente el bloque de código listo para usar, con comentarios que expliquen cada paso del proceso de limpieza.",
+    "suggestedTools": [
+        {
+            "name": "Google Colab",
+            "url": "https://colab.research.google.com/"
+        },
+        {
+            "name": "Jupyter Notebook",
+            "url": "https://jupyter.org/"
+        },
+        {
+            "name": "Cualquier IDE de Python",
+            "url": "https://www.python.org/"
+        }
+    ]
+}

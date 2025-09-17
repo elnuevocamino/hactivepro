@@ -1,0 +1,65 @@
+{
+    "id": "recipe_generator_form",
+    "nombre": "Generador de Recetas",
+    "descripcion": "Crea recetas únicas y deliciosas basadas en tus preferencias, ingredientes y tiempo disponible.",
+    "campos": [
+        {
+            "id": "recipeType",
+            "etiqueta": "Tipo de Plato",
+            "tipo": "text",
+            "placeholder": "Ej: Plato principal, postre, sopa, ensalada",
+            "requerido": true,
+            "tooltip": "Define qué tipo de receta estás buscando."
+        },
+        {
+            "id": "mainIngredients",
+            "etiqueta": "Ingredientes Principales que Tienes",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Pollo, arroz, pimientos, cebolla",
+            "requerido": true,
+            "tooltip": "Enumera los ingredientes clave que quieres usar."
+        },
+        {
+            "id": "cuisineStyle",
+            "etiqueta": "Estilo de Cocina (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Italiana, mexicana, asiática, mediterránea",
+            "requerido": false,
+            "tooltip": "Si tienes preferencia por un tipo de cocina, indícalo aquí."
+        },
+        {
+            "id": "dietaryRestrictions",
+            "etiqueta": "Restricciones Dietéticas (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: Vegano, sin gluten, bajo en carbohidratos",
+            "requerido": false,
+            "tooltip": "Indica cualquier restricción para que la receta se adapte."
+        },
+        {
+            "id": "cookingTime",
+            "etiqueta": "Tiempo de Preparación Máximo (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: 30 minutos, 1 hora",
+            "requerido": false,
+            "tooltip": "El tiempo total que tienes disponible para cocinar."
+        },
+        {
+            "id": "difficulty",
+            "etiqueta": "Nivel de Dificultad",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "fácil, para principiantes", "texto": "Fácil", "selected": true },
+                { "valor": "intermedio, para cocineros con algo de experiencia", "texto": "Intermedia" },
+                { "valor": "difícil, un reto culinario", "texto": "Difícil" }
+            ],
+            "tooltip": "Elige el nivel de habilidad requerido para la receta."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un chef creativo y experimentado. Tu tarea es crear una receta original y deliciosa basada en los siguientes requisitos:\n\n**Detalles de la Receta:**\n- **Tipo de Plato:** {{recipeType}}\n- **Ingredientes Principales Disponibles:** {{mainIngredients}}\n- **Nivel de Dificultad Deseado:** {{difficulty}}\n{{#if cuisineStyle}}- **Estilo de Cocina Preferido:** {{cuisineStyle}}\n{{/if}}{{#if dietaryRestrictions}}- **Restricciones Dietéticas:** {{dietaryRestrictions}}\n{{/if}}{{#if cookingTime}}- **Tiempo Máximo de Preparación:** {{cookingTime}}\n{{/if}}\n\n**Tarea:**\nGenera una receta completa. La receta debe incluir:\n1.  **Nombre del Plato:** Un nombre creativo y apetitoso.\n2.  **Lista de Ingredientes:** Una lista completa de todos los ingredientes necesarios, incluyendo cantidades.\n3.  **Instrucciones Paso a Paso:** Instrucciones claras y fáciles de seguir para preparar el plato.\n4.  **Consejo del Chef:** Un truco o sugerencia para mejorar el plato o una idea de presentación.",
+    "suggestedTools": [
+        { "name": "Yummly", "url": "https://www.yummly.com/" },
+        { "name": "Allrecipes", "url": "https://www.allrecipes.com/" },
+        { "name": "Cookpad", "url": "https://cookpad.com/" }
+    ]
+}

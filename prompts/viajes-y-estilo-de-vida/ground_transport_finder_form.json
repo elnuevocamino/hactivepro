@@ -1,0 +1,66 @@
+{
+    "id": "ground_transport_finder_form",
+    "nombre": "Buscador de Transporte Terrestre",
+    "descripcion": "Encuentra las mejores opciones de transporte terrestre (tren, bus, auto) para tu viaje.",
+    "campos": [
+        {
+            "id": "origin",
+            "etiqueta": "Origen del Trayecto",
+            "tipo": "text",
+            "placeholder": "Ej: Madrid, España",
+            "requerido": true,
+            "tooltip": "El punto de partida de tu viaje."
+        },
+        {
+            "id": "destination",
+            "etiqueta": "Destino del Trayecto",
+            "tipo": "text",
+            "placeholder": "Ej: Barcelona, España",
+            "requerido": true,
+            "tooltip": "El punto de llegada de tu viaje."
+        },
+        {
+            "id": "travelDate",
+            "etiqueta": "Fecha del Viaje",
+            "tipo": "text",
+            "placeholder": "Ej: 25 de Diciembre",
+            "requerido": true,
+            "tooltip": "La fecha en la que planeas viajar."
+        },
+        {
+            "id": "transportType",
+            "etiqueta": "Tipo de Transporte Preferido",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "cualquiera", "texto": "Cualquiera", "selected": true },
+                { "valor": "Tren", "texto": "Tren" },
+                { "valor": "Autobús", "texto": "Autobús" },
+                { "valor": "Coche de alquiler", "texto": "Coche de alquiler" }
+            ],
+            "tooltip": "Elige tu medio de transporte preferido."
+        },
+        {
+            "id": "preferences",
+            "etiqueta": "Preferencias de Ruta (Opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Ruta más rápida, ruta más barata, evitar peajes, ruta con paisajes bonitos.",
+            "requerido": false,
+            "tooltip": "Indica tus prioridades para la ruta."
+        },
+        {
+            "id": "passengers",
+            "etiqueta": "Número de Pasajeros (Opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: 2 adultos",
+            "requerido": false,
+            "tooltip": "El número de personas que viajan."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un planificador de viajes especializado en transporte terrestre. Tu tarea es encontrar y comparar las mejores opciones de transporte para el siguiente trayecto:\n\n**Detalles del Viaje:**\n- **Origen:** {{origin}}\n- **Destino:** {{destination}}\n- **Fecha:** {{travelDate}}\n- **Tipo de Transporte Preferido:** {{transportType}}\n{{#if passengers}}- **Número de Pasajeros:** {{passengers}}\n{{/if}}\n\n{{#if preferences}}**Preferencias de Ruta:**\n{{preferences}}\n{{/if}}\n\n**Tarea:**\nBusca y presenta las mejores opciones de transporte (tren, autobús, coche de alquiler, etc.) que coincidan con las preferencias. Para cada opción, proporciona:\n1.  **Tipo de Transporte.**\n2.  **Compañía Sugerida (ej. Renfe, Alsa, Hertz).**\n3.  **Duración Estimada del Viaje.**\n4.  **Precio Estimado por Persona.**\n5.  **Ventajas y Desventajas:** Un breve análisis para ayudar a tomar la decisión (ej. \"El tren es más rápido pero más caro\", \"El coche ofrece más flexibilidad\").",
+    "suggestedTools": [
+        { "name": "Omio", "url": "https://www.omio.com/" },
+        { "name": "Trainline", "url": "https://www.thetrainline.com/" },
+        { "name": "Rentalcars.com", "url": "https://www.rentalcars.com/" }
+    ]
+}

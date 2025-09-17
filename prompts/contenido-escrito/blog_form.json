@@ -1,0 +1,71 @@
+{
+    "id": "blog_form",
+    "nombre": "Artículos de Blog (SEO)",
+    "descripcion": "Genera prompts optimizados para la creación de artículos de blog con IA, incluyendo SEO y estructura.",
+    "campos": [
+        {
+            "id": "blogTopic",
+            "etiqueta": "Tema Principal del Artículo",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Los beneficios de la meditación para reducir el estrés, cómo empezar a invertir en criptomonedas.",
+            "requerido": true,
+            "tooltip": "El tema central sobre el que tratará el artículo."
+        },
+        {
+            "id": "blogKeywords",
+            "etiqueta": "Palabra Clave Principal (SEO)",
+            "tipo": "text",
+            "placeholder": "Ej: meditación para el estrés, invertir en criptomonedas para principiantes.",
+            "requerido": true,
+            "tooltip": "La palabra clave que quieres posicionar en los motores de búsqueda."
+        },
+        {
+            "id": "blogAudience",
+            "etiqueta": "Público Objetivo",
+            "tipo": "text",
+            "placeholder": "Ej: Profesionales ocupados, estudiantes universitarios, principiantes en finanzas.",
+            "requerido": false,
+            "tooltip": "Define a quién va dirigido el artículo para ajustar el tono y la complejidad."
+        },
+        {
+            "id": "blogTone",
+            "etiqueta": "Tono del Artículo",
+            "tipo": "select",
+            "tooltip": "Elige el estilo de escritura.",
+            "opciones": [
+                { "valor": "informativo y profesional", "texto": "Informativo y Profesional", "selected": true },
+                { "valor": "conversacional y amigable", "texto": "Conversacional y Amigable" },
+                { "valor": "inspirador y motivacional", "texto": "Inspirador y Motivacional" },
+                { "valor": "humorístico y entretenido", "texto": "Humorístico y Entretenido" }
+            ]
+        },
+        {
+            "id": "blogSections",
+            "etiqueta": "Secciones a Incluir",
+            "tipo": "checkbox-group",
+            "opciones": [
+                { "valor": "Introducción con un gancho", "texto": "Introducción", "checked": true },
+                { "valor": "Desarrollo del cuerpo del artículo", "texto": "Cuerpo del Artículo", "checked": true },
+                { "valor": "Conclusión con un resumen", "texto": "Conclusión", "checked": true },
+                { "valor": "Sección de Preguntas Frecuentes (FAQ)", "texto": "FAQ" },
+                { "valor": "Tabla comparativa", "texto": "Tabla Comparativa" }
+            ]
+        },
+        {
+            "id": "blogCTA",
+            "etiqueta": "Llamada a la Acción (CTA)",
+            "tipo": "text",
+            "placeholder": "Ej: 'Suscríbete a nuestro boletín', 'Deja un comentario con tu opinión'.",
+            "requerido": false,
+            "tooltip": "La acción que quieres que el lector realice al final."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un experto en redacción de contenido y SEO. Tu tarea es escribir un artículo de blog completo y optimizado.\n\n**Tema:** {{blogTopic}}\n**Palabra Clave Principal:** {{blogKeywords}}\n{{#if blogAudience}}**Público Objetivo:** {{blogAudience}}{{/if}}\n**Tono:** {{blogTone}}\n\n**Estructura y Requisitos:**\nEl artículo debe estar bien estructurado, ser fácil de leer y estar optimizado para SEO en torno a la palabra clave principal.\n{{#if blogSections}}\nEl artículo debe incluir las siguientes secciones:\n{{blogSections}}\n{{/if}}\n\n{{#if blogCTA}}Al final del artículo, incluye una llamada a la acción que invite al lector a: '{{blogCTA}}'.{{/if}}\n\nGenera el artículo completo.",
+    "suggestedTools": [
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" },
+        { "name": "Gemini", "url": "https://gemini.google.com/" },
+        { "name": "SurferSEO", "url": "https://surferseo.com/" },
+        { "name": "Google Docs", "url": "https://docs.google.com/" }
+    ]
+}

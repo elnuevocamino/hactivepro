@@ -1,0 +1,56 @@
+{
+    "id": "loan_amortization_form",
+    "nombre": "Plan de Amortización de Deuda",
+    "descripcion": "Genera una tabla de amortización detallada para un préstamo, mostrando pagos, intereses y capital.",
+    "campos": [
+        {
+            "id": "loanAmount",
+            "etiqueta": "Monto del Préstamo",
+            "tipo": "text",
+            "placeholder": "Ej: 150000",
+            "requerido": true,
+            "tooltip": "La cantidad total del préstamo."
+        },
+        {
+            "id": "interestRate",
+            "etiqueta": "Tasa de Interés Anual (%)",
+            "tipo": "text",
+            "placeholder": "Ej: 5.5 (introduce solo el número)",
+            "requerido": true,
+            "tooltip": "La tasa de interés nominal anual."
+        },
+        {
+            "id": "loanTerm",
+            "etiqueta": "Plazo del Préstamo",
+            "tipo": "text",
+            "placeholder": "Ej: 30 años, 60 meses",
+            "requerido": true,
+            "tooltip": "La duración total del préstamo."
+        },
+        {
+            "id": "paymentFrequency",
+            "etiqueta": "Frecuencia de Pago",
+            "tipo": "select",
+            "tooltip": "La periodicidad de los pagos.",
+            "opciones": [
+                { "valor": "mensual", "texto": "Mensual", "selected": true },
+                { "valor": "trimestral", "texto": "Trimestral" },
+                { "valor": "anual", "texto": "Anual" }
+            ]
+        },
+        {
+            "id": "extraPayment",
+            "etiqueta": "Pago Adicional por Período (opcional)",
+            "tipo": "text",
+            "placeholder": "Ej: 100",
+            "requerido": false,
+            "tooltip": "Una cantidad extra que pagarás en cada período para reducir el préstamo más rápido."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un asesor financiero. Necesito generar una tabla de amortización para un préstamo con las siguientes características:\n\n- **Monto del Préstamo:** {{loanAmount}}\n- **Tasa de Interés Anual:** {{interestRate}}%\n- **Plazo del Préstamo:** {{loanTerm}}\n- **Frecuencia de Pago:** {{paymentFrequency}}\n{{#if extraPayment}}- **Pago Adicional por Período:** {{extraPayment}}{{/if}}\n\n**Tarea:**\n1. Calcula el pago periódico regular.\n2. Genera una tabla de amortización que muestre, para cada período de pago: el número de pago, el pago total, el interés pagado, el capital pagado y el saldo restante del préstamo.\n3. Si se especifica un pago adicional, inclúyelo en el cálculo y muestra cómo afecta la duración total del préstamo.\n4. Al final, proporciona un resumen que incluya el interés total pagado y la fecha de finalización del préstamo.",
+    "suggestedTools": [
+        { "name": "Microsoft Excel", "url": "https://www.microsoft.com/excel" },
+        { "name": "Google Sheets", "url": "https://sheets.google.com/" },
+        { "name": "Bankrate Calculator", "url": "https://www.bankrate.com/calculators/mortgages/amortization-calculator.aspx" }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "id": "automatic_framework_form",
+    "nombre": "Framework AUTOMATIC",
+    "descripcion": "Genera prompts complejos usando el framework AUTOMATIC para obtener resultados precisos de la IA.",
+    "campos": [
+        {
+            "id": "automaticAuthor",
+            "etiqueta": "A - Autor (Rol de la IA)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Un historiador experto en el Imperio Romano.",
+            "requerido": false,
+            "tooltip": "Define la personalidad o el rol que debe adoptar la IA."
+        },
+        {
+            "id": "automaticTask",
+            "etiqueta": "U - Tarea Única",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Escribir un ensayo sobre las causas de la caída del Imperio Romano.",
+            "requerido": true,
+            "tooltip": "Describe la tarea específica y central que la IA debe realizar. Este campo es obligatorio."
+        },
+        {
+            "id": "automaticTone",
+            "etiqueta": "T - Tono",
+            "tipo": "text",
+            "placeholder": "Ej: Académico, formal, entretenido, sarcástico.",
+            "requerido": false,
+            "tooltip": "Define el tono y estilo de la respuesta."
+        },
+        {
+            "id": "automaticOutput",
+            "etiqueta": "O - Formato de Salida",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Un documento de 5 párrafos. Una lista con viñetas. Una tabla en formato Markdown.",
+            "requerido": false,
+            "tooltip": "Especifica cómo debe estar estructurada la respuesta final."
+        },
+        {
+            "id": "automaticMotivation",
+            "etiqueta": "M - Motivación (Objetivo)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: El objetivo es que un estudiante de secundaria entienda el tema.",
+            "requerido": false,
+            "tooltip": "¿Cuál es el propósito o la meta detrás de la tarea?"
+        },
+        {
+            "id": "automaticAudience",
+            "etiqueta": "A - Público Objetivo",
+            "tipo": "text",
+            "placeholder": "Ej: Estudiantes de secundaria, expertos en la materia, público general.",
+            "requerido": false,
+            "tooltip": "¿Para quién es la respuesta que generará la IA?"
+        },
+        {
+            "id": "automaticThreats",
+            "etiqueta": "T - Amenazas (Restricciones)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: No usar jerga demasiado técnica. No mencionar eventos posteriores al siglo V.",
+            "requerido": false,
+            "tooltip": "Define claramente lo que la IA NO debe hacer o incluir."
+        }
+    ],
+    "plantilla_prompt": "Aplica el framework AUTOMATIC para generar el siguiente prompt:\n\n{{#if automaticAuthor}}**A - Autor (Rol):** {{automaticAuthor}}\n{{/if}}\n**U - Tarea Única:** {{automaticTask}}\n\n{{#if automaticTone}}**T - Tono:** {{automaticTone}}\n{{/if}}{{#if automaticOutput}}**O - Formato de Salida:** {{automaticOutput}}\n{{/if}}{{#if automaticMotivation}}**M - Motivación (Objetivo):** {{automaticMotivation}}\n{{/if}}{{#if automaticAudience}}**A - Público Objetivo:** {{automaticAudience}}\n{{/if}}{{#if automaticThreats}}**T - Amenazas (Restricciones):** {{automaticThreats}}\n{{/if}}",
+    "suggestedTools": [
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" },
+        { "name": "Claude", "url": "https://claude.ai/" },
+        { "name": "Gemini", "url": "https://gemini.google.com/" }
+    ]
+}

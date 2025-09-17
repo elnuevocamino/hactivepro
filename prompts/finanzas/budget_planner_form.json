@@ -1,0 +1,59 @@
+{
+    "id": "budget_planner_form",
+    "nombre": "Planificador de Presupuesto",
+    "descripcion": "Crea un presupuesto personal o familiar detallado, aplicando reglas como la 50/30/20 para organizar tus finanzas.",
+    "campos": [
+        {
+            "id": "monthlyIncome",
+            "etiqueta": "Ingresos Mensuales Totales",
+            "tipo": "text",
+            "placeholder": "Ej: 3500",
+            "requerido": true,
+            "tooltip": "La suma de todos tus ingresos mensuales después de impuestos."
+        },
+        {
+            "id": "fixedExpenses",
+            "etiqueta": "Gastos Fijos Mensuales (uno por línea)",
+            "tipo": "textarea",
+            "filas": 5,
+            "placeholder": "Enumera tus gastos que no cambian mes a mes:\n- Alquiler/Hipoteca: 1200\n- Seguro de auto: 80\n- Préstamo estudiantil: 150",
+            "requerido": true,
+            "tooltip": "Gastos que son consistentes cada mes."
+        },
+        {
+            "id": "variableExpenses",
+            "etiqueta": "Gastos Variables Mensuales (estimados)",
+            "tipo": "textarea",
+            "filas": 5,
+            "placeholder": "Enumera tus gastos que pueden variar:\n- Comida: 400\n- Transporte: 100\n- Ocio y entretenimiento: 200",
+            "requerido": false,
+            "tooltip": "Gastos que fluctúan mes a mes. Proporciona una estimación."
+        },
+        {
+            "id": "budgetRule",
+            "etiqueta": "Regla de Presupuesto a Aplicar",
+            "tipo": "select",
+            "tooltip": "Elige una regla para estructurar tu presupuesto.",
+            "opciones": [
+                { "valor": "la regla 50/30/20 (50% necesidades, 30% deseos, 20% ahorros)", "texto": "Regla 50/30/20", "selected": true },
+                { "valor": "un presupuesto de base cero (cada euro tiene un propósito)", "texto": "Presupuesto Base Cero" },
+                { "valor": "un presupuesto tradicional basado en categorías", "texto": "Presupuesto por Categorías" }
+            ]
+        },
+        {
+            "id": "financialGoals",
+            "etiqueta": "Metas Financieras (opcional)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Ahorrar para el pago inicial de una casa (10,000).\nPagar la tarjeta de crédito (2,000).\nCrear un fondo de emergencia de 3 meses.",
+            "requerido": false,
+            "tooltip": "Describe tus objetivos de ahorro o pago de deudas."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un planificador financiero. Tu tarea es crear un plan de presupuesto mensual detallado y personalizado.\n\n**Datos Financieros:**\n- **Ingreso Mensual Neto:** {{monthlyIncome}}\n- **Gastos Fijos:**\n{{fixedExpenses}}\n{{#if variableExpenses}}- **Gastos Variables (Estimados):**\n{{variableExpenses}}{{/if}}\n\n**Estructura del Presupuesto:**\n- **Regla a Aplicar:** {{budgetRule}}\n{{#if financialGoals}}- **Metas Financieras:**\n{{financialGoals}}{{/if}}\n\n**Tarea:**\n1. Calcula el total de gastos fijos y variables.\n2. Crea un presupuesto mensual detallado aplicando {{budgetRule}}. Asigna los ingresos a las diferentes categorías (necesidades, deseos, ahorros/deudas).\n3. Proporciona un resumen claro que muestre el ingreso total, los gastos totales y el dinero sobrante (o déficit).\n4. Ofrece recomendaciones personalizadas para optimizar el presupuesto y alcanzar las metas financieras especificadas.",
+    "suggestedTools": [
+        { "name": "YNAB (You Need A Budget)", "url": "https://www.youneedabudget.com/" },
+        { "name": "Mint", "url": "https://mint.intuit.com/" },
+        { "name": "Google Sheets", "url": "https://sheets.google.com/" }
+    ]
+}

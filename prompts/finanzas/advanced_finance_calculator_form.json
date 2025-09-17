@@ -1,0 +1,49 @@
+{
+    "id": "advanced_finance_calculator_form",
+    "nombre": "Calculadora Financiera Avanzada",
+    "descripcion": "Calcula métricas de inversión como el Valor Presente Neto (VPN/NPV) y la Tasa Interna de Retorno (TIR/IRR).",
+    "campos": [
+        {
+            "id": "initialInvestment",
+            "etiqueta": "Inversión Inicial",
+            "tipo": "text",
+            "placeholder": "Ej: 10000 (introduce el valor como un número positivo)",
+            "requerido": true,
+            "tooltip": "El coste inicial de la inversión. Es un valor positivo."
+        },
+        {
+            "id": "cashFlows",
+            "etiqueta": "Flujos de Caja (uno por período)",
+            "tipo": "textarea",
+            "filas": 5,
+            "placeholder": "Introduce cada flujo de caja en una nueva línea. Ej:\n3000\n3500\n4000\n4500",
+            "requerido": true,
+            "tooltip": "Los flujos de caja esperados para cada período (ej. anual)."
+        },
+        {
+            "id": "discountRate",
+            "etiqueta": "Tasa de Descuento (para VPN) (%)",
+            "tipo": "text",
+            "placeholder": "Ej: 8 (introduce solo el número)",
+            "requerido": false,
+            "tooltip": "La tasa de retorno requerida o el coste de capital. Necesaria para el cálculo del VPN."
+        },
+        {
+            "id": "calculationType",
+            "etiqueta": "Métrica a Calcular",
+            "tipo": "select",
+            "tooltip": "Elige qué métrica financiera quieres calcular.",
+            "opciones": [
+                { "valor": "el Valor Presente Neto (VPN)", "texto": "Valor Presente Neto (VPN / NPV)", "selected": true },
+                { "valor": "la Tasa Interna de Retorno (TIR)", "texto": "Tasa Interna de Retorno (TIR / IRR)" },
+                { "valor": "tanto el VPN como la TIR", "texto": "Ambos (VPN y TIR)" }
+            ]
+        }
+    ],
+    "plantilla_prompt": "Actúa como un analista financiero experto. Necesito calcular una métrica de viabilidad de una inversión.\n\n**Datos de la Inversión:**\n- **Inversión Inicial:** {{initialInvestment}}\n- **Flujos de Caja por Período:**\n{{cashFlows}}\n{{#if discountRate}}- **Tasa de Descuento:** {{discountRate}}%{{/if}}\n\n**Tarea:**\nCalcula {{calculationType}} para esta inversión. Muestra la fórmula utilizada, el cálculo paso a paso y una breve interpretación del resultado (¿es viable la inversión según esta métrica?).",
+    "suggestedTools": [
+        { "name": "Microsoft Excel", "url": "https://www.microsoft.com/excel" },
+        { "name": "Google Sheets", "url": "https://sheets.google.com/" },
+        { "name": "WolframAlpha", "url": "https://www.wolframalpha.com/" }
+    ]
+}

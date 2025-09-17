@@ -1,0 +1,61 @@
+{
+    "id": "customer_review_responder_form",
+    "nombre": "Generador de Respuestas a Reseñas",
+    "descripcion": "Crea respuestas profesionales y personalizadas para reseñas de clientes, ya sean positivas, negativas o mixtas.",
+    "campos": [
+        {
+            "id": "reviewText",
+            "etiqueta": "Texto de la Reseña del Cliente",
+            "tipo": "textarea",
+            "filas": 5,
+            "placeholder": "Ej: ¡El producto es increíble! Llegó rápido y funciona a la perfección. Totalmente recomendado.",
+            "requerido": true,
+            "tooltip": "Pega aquí la reseña completa que ha dejado el cliente."
+        },
+        {
+            "id": "reviewRating",
+            "etiqueta": "Calificación de la Reseña",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "positiva (4-5 estrellas)", "texto": "Positiva (4-5 estrellas)", "selected": true },
+                { "valor": "mixta (3 estrellas)", "texto": "Mixta (3 estrellas)" },
+                { "valor": "negativa (1-2 estrellas)", "texto": "Negativa (1-2 estrellas)" }
+            ],
+            "tooltip": "Indica la calificación que dio el cliente para contextualizar la respuesta."
+        },
+        {
+            "id": "companyName",
+            "etiqueta": "Nombre de tu Empresa/Producto",
+            "tipo": "text",
+            "placeholder": "Ej: HactivePro, Zapatillas Rápidas",
+            "requerido": true,
+            "tooltip": "El nombre que se debe mencionar en la respuesta."
+        },
+        {
+            "id": "responseTone",
+            "etiqueta": "Tono de la Respuesta",
+            "tipo": "select",
+            "opciones": [
+                { "valor": "agradecido y entusiasta", "texto": "Agradecido y Entusiasta", "selected": true },
+                { "valor": "empático y resolutivo", "texto": "Empático y Resolutivo" },
+                { "valor": "profesional y formal", "texto": "Profesional y Formal" }
+            ],
+            "tooltip": "Elige el estilo de comunicación para la respuesta."
+        },
+        {
+            "id": "keyPoints",
+            "etiqueta": "Puntos Clave a Mencionar (Opcional)",
+            "tipo": "textarea",
+            "filas": 2,
+            "placeholder": "Ej: Ofrecer un descuento en la próxima compra. Mencionar la nueva característica que soluciona su problema.",
+            "requerido": false,
+            "tooltip": "Cualquier detalle específico que deba incluirse en la respuesta."
+        }
+    ],
+    "plantilla_prompt": "Actúa como un gerente de atención al cliente experto en gestión de la reputación online. Tu tarea es redactar una respuesta profesional, personalizada y apropiada a una reseña de un cliente.\n\n**Información de la Reseña:**\n- **Texto de la Reseña:** \"{{reviewText}}\"\n- **Calificación:** {{reviewRating}}\n- **Nombre de la Empresa/Producto:** {{companyName}}\n- **Tono Deseado para la Respuesta:** {{responseTone}}\n\n{{#if keyPoints}}**Puntos Clave a Incluir en la Respuesta:**\n{{keyPoints}}\n{{/if}}\n\n**Tarea:**\nEscribe una respuesta a la reseña. La respuesta debe:\n1.  Agradecer al cliente por su tiempo y su comentario.\n2.  Abordar directamente los puntos mencionados en la reseña (tanto positivos como negativos).\n3.  Reflejar el tono solicitado.\n4.  Si la reseña es negativa o mixta, mostrar empatía y ofrecer una solución o un canal de contacto para resolver el problema.\n5.  Ser concisa y sonar auténtica, no como una respuesta genérica.",
+    "suggestedTools": [
+        { "name": "Google Business Profile", "url": "https://www.google.com/business/" },
+        { "name": "Trustpilot", "url": "https://www.trustpilot.com/" },
+        { "name": "G2", "url": "https://www.g2.com/" }
+    ]
+}

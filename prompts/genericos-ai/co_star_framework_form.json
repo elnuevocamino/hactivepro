@@ -1,0 +1,64 @@
+{
+    "id": "co_star_framework_form",
+    "nombre": "Framework CO-STAR",
+    "descripcion": "Genera prompts efectivos usando el framework CO-STAR (Contexto, Objetivo, Estilo, Tono, Audiencia, Respuesta).",
+    "campos": [
+        {
+            "id": "costarContext",
+            "etiqueta": "C - Contexto",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Estoy escribiendo un guion para un video de YouTube sobre la historia de la computación.",
+            "requerido": false,
+            "tooltip": "Proporciona el trasfondo o la situación para la tarea."
+        },
+        {
+            "id": "costarObjective",
+            "etiqueta": "O - Objetivo",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Crear un resumen de 300 palabras que sea fácil de entender para principiantes.",
+            "requerido": true,
+            "tooltip": "Describe la meta específica que quieres alcanzar con el prompt. Este campo es obligatorio."
+        },
+        {
+            "id": "costarStyle",
+            "etiqueta": "S - Estilo",
+            "tipo": "text",
+            "placeholder": "Ej: Narrativo, como si fuera un documental de David Attenborough.",
+            "requerido": false,
+            "tooltip": "Define el estilo de escritura deseado."
+        },
+        {
+            "id": "costarTone",
+            "etiqueta": "T - Tono",
+            "tipo": "text",
+            "placeholder": "Ej: Inspirador y educativo.",
+            "requerido": false,
+            "tooltip": "Elige la actitud o el sentimiento de la respuesta."
+        },
+        {
+            "id": "costarAudience",
+            "etiqueta": "A - Audiencia",
+            "tipo": "text",
+            "placeholder": "Ej: Estudiantes de bachillerato sin conocimientos previos de programación.",
+            "requerido": false,
+            "tooltip": "¿A quién va dirigida la respuesta?"
+        },
+        {
+            "id": "costarResponse",
+            "etiqueta": "R - Respuesta (Formato)",
+            "tipo": "textarea",
+            "filas": 3,
+            "placeholder": "Ej: Una lista con viñetas, donde cada punto es un hito importante. Incluir fechas.",
+            "requerido": false,
+            "tooltip": "Especifica el formato exacto de la salida que esperas."
+        }
+    ],
+    "plantilla_prompt": "Aplica el framework CO-STAR para generar el siguiente prompt:\n\n{{#if costarContext}}**C - Contexto:** {{costarContext}}\n{{/if}}\n**O - Objetivo:** {{costarObjective}}\n\n{{#if costarStyle}}**S - Estilo:** {{costarStyle}}\n{{/if}}{{#if costarTone}}**T - Tono:** {{costarTone}}\n{{/if}}{{#if costarAudience}}**A - Audiencia:** {{costarAudience}}\n{{/if}}{{#if costarResponse}}**R - Respuesta (Formato):** {{costarResponse}}\n{{/if}}",
+    "suggestedTools": [
+        { "name": "ChatGPT", "url": "https://chat.openai.com/" },
+        { "name": "Claude", "url": "https://claude.ai/" },
+        { "name": "Gemini", "url": "https://gemini.google.com/" }
+    ]
+}
